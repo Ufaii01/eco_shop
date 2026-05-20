@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoShop – Nama Produk</title>
+  <link rel="stylesheet" href="catalog-detail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Work+Sans:wght@400;600;700&family=Manrope:wght@700&family=Inter&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER
+  ================================================================ -->
+  <header class="header">
+    <!-- Hamburger (tablet/mobile) -->
+    <button
+      class="header__hamburger"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      id="hamburger-btn"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Logo / breadcrumb -->
+    <a href="#" class="header__logo">ECOSHOP</a>
+    <span class="header__sep">|</span>
+    <a href="#" class="header__breadcrumb">catalog</a>
+    <span class="header__sep">|</span>
+    <span class="header__breadcrumb header__breadcrumb--active">nama produk</span>
+
+    <!-- Icons -->
+    <div class="header__icons" aria-hidden="true">
+      <!-- Search -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#faf9ed" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <!-- Cart -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="#faf9ed" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 6h18M16 10a4 4 0 0 1-8 0" stroke="#faf9ed" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <!-- User -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="#faf9ed" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="product-hero" aria-labelledby="product-title">
+      <div class="product-hero__title-wrap">
+        <h1 class="product-hero__title" id="product-title">Nama produk</h1>
+      </div>
+    </section>
+
+    <section class="product-images" aria-label="Product images">
+      <div class="product-images__track" id="img-track" role="list">
+        <div class="product-images__slide" role="listitem">
+          <img
+            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            alt="Product view 1"
+          />
+        </div>
+        <div class="product-images__slide" role="listitem">
+          <img
+            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            alt="Product view 2"
+          />
+        </div>
+        <div class="product-images__slide" role="listitem">
+          <img
+            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            alt="Product view 3"
+          />
+        </div>
+        <div class="product-images__slide" role="listitem">
+          <img
+            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            alt="Product view 4"
+          />
+        </div>
+        <div class="product-images__slide" role="listitem">
+          <img
+            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            alt="Product view 5"
+          />
+        </div>
+        <div class="product-images__slide" role="listitem">
+          <img
+            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            alt="Product view 6"
+          />
+        </div>
+        <div class="product-images__slide" role="listitem">
+          <img
+            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            alt="Product view 7"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRODUCT INFO ──────────────────────────────────── -->
+    <section class="product-info" aria-labelledby="product-info-heading">
+      <h2 id="product-info-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden;">Product Details</h2>
+
+      <!-- Left col -->
+      <div class="product-info__left">
+
+        <!-- Rating row -->
+        <div class="product-info__row" style="align-items:center; gap:16px; flex-wrap:wrap;">
+          <span class="product-info__label">rating:</span>
+          <div class="stars" aria-label="4 out of 5 stars">
+            <!-- 4 filled stars -->
+            <span class="stars__icon star-filled" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+            </span>
+            <span class="stars__icon star-filled" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+            </span>
+            <span class="stars__icon star-filled" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+            </span>
+            <span class="stars__icon star-filled" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+            </span>
+            <!-- 1 half/empty star -->
+            <span class="stars__icon star-empty" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#888"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- Price row -->
+        <div class="product-info__row">
+          <span class="product-info__label">price :</span>
+          <span class="product-info__value">Rp. 87.000,00</span>
+        </div>
+
+        <!-- Materials row -->
+        <div class="product-info__row" style="flex-direction:column; gap:4px; align-items:flex-start;">
+          <span class="product-info__label">Materials:</span>
+          <p class="product-info__desc-text">Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <!-- CTA buttons -->
+        <div class="product-info__actions">
+          <button class="btn-add-cart" aria-label="Add to cart">ADD TO CART +</button>
+          <button class="btn-buy-now" aria-label="Buy now">BUY NOW</button>
+        </div>
+      </div>
+
+      <!-- Right col: Description -->
+      <div class="product-info__right">
+        <p class="product-info__desc-label">Desc:</p>
+        <p class="product-info__desc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </section>
+
+    <!-- ── VIDEO PLACEHOLDER ─────────────────────────────── -->
+    <section class="product-video" aria-label="Product video">
+      <div class="product-video__box">
+        <div class="product-video__play" role="img" aria-label="Play video">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SHOP / SELLER INFO ────────────────────────────── -->
+    <section class="shop-info" aria-labelledby="shop-info-heading">
+      <h2 id="shop-info-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden;">Seller Information</h2>
+
+      <!-- Shop card -->
+      <article class="shop-card">
+        <div class="shop-card__avatar">
+          <img
+            src="https://www.figma.com/api/mcp/asset/db0db346-3911-424a-ae0d-7ac4fa8a981e"
+            alt="Shop avatar"
+          />
+        </div>
+        <p class="shop-card__name">Nama toko</p>
+        <p class="shop-card__location">Lokasi</p>
+        <button class="btn-visit" aria-label="Visit seller store">VISIT</button>
+      </article>
+
+      <!-- Rating boxes -->
+      <div class="rating-card">
+        <div class="rating-box">
+          <span class="rating-box__label">RATING:</span>
+          <span class="rating-box__value">?/5</span>
+        </div>
+        <div class="rating-stars-box" aria-label="4 out of 5 stars rating">
+          <!-- 4 filled large stars -->
+          <span class="star-lg star-filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+          </span>
+          <span class="star-lg star-filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+          </span>
+          <span class="star-lg star-filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+          </span>
+          <span class="star-lg star-filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+          </span>
+          <!-- 1 empty -->
+          <span class="star-lg star-empty" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#aaa"/></svg>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CUSTOMERS RATING ──────────────────────────────── -->
+    <section class="customers-rating" aria-labelledby="customers-heading">
+      <h2 class="customers-rating__heading" id="customers-heading">Costumers Rating</h2>
+      <p class="customers-rating__sub">What our costumers said about Our Products</p>
+
+      <div class="customers-rating__track-wrap">
+        <div class="customers-rating__track" role="list">
+
+          <!-- Seller card template — repeated -->
+          <!-- 1 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://www.figma.com/api/mcp/asset/2850a699-6afc-497b-b856-f1e977b04a34" alt="EcoWeave Studios avatar" />
+            </div>
+            <p class="seller-card__name">EcoWeave Studios</p>
+            <p class="seller-card__category">RECYCLED TEXTILES</p>
+            <div class="seller-card__rating" aria-label="4.9 out of 5, 1.2k reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">4.9 (1.2k)</span>
+            </div>
+            <p class="seller-card__desc">Specializing in zero-waste home textiles and circular fashion.</p>
+          </article>
+
+          <!-- 2 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://www.figma.com/api/mcp/asset/2850a699-6afc-497b-b856-f1e977b04a34" alt="EcoWeave Studios avatar" />
+            </div>
+            <p class="seller-card__name">EcoWeave Studios</p>
+            <p class="seller-card__category">RECYCLED TEXTILES</p>
+            <div class="seller-card__rating" aria-label="4.9 out of 5, 1.2k reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">4.9 (1.2k)</span>
+            </div>
+            <p class="seller-card__desc">Specializing in zero-waste home textiles and circular fashion.</p>
+          </article>
+
+          <!-- 3 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://www.figma.com/api/mcp/asset/2850a699-6afc-497b-b856-f1e977b04a34" alt="PureRoot Labs avatar" />
+            </div>
+            <p class="seller-card__name">PureRoot Labs</p>
+            <p class="seller-card__category">PLANT-BASED TECH</p>
+            <div class="seller-card__rating" aria-label="4.8 out of 5, 850 reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">4.8 (850)</span>
+            </div>
+            <p class="seller-card__desc">Innovators in plant-based resins and biodegradable electronics.</p>
+          </article>
+
+          <!-- 4 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://www.figma.com/api/mcp/asset/2850a699-6afc-497b-b856-f1e977b04a34" alt="TimberSoul avatar" />
+            </div>
+            <p class="seller-card__name">TimberSoul</p>
+            <p class="seller-card__category">RECLAIMED FURNITURE</p>
+            <div class="seller-card__rating" aria-label="5.0 out of 5, 540 reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">5.0 (540)</span>
+            </div>
+            <p class="seller-card__desc">Master craftsmen turning urban salvaged timber into heirloom pieces.</p>
+          </article>
+
+          <!-- 5 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://www.figma.com/api/mcp/asset/2850a699-6afc-497b-b856-f1e977b04a34" alt="Gaia Essentials avatar" />
+            </div>
+            <p class="seller-card__name">Gaia Essentials</p>
+            <p class="seller-card__category">ETHICAL APOTHECARY</p>
+            <div class="seller-card__rating" aria-label="4.9 out of 5, 2.1k reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">4.9 (2.1k)</span>
+            </div>
+            <p class="seller-card__desc">Clean beauty and skincare formulated with regenerative forest botanicals.</p>
+          </article>
+
+          <!-- 6 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://www.figma.com/api/mcp/asset/2850a699-6afc-497b-b856-f1e977b04a34" alt="EcoWeave Studios avatar" />
+            </div>
+            <p class="seller-card__name">EcoWeave Studios</p>
+            <p class="seller-card__category">RECYCLED TEXTILES</p>
+            <div class="seller-card__rating" aria-label="4.9 out of 5, 1.2k reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">4.9 (1.2k)</span>
+            </div>
+            <p class="seller-card__desc">Specializing in zero-waste home textiles and circular fashion.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── YOU MAY ALSO LIKE ──────────────────────────────── -->
+    <section class="also-like" aria-labelledby="also-like-heading">
+      <h2 class="also-like__heading" id="also-like-heading">YOU MAY ALSO LIKE THIS</h2>
+
+      <!-- Divider -->
+      <div class="divider-line" style="margin-bottom:24px;"></div>
+
+      <!-- Fan carousel -->
+      <div class="carousel-fan" aria-label="Related products image gallery">
+        <div class="carousel-fan__track">
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="https://www.figma.com/api/mcp/asset/686a5062-1564-48be-9aea-ad8c24ac04ce" alt="Related product 1" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="https://www.figma.com/api/mcp/asset/2558f129-80b5-4e1f-8914-eddc430c9881" alt="Related product 2" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="https://www.figma.com/api/mcp/asset/4244d348-720c-44de-b73a-0371af2c8349" alt="Related product 3" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--sm">
+            <img src="https://www.figma.com/api/mcp/asset/86e66e13-0f8d-4a35-a2cf-eccc450f878c" alt="Related product 4" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--md">
+            <img src="https://www.figma.com/api/mcp/asset/2558f129-80b5-4e1f-8914-eddc430c9881" alt="Related product 5" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--lg">
+            <img src="https://www.figma.com/api/mcp/asset/86e66e13-0f8d-4a35-a2cf-eccc450f878c" alt="Related product 6 – featured" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--md">
+            <img src="https://www.figma.com/api/mcp/asset/686a5062-1564-48be-9aea-ad8c24ac04ce" alt="Related product 7" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--sm">
+            <img src="https://www.figma.com/api/mcp/asset/2558f129-80b5-4e1f-8914-eddc430c9881" alt="Related product 8" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="https://www.figma.com/api/mcp/asset/4244d348-720c-44de-b73a-0371af2c8349" alt="Related product 9" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="https://www.figma.com/api/mcp/asset/86e66e13-0f8d-4a35-a2cf-eccc450f878c" alt="Related product 10" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="https://www.figma.com/api/mcp/asset/2558f129-80b5-4e1f-8914-eddc430c9881" alt="Related product 11" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="https://www.figma.com/api/mcp/asset/686a5062-1564-48be-9aea-ad8c24ac04ce" alt="Related product 12" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer aria-labelledby="footer-heading">
+    <div class="footer__bg" aria-hidden="true"></div>
+    <div class="footer__bg-overlay" aria-hidden="true"></div>
+    <div class="footer__inner">
+
+      <!-- Header / tagline -->
+      <div class="footer__header">
+        <div class="footer__logo-icon" aria-hidden="true"></div>
+        <p class="footer__tagline">Make Earth More Greener . . .</p>
+      </div>
+
+      <!-- Columns -->
+      <div class="footer__columns">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <p class="footer__brand-name">ecoShop</p>
+          <p class="footer__brand-desc">
+            A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.
+          </p>
+          <div class="footer__socials" aria-label="Social media links">
+            <a href="#" aria-label="Facebook" class="footer__social-icon"></a>
+            <a href="#" aria-label="Instagram" class="footer__social-icon"></a>
+            <a href="#" aria-label="LinkedIn" class="footer__social-icon"></a>
+          </div>
+        </div>
+
+        <!-- Link groups -->
+        <div class="footer__links-group">
+          <nav class="footer__col" aria-label="Marketplace links">
+            <p class="footer__col-heading">MARKETPLACE</p>
+            <a href="#">Sustainability Commitments</a>
+            <a href="#">Verified Sellers</a>
+            <a href="#">How it Works</a>
+          </nav>
+
+          <nav class="footer__col" aria-label="Support links">
+            <p class="footer__col-heading">SUPPORT</p>
+            <a href="#">Customer Support</a>
+            <a href="#">Shipping &amp; Returns</a>
+            <a href="#">Privacy Policy</a>
+          </nav>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer__newsletter">
+          <p class="footer__newsletter-heading">STAY UPDATED</p>
+          <p class="footer__newsletter-sub">Join our newsletter for the latest ethical drops.</p>
+          <div class="footer__newsletter-form">
+            <input
+              class="footer__newsletter-input"
+              type="email"
+              placeholder="Email Address . . ."
+              aria-label="Email address for newsletter"
+            />
+            <button class="footer__newsletter-btn" aria-label="Join newsletter">JOIN</button>
+          </div>
+        </div>
+
+      </div><!-- /footer__columns -->
+
+      <div class="footer__divider" role="separator"></div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
+        <nav class="footer__social-links" aria-label="Footer social links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="LinkedIn">li</a>
+        </nav>
+      </div>
+
+    </div><!-- /footer__inner -->
+  </footer>
+
+  <!-- ================================================================
+       JAVASCRIPT
+  ================================================================ -->
+  <script>
+    // ── Hamburger toggle ────────────────────────────────────
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileNav    = document.getElementById('mobile-nav');
+
+    hamburgerBtn.addEventListener('click', () => {
+      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+      hamburgerBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.classList.toggle('is-open');
+    });
+
+    // Close mobile nav when a link is clicked
+    mobileNav.querySelectorAll('.header__mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('is-open');
+      });
+    });
+
+    // Close mobile nav on outside click
+    document.addEventListener('click', (e) => {
+      if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('is-open');
+      }
+    });
+  </script>
+
+</body>
+</html>
