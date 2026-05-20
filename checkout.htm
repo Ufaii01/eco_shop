@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoShop - Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+  <main class="checkout-container">
+    
+    <nav class="breadcrumb">
+      <svg class="breadcrumb__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <a href="#" class="breadcrumb__link">ECOSHOP</a> /
+      <a href="#" class="breadcrumb__link">CATALOG</a> /
+      <a href="#" class="breadcrumb__link">NAMA PRODUK</a> /
+      <span class="breadcrumb__current">CHECKOUT</span>
+    </nav>
+
+    <header class="header">
+      <h1 class="header__title title-font">CHECKOUT</h1>
+      <p class="header__subtitle">
+        <span class="header__subtitle-icon">!</span> ALWAYS RECHECK YOUR ORDERS BEFORE PAYING
+      </p>
+    </header>
+
+    <div class="checkout-grid">
+      
+      <section class="cart-wrapper" id="cart-container">
+        </section>
+
+      <aside class="summary-wrapper">
+        
+        <div class="summary-table">
+          <div class="summary-row title-font">
+            <span>SUBTOTAL</span>
+            <span id="summ-subtotal">RP. 0</span>
+          </div>
+          <div class="summary-row title-font">
+            <span>SHIPPING COST</span>
+            <span id="summ-shipping">RP. 15.000</span>
+          </div>
+          <div class="summary-row summary-row--discount title-font">
+            <span>DISCOUNT <span class="discount-badge">🎫</span></span>
+            <span id="summ-discount">RP. 0</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-total title-font">
+            <span>TOTAL</span>
+            <span id="summ-total">RP. 0</span>
+          </div>
+        </div>
+
+        <h3 class="payment-title">PAYMENT INFORMATION</h3>
+
+        <div class="payment-methods">
+          <div class="payment-method is-active" data-method="card">
+            <svg class="payment-method__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+            <span class="payment-method__name">Credit Card</span>
+            <svg class="payment-method__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="payment-method" data-method="digital">
+            <svg class="payment-method__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <div>
+              <span class="payment-method__name" style="display:block;">Digital Wallet</span>
+              <span class="payment-method__sub">Apple Pay, Google Pay</span>
+            </div>
+            <svg class="payment-method__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+        </div>
+
+        <form id="payment-form">
+          <div class="form-group">
+            <label class="form-label" for="card-name">CARDHOLDER NAME</label>
+            <input class="form-input" type="text" id="card-name" placeholder="Julian Thorne" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="card-number">CARD NUMBER</label>
+            <div class="form-input-wrap">
+              <input class="form-input" type="text" id="card-number" placeholder="5547 8890 7600 6620" maxlength="19" required>
+              <svg class="form-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="card-expiry">EXPIRY DATE</label>
+              <input class="form-input" type="text" id="card-expiry" placeholder="MM / YY" maxlength="7" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="card-cvv">CVC / CVV</label>
+              <input class="form-input" type="password" id="card-cvv" placeholder="***" maxlength="3" required>
+            </div>
+          </div>
+
+          <button type="button" class="checkout-btn" id="btn-checkout">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4l3 3"></path></svg> Check Out
+          </button>
+        </form>
+
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span class="trust-badge__label">SECURE PAY</span>
+          </div>
+          <div class="trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="trust-badge__label">CARBON NEUTRAL</span>
+          </div>
+          <div class="trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-9.28l5.67-5.67"></path></svg>
+            <span class="trust-badge__label">EASY RETURNS</span>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
