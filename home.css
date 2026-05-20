@@ -9,7 +9,6 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* NAVIGATION BAR*/
 nav {
     display: flex;
     justify-content: space-between;
@@ -72,7 +71,6 @@ nav {
     font-size: 20px;
 }
 
-/* NAVBAR BAGIAN KANAN */
 .nav-right {
     display: flex;
     align-items: center;
