@@ -4,11 +4,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EcoShop — Create Account</title>
+  <title>FontDale — Create Account</title>
   <link rel="stylesheet" href="Login and Register.css" />
   <link rel="stylesheet" href="Register.css" />
-</head>
+  <style>
+    /* ── Auth error / success styles ── */
+    .input-error {
+      border-color: #c0392b !important;
+      box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12) !important;
+    }
+    .error-msg {
+      display: none;
+      font-size: 12px;
+      color: #c0392b;
+      margin-top: 4px;
+      padding-left: 4px;
+      font-weight: 600;
+    }
+    /* terms error floats below the checkbox row */
+    .terms-group .error-msg {
+      display: none;
+      padding-left: 28px;
+      margin-top: 0;
+    }
 
+    .auth-banner {
+      display: none;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+    .auth-banner--error {
+      background: #fdf0ef;
+      border: 1.5px solid #e74c3c;
+      color: #a93226;
+    }
+    .auth-banner--success {
+      background: #edfaf1;
+      border: 1.5px solid #2ecc71;
+      color: #1e8449;
+    }
+  </style>
+</head>
 
 <body>
 
@@ -19,16 +58,16 @@
       <aside class="hero-banner">
         <div class="hero-content">
 
-          <h2 class="hero-logo">ECOSHOP</h2>
+          <h2 class="hero-logo">FONTDALE</h2>
 
           <div class="hero-main-text">
-            <h3 class="hero-title">Join the movement<br>for conscious<br>consumption.</h3>
-            <p class="hero-description">Every choice you make at EcoShop supports verified ethical sellers and regenerative environmental projects worldwide.</p>
+            <h3 class="hero-title">Join the movement<br>for premium<br>living.</h3>
+            <p class="hero-description">Every visit to FontDale at Arcadia Circle is a curated journey through luxury, culture, and innovation — founded by Franz Diego.</p>
           </div>
 
           <div class="hero-stats">
-            <span class="stats-number">50+</span>
-            <span class="stats-label">VERIFIED SELLERS</span>
+            <span class="stats-number">3</span>
+            <span class="stats-label">SIGNATURE WINGS</span>
           </div>
 
         </div>
@@ -40,34 +79,41 @@
 
           <header class="auth-header">
             <h1>Create Account</h1>
-            <p>Welcome! Join our community of ethical shoppers.</p>
+            <p>Welcome! Join our community of premium lifestyle enthusiasts.</p>
           </header>
 
-          <form action="#" method="POST" class="auth-form">
+          <!-- Status banner (shown on register success or error) -->
+          <div id="register-banner" class="auth-banner" role="alert"></div>
+
+          <form id="register-form" action="#" method="POST" class="auth-form" novalidate>
 
             <div class="input-group">
               <label for="fullname">Full Name</label>
-              <input type="text" id="fullname" name="fullname" placeholder="" autocomplete="name" required />
+              <input type="text" id="fullname" name="fullname" placeholder="" autocomplete="name" />
+              <span id="fullname-error" class="error-msg" role="alert"></span>
             </div>
 
             <div class="input-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="" autocomplete="email" required />
+              <input type="email" id="email" name="email" placeholder="" autocomplete="email" />
+              <span id="email-error" class="error-msg" role="alert"></span>
             </div>
 
             <div class="input-group">
               <label for="password">Password</label>
-              <input type="password" id="password" name="password" placeholder="" autocomplete="new-password" required />
+              <input type="password" id="password" name="password" placeholder="" autocomplete="new-password" />
+              <span id="password-error" class="error-msg" role="alert"></span>
             </div>
 
             <div class="terms-group">
-              <input type="checkbox" id="privacy-policy" name="terms" required />
+              <input type="checkbox" id="privacy-policy" name="terms" />
               <label for="privacy-policy">
                 I agree to the <strong>Terms of Service</strong> and <strong>Privacy Policy</strong>.
               </label>
+              <span id="privacy-policy-error" class="error-msg" role="alert" style="width:100%;display:none;"></span>
             </div>
 
-            <button type="submit" class="btn-submit">Register</button>
+            <button type="submit" class="btn-submit">Create Account</button>
 
             <div class="divider"><span>or continue with</span></div>
 
@@ -97,18 +143,17 @@
     <footer class="main-footer">
 
       <div class="footer-top-header">
-        <!-- TODO: add badge image -->
         <div class="footer-badge">
           <img src="" alt="">
         </div>
-        <h2 class="footer-tagline">MAKE EARTH MORE GREENER . . .</h2>
+        <h2 class="footer-tagline">EXPERIENCE LUXURY AT EVERY STEP . . .</h2>
       </div>
 
       <div class="footer-columns">
 
         <div class="footer-brand">
-          <h2 class="footer-brand-name">ECOSHOP</h2>
-          <p>A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
+          <h2 class="footer-brand-name">FONTDALE</h2>
+          <p>A premium lifestyle destination founded by Franz Diego, curating luxury and innovation under one roof at Arcadia Circle.</p>
           <div class="brand-socials">
             <a href="#" aria-label="Website">
               <img src="assets/Footer/Icon.png" alt="">
@@ -122,12 +167,12 @@
           </div>
         </div>
 
-        <nav class="nav-column" aria-label="Marketplace">
-          <h3>MARKETPLACE</h3>
+        <nav class="nav-column" aria-label="Explore">
+          <h3>EXPLORE</h3>
           <ul>
-            <li><a href="#">Sustainability Commitments</a></li>
-            <li><a href="#">Verified Sellers</a></li>
-            <li><a href="#">How it Works</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Directory</a></li>
+            <li><a href="#">Events</a></li>
           </ul>
         </nav>
 
@@ -135,14 +180,14 @@
           <h3>SUPPORT</h3>
           <ul>
             <li><a href="#">Customer Support</a></li>
-            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Visitor Guide</a></li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
         </nav>
 
         <div class="footer-newsletter">
           <h3>STAY UPDATED</h3>
-          <p>Join our newsletter for the latest ethical drops.</p>
+          <p>Join our newsletter for exclusive FontDale events and offers.</p>
           <form class="newsletter-form" action="#" method="POST">
             <input type="email" name="newsletter-email" placeholder="Email Address . . ." required />
             <button type="submit">JOIN</button>
@@ -155,23 +200,23 @@
 
       <div class="footer-bottom-bar">
         <div class="bottom-socials">
-          <a href="#" aria-label="Instagram">
+          <a href="https://www.instagram.com/" aria-label="Instagram">
             <img src="assets/Footer/Clip path group.png" alt="">
           </a>
-          <a href="#" aria-label="Facebook">
+          <a href="https://www.facebook.com/" aria-label="Facebook">
             <img src="assets/Footer/Vector.png" alt="">
           </a>
-          <a href="#" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn">
             <img src="assets/Footer/in.png" alt="">
           </a>
         </div>
-        <p class="copyright-text">&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
+        <p class="copyright-text">&copy; 2025 FontDale. Curated by Franz Diego. All rights reserved.</p>
       </div>
 
     </footer>
 
   </div>
 
+  <script src="auth.js"></script>
 </body>
-
 </html>
