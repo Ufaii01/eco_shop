@@ -1,6 +1,4 @@
-/* =========================================================
-   RESET & BASE STYLES
-   ========================================================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,24 +25,20 @@ input {
   outline: none;
 }
 
-/* =========================================================
-   TYPOGRAPHY
-   ========================================================= */
+
 .title-font {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
 }
 
-/* =========================================================
-   LAYOUT
-   ========================================================= */
+
 .checkout-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
 }
 
-/* Breadcrumb */
+
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -67,7 +61,7 @@ input {
 .breadcrumb__link:hover { color: #3B2A1A; }
 .breadcrumb__current { color: #3B2A1A; }
 
-/* Header */
+
 .header {
   margin-bottom: 40px;
 }
@@ -90,7 +84,7 @@ input {
   font-weight: 700;
 }
 
-/* Grid Layout */
+
 .checkout-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -98,9 +92,7 @@ input {
   align-items: start;
 }
 
-/* =========================================================
-   CART ITEMS (LEFT COLUMN)
-   ========================================================= */
+
 .cart-wrapper {
   background-color: #423223;
   border-radius: 24px;
@@ -215,9 +207,7 @@ input {
 }
 .cart-item__delete:hover { background-color: #c9302c; }
 
-/* =========================================================
-   SUMMARY & PAYMENT (RIGHT COLUMN)
-   ========================================================= */
+
 .summary-wrapper {
   background-color: #FAF7F2;
   border: 3px solid #3B2A1A;
@@ -268,7 +258,7 @@ input {
   margin-bottom: 32px;
 }
 
-/* Payment Information */
+
 .payment-title {
   font-size: 14px;
   font-weight: 700;
@@ -314,7 +304,6 @@ input {
 }
 .payment-method.is-active .payment-method__check { display: block; }
 
-/* Form Fields */
 .form-group {
   margin-bottom: 16px;
 }
@@ -384,7 +373,7 @@ input {
 .checkout-btn:hover { background-color: #4cae4c; }
 .checkout-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
-/* Trust Icons */
+
 .trust-badges {
   display: flex;
   justify-content: space-around;
@@ -408,9 +397,7 @@ input {
   letter-spacing: 0.5px;
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+
 @media screen and (max-width: 1024px) {
   .checkout-grid { grid-template-columns: 1fr; }
   .checkout-container { padding: 24px; }

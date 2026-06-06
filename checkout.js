@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Configuration
-  const SHIPPING_COST = 15000;
-  const DISCOUNT_RATE = 0.10; // 10% discount
 
-  // Initial Cart Data (matching the 4 items from the design)
+  const SHIPPING_COST = 15000;
+  const DISCOUNT_RATE = 0.10; 
+
+  
   let cartItems = [
     { id: 1, name: 'PRODUCT NAME', desc: 'PREORDER DAYS', price: 45000, qty: 1, img: 'https://images.unsplash.com/photo-1607006411204-62986420d418?w=200&q=80' },
     { id: 2, name: 'PRODUCT NAME', desc: 'PREORDER DAYS', price: 45000, qty: 1, img: 'https://images.unsplash.com/photo-1607006411204-62986420d418?w=200&q=80' },
@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const cartContainer = document.getElementById('cart-container');
   
-  // Formatting utility
+  
   const formatCurrency = (num) => {
     return 'RP. ' + num.toLocaleString('id-ID').replace(/,/g, '.');
   };
 
-  // Render Cart
+  
   const renderCart = () => {
     if (cartItems.length === 0) {
       cartContainer.innerHTML = '<div style="color: #FAF7F2; text-align: center; padding: 40px;">Your cart is empty.</div>';
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTotals();
   };
 
-  // Handle Events for Cart Items
+  
   const attachCartListeners = () => {
     document.querySelectorAll('.btn-inc').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Update Summary Totals
+  
   const updateTotals = () => {
     const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
     const discount = cartItems.length > 0 ? Math.round(subtotal * DISCOUNT_RATE) : 0;
@@ -94,8 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('summ-discount').textContent = formatCurrency(discount);
     document.getElementById('summ-total').textContent = formatCurrency(total);
   };
-
-  // Initialize Payment Tabs
+s
   const paymentTabs = document.querySelectorAll('.payment-method');
   paymentTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -104,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Input Formatting
+
   const cardNumberInput = document.getElementById('card-number');
   if (cardNumberInput) {
     cardNumberInput.addEventListener('input', (e) => {
@@ -125,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Checkout Button
+
   const checkoutBtn = document.getElementById('btn-checkout');
   if (checkoutBtn) {
     checkoutBtn.addEventListener('click', () => {
@@ -147,6 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initial Render
+  
   renderCart();
 });
