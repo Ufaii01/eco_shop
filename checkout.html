@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoShop - Checkout</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="checkout.css">
 </head>
 <body>
@@ -31,7 +33,7 @@
     <div class="checkout-grid">
       
       <section class="cart-wrapper" id="cart-container">
-        </section>
+      </section>
 
       <aside class="summary-wrapper">
         
@@ -123,54 +125,69 @@
   </main>
 
   <script src="checkout.js"></script>
+
+  <footer aria-labelledby="footer-heading">
+    <div class="footer__bg" aria-hidden="true" style="background-image: url('assets/daun.jpg');"></div>
+    <div class="footer__bg-overlay" aria-hidden="true"></div>
+    <div class="footer__inner">
+
+      <div class="footer__header">
+        <div class="footer__logo-icon" aria-hidden="true">🌿</div>
+        <p class="footer__tagline">Make Earth More Greener . . .</p>
+      </div>
+
+      <div class="footer__columns">
+        <div class="footer__brand">
+          <p class="footer__brand-name">ecoShop</p>
+          <p class="footer__brand-desc">
+            A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.
+          </p>
+          <div class="footer__socials" aria-label="Social media links">
+            <a href="#" aria-label="Facebook" class="footer__social-icon">f</a>
+            <a href="#" aria-label="Instagram" class="footer__social-icon">in</a>
+            <a href="#" aria-label="LinkedIn" class="footer__social-icon">li</a>
+          </div>
+        </div>
+
+        <div class="footer__links-group">
+          <nav class="footer__col" aria-label="Marketplace links">
+            <p class="footer__col-heading">MARKETPLACE</p>
+            <a href="#">Sustainability Commitments</a>
+            <a href="#">Verified Sellers</a>
+            <a href="#">How it Works</a>
+          </nav>
+
+          <nav class="footer__col" aria-label="Support links">
+            <p class="footer__col-heading">SUPPORT</p>
+            <a href="#">Customer Support</a>
+            <a href="#">Shipping &amp; Returns</a>
+            <a href="#">Privacy Policy</a>
+          </nav>
+        </div>
+
+        <div class="footer__newsletter">
+          <p class="footer__newsletter-heading">STAY UPDATED</p>
+          <p class="footer__newsletter-sub">Join our newsletter for the latest ethical drops.</p>
+          <div class="footer__newsletter-form">
+            <input
+              class="footer__newsletter-input"
+              type="email"
+              placeholder="Email Address . . ."
+              aria-label="Email address for newsletter"
+            />
+            <button class="footer__newsletter-btn" aria-label="Join newsletter">JOIN</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__divider" role="separator"></div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
+      </div>
+
+    </div>
+  </footer>
+
 </body>
-  <footer class="footer">
-        <div class="footer-bg-overlay"></div>
-        <div class="footer-content">
-            <div class="footer-col brand-col">
-                <div class="eco-icon">&#127807;</div>
-                <h3>MAKE EARTH MORE GREENER . . .</h3>
-                <h4>ECOSHOP</h4>
-                <p>A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
-                <div class="footer-social-small">
-                    <span>&#127758;</span> <span>&#9993;</span> <span>&#9881;</span>
-                </div>
-            </div>
-
-            <div class="footer-col links-col">
-                <h5>MARKETPLACE</h5>
-                <ul>
-                    <li><a href="home.html">Sustainability Commitments</a></li>
-                    <li><a href="catalog.html">Verified Sellers</a></li>
-                    <li><a href="home.html">How it Works</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col links-col">
-                <h5>SUPPORT</h5>
-                <ul>
-                    <li><a href="#">Customer Support</a></li>
-                    <li><a href="#">Shipping & Returns</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col newsletter-col">
-                <h5>STAY UPDATED</h5>
-                <p>Join our newsletter for the latest ethical drops.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Email Address . . .">
-                    <button type="submit">JOIN</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="social-icons">
-                <span>&#128247;</span> <span>&#128101;</span> <span>&#128188;</span>
-            </div>
-            <p>&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
-        </div>
-    </footer>
-
 </html>
