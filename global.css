@@ -1,0 +1,219 @@
+/* RESET & GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f6f5ef; /* Light beige background */
+    color: #2c2a27; /* Dark charcoal text */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR (Global) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    font-weight: 400;
+    color: #555;
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.nav-right .icon {
+    cursor: pointer;
+}
+
+/* FOOTER (Global) */
+.footer {
+    position: relative;
+    background-color: #0c140d; /* Very dark green/black */
+    color: #fff;
+    padding: 60px 5% 20px;
+    overflow: hidden;
+}
+
+.footer-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 40px;
+}
+
+.brand-col h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.eco-icon {
+    background: #fff;
+    color: #0c140d;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.brand-col h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.brand-col p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.footer-social-small span {
+    font-size: 18px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.links-col h5, .newsletter-col h5 {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.links-col ul {
+    list-style: none;
+}
+
+.links-col ul li {
+    margin-bottom: 15px;
+}
+
+.links-col ul li a {
+    font-size: 13px;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.links-col ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.newsletter-col p {
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.newsletter-form {
+    display: flex;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.newsletter-form input {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    flex-grow: 1;
+}
+
+.newsletter-form button {
+    background-color: #0c140d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #777;
+}
+
+/* RESPONSIVE DESIGN FOR GLOBAL ELEMENTS */
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .brand-col h3 {
+        justify-content: center;
+    }
+}

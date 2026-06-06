@@ -1,319 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoShop / Catalog</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="catalog.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoshop Catalog</title>
+    <link rel="stylesheet" href="catalog.css">
+    <link href="global.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <button class="navbar__hamburger" aria-expanded="false" aria-label="Toggle navigation" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <a href="home.html" class="navbar__brand">ECOSHOP <span>/ CATALOG</span></a>
-    <nav class="navbar__nav" id="main-nav" role="navigation">
-      <a href="catalog.html">Marketplace</a>
-      <a href="#">About</a>
-      <a href="#">How It Works</a>
-    </nav>
-    <div class="navbar__icons">
-      <a href="#" aria-label="Search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-      </a>
-      <a href="#" aria-label="Cart">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <path d="M16 10a4 4 0 0 1-8 0"/>
-        </svg>
-      </a>
-      <a href="#" aria-label="Account">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-      </a>
-    </div>
-  </header>
+    <header class="navbar">
+        <div class="nav-left">
+            <span class="hamburger">&#9776;</span>
+            <h1 class="logo">ECOSHOP <span>/ CATALOG</span></h1>
+        </div>
+        <div class="nav-right">
+            <span class="icon">&#128269;</span>
+            <span class="icon">&#128178;</span>
+            <span class="icon">&#128100;</span>
+        </div>
+    </header>
 
-  <main>
-
-    <!-- HERO BANNER -->
     <section class="hero">
-      <img class="hero__img" src="assets/AssetFolderHCI-Lec/Sustainable Catering_ How to Reduce Waste and…_imgupscaler.ai_Beta_2K.jpg" alt="Eco-friendly cutlery and packaging on natural background" />
-      <div class="hero__overlay">
-        <p class="hero__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
+        <img src="assets/AssetFolderHCI-Lec/Sustainable Catering_ How to Reduce Waste and…_imgupscaler.ai_Beta_2K.jpg" alt="Hero Image" class="hero-bg">
+        
+        <div class="hero-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
     </section>
 
-    <!-- OUR PRODUCTS -->
-    <section class="products">
-      <div class="products__header">
-        <h2 class="products__title">OUR PRODUCTS</h2>
-        <div class="products__filters">
-          <div class="filter-group">
-            <span class="filter-group__label">CATEGORIES</span>
-            <select aria-label="Filter by categories">
-              <option>Filter</option>
-              <option>Home &amp; Garden</option>
-              <option>Personal Care</option>
-              <option>Stationery</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <span class="filter-group__label">MATERIALS</span>
-            <select aria-label="Filter by materials">
-              <option>Filter</option>
-              <option>Recycled</option>
-              <option>Organic</option>
-              <option>Biodegradable</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <span class="filter-group__label">PO TIMES</span>
-            <select aria-label="Filter by PO times">
-              <option>Filter</option>
-              <option>1&ndash;2 weeks</option>
-              <option>3&ndash;4 weeks</option>
-              <option>5+ weeks</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="products__grid">
-
-        <div class="product-card">
-          <div class="product-card__img-wrap">
-            <img class="product-card__img" src="assets/AssetFolderHCI-Lec/cosmos_1965260408.jpeg" alt="" />
-          </div>
-          <span class="product-card__label">product name</span>
-          <div class="product-card__overlay">
-            <button class="product-card__cta">View Product</button>
-          </div>
+    <section class="products-section">
+        <div class="products-header">
+            <h2>OUR PRODUCTS</h2>
+            <div class="filters">
+                <div class="filter-group">
+                    <label>CATEGORIES</label>
+                    <select><option>Filter</option></select>
+                </div>
+                <div class="filter-group">
+                    <label>MATERIALS</label>
+                    <select><option>Filter</option></select>
+                </div>
+                <div class="filter-group">
+                    <label>PO TIMES</label>
+                    <select><option>Filter</option></select>
+                </div>
+            </div>
         </div>
 
-        <div class="product-card">
-          <div class="product-card__img-wrap">
-            <img class="product-card__img" src="assets/AssetFolderHCI-Lec/DesignUplift.jpg" alt="" />
-          </div>
-          <span class="product-card__label">product name</span>
-          <div class="product-card__overlay">
-            <button class="product-card__cta">View Product</button>
-          </div>
-        </div>
+        <div class="products-grid">
+            <div class="product-card card-large-square">
+                <img src="assets/AssetFolderHCI-Lec/Sustainable Catering_ How to Reduce Waste and…_imgupscaler.ai_Beta_2K.jpg" alt="Product 1">
+                <div class="product-badge">product name</div>
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
 
-        <div class="product-card">
-          <div class="product-card__img-wrap">
-            <img class="product-card__img" src="assets/AssetFolderHCI-Lec/image 1.jpg" alt="" />
-          </div>
-          <span class="product-card__label">product name</span>
-          <div class="product-card__overlay">
-            <button class="product-card__cta">View Product</button>
-          </div>
-        </div>
+            <div class="product-card card-small">
+                <img src="" alt="Product 2">
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
 
-        <div class="product-card">
-          <div class="product-card__img-wrap">
-            <img class="product-card__img" src="assets/AssetFolderHCI-Lec/image 2.jpg" alt="" />
-          </div>
-          <span class="product-card__label">product name</span>
-          <div class="product-card__overlay">
-            <button class="product-card__cta">View Product</button>
-          </div>
-        </div>
+            <div class="product-card card-small">
+                <img src="" alt="Product 3">
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
 
-        <div class="product-card">
-          <div class="product-card__img-wrap product-card__img-wrap--tall">
-            <img class="product-card__img" src="assets/AssetFolderHCI-Lec/image 3.jpg" alt="" />
-          </div>
-          <span class="product-card__label">product name</span>
-          <div class="product-card__overlay">
-            <button class="product-card__cta">View Product</button>
-          </div>
-        </div>
+            <div class="product-card card-wide">
+                <img src="" alt="Product 4">
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
 
-        <div class="product-card">
-          <div class="product-card__img-wrap">
-            <img class="product-card__img" src="assets/AssetFolderHCI-Lec/image 4.jpg" alt="" />
-          </div>
-          <span class="product-card__label">product name</span>
-          <div class="product-card__overlay">
-            <button class="product-card__cta">View Product</button>
-          </div>
-        </div>
+            <div class="product-card card-wide bg-grey">
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
 
-      </div>
+            <div class="product-card card-tall">
+                <img src="" alt="Product 6">
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
+
+            <div class="product-card card-large-tall">
+                <img src="" alt="Product 7">
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- NEW ARRIVALS -->
     <section class="new-arrivals">
-      <div class="new-arrivals__header">
-        <h2 class="new-arrivals__title">OUR'S NEW ARRIVALS</h2>
-        <p class="new-arrivals__sub">Check our's newest products now!</p>
-        <a href="catalog-detail.html" class="new-arrivals__btn">
-          CHECK NOW!
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"/>
-            <path d="m12 5 7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-      <div class="new-arrivals__featured">
-        <img src="assets/AssetFolderHCI-Lec/image 5.jpg" alt="" />
-        <span class="product-card__label">product name</span>
-      </div>
+        <div class="new-arrivals-header">
+            <h2>OUR'S NEW ARRIVALS</h2>
+            <p>Check our's newest products now!</p>
+            <button class="check-now-btn">CHECK NOW! <span>&#10140;</span></button>
+        </div>
+
+        <div class="new-arrivals-grid">
+            <div class="product-card arrival-main">
+                <img src="" alt="New Arrival Main">
+                <div class="product-badge">product name</div>
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
+
+            <div class="product-card arrival-small">
+                <img src="" alt="New Arrival 1">
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
+
+            <div class="product-card arrival-grey bg-grey">
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
+
+            <div class="product-card arrival-small">
+                <img src="" alt="New Arrival 2">
+                <div class="hover-overlay">
+                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- PLANT PRODUCTS GRID -->
-    <section class="plant-grid">
-      <div class="plant-grid__layout">
-        <div class="plant-grid__left">
-
-          <div class="plant-card">
-            <img src="assets/AssetFolderHCI-Lec/plan_t - Sungchae Park.jpg" alt="" />
-            <span class="product-card__label">product name</span>
-            <div class="product-card__overlay">
-              <button class="product-card__cta">View Product</button>
+    <footer class="footer">
+        <div class="footer-bg-overlay"></div>
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="eco-icon">&#127807;</div>
+                <h3>MAKE EARTH MORE GREENER . . .</h3>
+                <h4>ECOSHOP</h4>
+                <p>A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
+                <div class="footer-social-small">
+                    <span>&#127758;</span> <span>&#9993;</span> <span>&#9881;</span>
+                </div>
             </div>
-          </div>
 
-          <div class="plant-card">
-            <img src="" alt="" />
-            <span class="product-card__label">product name</span>
-            <div class="product-card__overlay">
-              <button class="product-card__cta">View Product</button>
+            <div class="footer-col links-col">
+                <h5>MARKETPLACE</h5>
+                <ul>
+                    <li><a href="#">Sustainability Commitments</a></li>
+                    <li><a href="#">Verified Sellers</a></li>
+                    <li><a href="#">How it Works</a></li>
+                </ul>
             </div>
-          </div>
 
+            <div class="footer-col links-col">
+                <h5>SUPPORT</h5>
+                <ul>
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h5>STAY UPDATED</h5>
+                <p>Join our newsletter for the latest ethical drops.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Address . . .">
+                    <button type="submit">JOIN</button>
+                </form>
+            </div>
         </div>
-        <div class="plant-grid__right"></div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__inner">
-
-      <div class="footer__tagline">
-        <div class="footer__logo-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <path d="M9 12l2 2 4-4"/>
-          </svg>
+        
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <span>&#128247;</span> <span>&#128101;</span> <span>&#128188;</span>
+            </div>
+            <p>&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
         </div>
-        <p class="footer__slogan">MAKE EARTH MORE GREENER . . .</p>
-      </div>
-
-      <div class="footer__cols">
-
-        <div class="footer__col">
-          <p class="footer__brand-name">ECOSHOP</p>
-          <p class="footer__brand-desc">A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
-          <div class="footer__social-icons">
-            <a href="#" aria-label="Website">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Partners">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"/>
-                <circle cx="6" cy="12" r="3"/>
-                <circle cx="18" cy="19" r="3"/>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer__col">
-          <p class="footer__col-title">MARKETPLACE</p>
-          <ul>
-            <li><a href="#">Sustainability Commitments</a></li>
-            <li><a href="#">Verified Sellers</a></li>
-            <li><a href="#">How It Works</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
-          <p class="footer__col-title">SUPPORT</p>
-          <ul>
-            <li><a href="#">Customer Support</a></li>
-            <li><a href="#">Shipping &amp; Returns</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
-          <p class="footer__newsletter-label">STAY UPDATED</p>
-          <p class="footer__newsletter-desc">Join our newsletter for the latest ethical drops.</p>
-          <div class="footer__newsletter-form">
-            <input type="email" placeholder="Email Address . . ." aria-label="Email address for newsletter" />
-            <button type="button">JOIN</button>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="footer__bottom">
-        <div class="footer__bottom-socials">
-          <a href="https://www.instagram.com/" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-          </a>
-        </div>
-        <p class="footer__copy">&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
-      </div>
-
-    </div>
-  </footer>
-
-  <script>
-    var hamburger = document.getElementById('hamburger');
-    var nav = document.getElementById('main-nav');
-
-    hamburger.addEventListener('click', function () {
-      var expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('is-open');
-    });
-  </script>
+    </footer>
 
 </body>
 </html>
