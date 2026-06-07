@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +9,7 @@ body {
   background-color: #FAF7F2;
   color: #3B2A1A;
   line-height: 1.5;
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; <-- INI YANG BIKIN GAP BAWAH, UDAH DIHAPUS */
 }
 
 button {
@@ -25,19 +24,16 @@ input {
   outline: none;
 }
 
-
 .title-font {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
 }
-
 
 .checkout-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
 }
-
 
 .breadcrumb {
   display: flex;
@@ -61,7 +57,6 @@ input {
 .breadcrumb__link:hover { color: #3B2A1A; }
 .breadcrumb__current { color: #3B2A1A; }
 
-
 .header {
   margin-bottom: 40px;
 }
@@ -84,14 +79,12 @@ input {
   font-weight: 700;
 }
 
-
 .checkout-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 32px;
   align-items: start;
 }
-
 
 .cart-wrapper {
   background-color: #423223;
@@ -207,7 +200,6 @@ input {
 }
 .cart-item__delete:hover { background-color: #c9302c; }
 
-
 .summary-wrapper {
   background-color: #FAF7F2;
   border: 3px solid #3B2A1A;
@@ -257,7 +249,6 @@ input {
   color: #3B2A1A;
   margin-bottom: 32px;
 }
-
 
 .payment-title {
   font-size: 14px;
@@ -373,7 +364,6 @@ input {
 .checkout-btn:hover { background-color: #4cae4c; }
 .checkout-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
-
 .trust-badges {
   display: flex;
   justify-content: space-around;
@@ -397,7 +387,6 @@ input {
   letter-spacing: 0.5px;
 }
 
-
 @media screen and (max-width: 1024px) {
   .checkout-grid { grid-template-columns: 1fr; }
   .checkout-container { padding: 24px; }
@@ -418,10 +407,10 @@ input {
 footer {
   position: relative;
   overflow: hidden;
-  min-height: 714px;
-  background-color: #1a1a1a;
+  /* min-height: 714px; <-- INI YANG BIKIN FOOTER KEPANJANGAN KE BAWAH, UDAH DIHAPUS */
+  background-color: #0c140d; /* Fallback warna hijau daun gelap kalau gambar gagal load */
   color: #faf9ed;
-  margin-top: 60px; /* Jarak dari konten checkout ke footer */
+  margin-top: 60px;
 }
 .footer__bg {
   position: absolute;
@@ -432,7 +421,7 @@ footer {
 .footer__bg-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0,0,0,0.71);
+  background-color: rgba(10, 20, 12, 0.85); /* Overlay-nya dibikin rada hijau tua biar nyatu */
 }
 .footer__inner {
   position: relative;
