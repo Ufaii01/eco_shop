@@ -1,8 +1,3 @@
-/* ============================================================
-   FOOTER — Shared footer styles for EcoShop
-   Matches the footer design from Register.HTML
-   ============================================================ */
-
 @import url("https://fonts.googleapis.com/css2?family=Koulen&family=Work+Sans:wght@400;500;600;700&display=swap");
 
 :root {
@@ -26,6 +21,8 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  background-size: cover; 
+  background-position: center;
 }
 
 .main-footer::after {

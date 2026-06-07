@@ -9,7 +9,51 @@
     <link rel="stylesheet" href="footer.css">
 </head>
 <body>
+<div class="overlay" id="overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="hamburger close-btn" id="close-btn">&#9776;</span>
+            <h2>ECOSHOP</h2>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h4>PAGE</h4>
+                <ul class="menu-page">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">PROFILE</a></li>
+                    <li><a href="#">PRODUCT CATALOG</a></li>
+                    <li><a href="#">DASHBOARD</a></li>
+                    <li><a href="#">CART</a></li>
+                    <li><a href="#">CHECKOUT</a></li>
+                </ul>
+            </div>
 
+            <div class="sidebar-section">
+                <h4>CONTACT US</h4>
+                <ul class="menu-contact">
+                    <li><a href="#"><img src="assets/Footer/Clip path group.png" alt="IG"> @ECOSHOP.ID</a></li>
+                    <li><a href="#"><img src="assets/Footer/Vector.png" alt="FB"> ECOSHOP</a></li>
+                    <li><a href="#"><img src="assets/Footer/in.png" alt="IN"> ECOSHOP</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h4>SUPPORT</h4>
+                <ul class="menu-support">
+                    <li><a href="#">CUSTOMER SUPPORT</a></li>
+                    <li><a href="#">SHIPPING & RETURNS</a></li>
+                    <li><a href="#">PRIVACY POLICY</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section community">
+                <h4>COMMUNITY</h4>
+                <h5>ECO SHOPPER</h5>
+                <p>A community of nature enthusiast who loves eco-product</p>
+                <button class="join-btn">JOIN NOW &mdash; It's Free</button>
+            </div>
+        </div>
+    </nav>
     <header class="navbar">
         <div class="nav-left">
             <span class="hamburger">&#9776;</span>
@@ -36,15 +80,33 @@
             <div class="filters">
                 <div class="filter-group">
                     <label>CATEGORIES</label>
-                    <select><option>Filter</option></select>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="cutlery">Cutlery</option>
+                        <option value="bags">Bags</option>
+                        <option value="stationery">Stationery</option>
+                        <option value="home-decor">Home Decor</option>
+                        <option value="apparel">Apparel</option>
+                    </select>
                 </div>
                 <div class="filter-group">
                     <label>MATERIALS</label>
-                    <select><option>Filter</option></select>
+                    <select id="material-filter">
+                        <option value="all">All Materials</option>
+                        <option value="plastic">Biological Plastic</option>
+                        <option value="cotton">Recycled Cotton</option>
+                        <option value="paper">Recycled Paper</option>
+                        <option value="bamboo">Bamboo</option>
+                    </select>
                 </div>
                 <div class="filter-group">
                     <label>PO TIMES</label>
-                    <select><option>Filter</option></select>
+                    <select id="po-filter">
+                        <option value="all">All Times</option>
+                        <option value="2">2 PO Days</option>
+                        <option value="4">4 PO Days</option>
+                        <option value="7">7 PO Days</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -52,52 +114,123 @@
         <div class="products-grid">
             <div class="product-card card-large-square">
                 <img src="assets/AssetFolderHCI-Lec/Sustainable Catering_ How to Reduce Waste and…_imgupscaler.ai_Beta_2K.jpg" alt="Product 1">
-                <div class="product-badge">product name</div>
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                <div class="product-tags">
+                    <span class="tag">Cutlery</span>
+                    <span class="tag">biological plastic</span>
+                    <span class="tag">4 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
-
             <div class="product-card card-small">
-                <img src="assets\AssetFolderHCI-Lec\NewCatalog2.jpg" alt="Product 2">
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                <img src="assets/AssetFolderHCI-Lec/NewCatalog2.jpg" alt="Product 2">
+                <div class="product-tags">
+                    <span class="tag">Bags</span>
+                    <span class="tag">recycled cotton</span>
+                    <span class="tag">2 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
-
-            <div class="product-card card-small">
-                <img src="assets\AssetFolderHCI-Lec\This Zero Waste Drawing Might Inspire You to Change Your Life.jpg" alt="Product 3">
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+            <div class="product-card card-small bg-grey">
+                <img src="assets/AssetFolderHCI-Lec/This Zero Waste Drawing Might Inspire You to Change Your Life.jpg" alt="Product 3">
+                <div class="product-tags">
+                    <span class="tag">Stationery</span>
+                    <span class="tag">recycled paper</span>
+                    <span class="tag">4 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
-
             <div class="product-card card-wide">
-                <img src="assets/AssetFolderHCI-Lec/NewCatalog2.jpg" alt="Product 4">
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                <img src="assets/AssetFolderHCI-Lec/Catalog1.jpeg" alt="Product 4">
+                <div class="product-tags">
+                    <span class="tag">Home Decor</span>
+                    <span class="tag">bamboo</span>
+                    <span class="tag">7 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
 
             <div class="product-card card-wide bg-grey">
-                <img src="assets\AssetFolderHCI-Lec\Catalog1.jpeg" alt="Product 6">
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                <img src="assets/AssetFolderHCI-Lec/image 4.jpg" alt="Product 5">
+                <div class="product-tags">
+                    <span class="tag">Apparel</span>
+                    <span class="tag">organic hemp</span>
+                    <span class="tag">4 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
-
             <div class="product-card card-tall">
-                <img src="assets\AssetFolderHCI-Lec\This Zero Waste Drawing Might Inspire You to Change Your Life.jpg" alt="Product 6">
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                <img src="assets/AssetFolderHCI-Lec/image 1.jpg" alt="Product 6">
+                <div class="product-tags">
+                    <span class="tag">Drinkware</span>
+                    <span class="tag">glass & cork</span>
+                    <span class="tag">3 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
+            </div>
+            <div class="product-card card-small">
+                <img src="assets/AssetFolderHCI-Lec/image 3.jpg" alt="Product 7">
+                <div class="product-tags">
+                    <span class="tag">Personal Care</span>
+                    <span class="tag">natural loofah</span>
+                    <span class="tag">2 po days</span>
+                </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
+            </div>
+            <div class="product-card card-small bg-grey">
+                <img src="assets/AssetFolderHCI-Lec/NewCatalog2.jpg" alt="Product 8">
+                <div class="product-tags">
+                    <span class="tag">Accessories</span>
+                    <span class="tag">jute</span>
+                    <span class="tag">4 po days</span>
+                </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
 
             <div class="product-card card-large-tall">
-                <img src="assets\AssetFolderHCI-Lec\image 4.jpg" alt="Product 7">
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+                <img src="assets/AssetFolderHCI-Lec/Sustainable Catering_ How to Reduce Waste and…_imgupscaler.ai_Beta_2K.jpg" alt="Product 9">
+                <div class="product-tags">
+                    <span class="tag">Kitchenware</span>
+                    <span class="tag">biological plastic</span>
+                    <span class="tag">5 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
+            </div>
+            <div class="product-card card-tall">
+                <img src="assets/AssetFolderHCI-Lec/This Zero Waste Drawing Might Inspire You to Change Your Life.jpg" alt="Product 10">
+                <div class="product-tags">
+                    <span class="tag">Art</span>
+                    <span class="tag">recycled paper</span>
+                    <span class="tag">4 po days</span>
+                </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
+            </div>
+            
+            <div class="product-card card-small bg-grey">
+                <img src="assets/AssetFolderHCI-Lec/Catalog1.jpeg" alt="Product 11">
+                <div class="product-tags">
+                    <span class="tag">Storage</span>
+                    <span class="tag">rattan</span>
+                    <span class="tag">7 po days</span>
+                </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
+            </div>
+            <div class="product-card card-wide">
+                <img src="assets/AssetFolderHCI-Lec/image 4.jpg" alt="Product 12">
+                <div class="product-tags">
+                    <span class="tag">Clothing</span>
+                    <span class="tag">organic cotton</span>
+                    <span class="tag">4 po days</span>
+                </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
+            </div>
+            <div class="product-card card-small">
+                <img src="assets/AssetFolderHCI-Lec/image 3.jpg" alt="Product 13">
+                <div class="product-tags">
+                    <span class="tag">Bath</span>
+                    <span class="tag">biological plastic</span>
+                    <span class="tag">3 po days</span>
+                </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
         </div>
     </section>
@@ -109,34 +242,60 @@
             <button class="check-now-btn">CHECK NOW! <span>&#10140;</span></button>
         </div>
 
-        <div class="new-arrivals-grid">
-            <div class="product-card arrival-main">
-                <img src="assets/AssetFolderHCI-Lec/image 1.jpg" alt="New Arrival Main">
-                <div class="product-badge">product name</div>
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+        <div class="new-arrivals-scroll-container">
+            <div class="new-arrival-card">
+                <img src="assets/AssetFolderHCI-Lec/image 1.jpg" alt="New Arrival 1">
+                <div class="product-tags">
+                    <span class="tag">Drinkware</span>
+                    <span class="tag">stainless steel</span>
+                    <span class="tag">4 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
-
-            <div class="product-card arrival-small">
-                <img src="assets\AssetFolderHCI-Lec\image 3.jpg" alt="New Arrival 1">
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+            <div class="new-arrival-card">
+                <img src="assets/AssetFolderHCI-Lec/image 3.jpg" alt="New Arrival 2">
+                <div class="product-tags">
+                    <span class="tag">Skincare</span>
+                    <span class="tag">bamboo fiber</span>
+                    <span class="tag">2 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
-
-            <div class="product-card arrival-grey bg-grey">
-                <img src="assets/AssetFolderHCI-Lec/NewCatalog2.jpg" alt="New Arrival 2">
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+            <div class="new-arrival-card bg-grey">
+                <img src="assets/AssetFolderHCI-Lec/NewCatalog2.jpg" alt="New Arrival 3">
+                <div class="product-tags">
+                    <span class="tag">Tote Bag</span>
+                    <span class="tag">recycled canvas</span>
+                    <span class="tag">4 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
-
-            <div class="product-card arrival-small">
-                <img src="assets\AssetFolderHCI-Lec\Обои_imgupscaler.ai_Enhancer_2K.png" alt="New Arrival 2">
-                <div class="hover-overlay">
-                    <a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a>
+            <div class="new-arrival-card">
+                <img src="assets/AssetFolderHCI-Lec/Catalog1.jpeg" alt="New Arrival 4">
+                <div class="product-tags">
+                    <span class="tag">Decor</span>
+                    <span class="tag">biological plastic</span>
+                    <span class="tag">5 po days</span>
                 </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
+            </div>
+            <div class="new-arrival-card">
+                <img src="assets/AssetFolderHCI-Lec/image 4.jpg" alt="New Arrival 5">
+                <div class="product-tags">
+                    <span class="tag">Apparel</span>
+                    <span class="tag">organic linen</span>
+                    <span class="tag">4 po days</span>
+                </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
+            </div>
+            <div class="new-arrival-card">
+                <img src="assets/AssetFolderHCI-Lec/This Zero Waste Drawing Might Inspire You to Change Your Life.jpg" alt="New Arrival 6">
+                <div class="product-tags">
+                    <span class="tag">Notebook</span>
+                    <span class="tag">stone paper</span>
+                    <span class="tag">3 po days</span>
+                </div>
+                <div class="hover-overlay"><a href="catalog-detail.html" class="detail-btn">see detail &rarr;</a></div>
             </div>
         </div>
     </section>
@@ -144,7 +303,6 @@
     <footer class="main-footer">
 
       <div class="footer-top-header">
-        <!-- TODO: add badge image -->
         <div class="footer-badge">
           <img src="" alt="">
         </div>
@@ -217,5 +375,20 @@
 
     </footer>
 
+    <script>
+        const hamburgerBtn = document.querySelector('.nav-left .hamburger');
+        const closeBtn = document.getElementById('close-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        hamburgerBtn.addEventListener('click', toggleSidebar);
+        closeBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+    </script>
 </body>
 </html>
