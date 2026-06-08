@@ -1,11 +1,10 @@
-/* HERO SECTION */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     padding: 0 5%;
     position: relative;
-    overflow: hidden; /* Mencegah gambar melewati batas */
+    overflow: hidden; 
 }
 
 .hero-bg {
@@ -16,12 +15,12 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    background-color: #3b322a; /* Placeholder color */
+    background-color: #3b322a; 
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Agar teks berada di atas gambar */
+    z-index: 2; 
     width: 40%;
     margin-top: 50px;
 }
@@ -33,7 +32,6 @@
     text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
-/* PRODUCTS SECTION */
 .products-section {
     padding: 60px 5%;
 }
@@ -83,13 +81,11 @@
     background-size: 10px auto;
 }
 
-/* PRODUCT GRID STYLING */
-/* PRODUCT GRID STYLING */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Diubah jadi 3 kolom agar width card lebih besar */
-    grid-gap: 30px; /* Jarak antar kotak sedikit dilebarkan */
-    grid-auto-rows: 380px; /* Tinggi diseragamkan agar proporsional (tidak gepeng) */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 30px;
+    grid-auto-rows: 380px;
 }
 
 .product-card {
@@ -110,7 +106,6 @@
     z-index: 1;
 }
 
-/* KITA PAKSA SEMUA CARD JADI 1 UKURAN (MENGHILANGKAN EFEK MEMANJANG) */
 .card-large-square, 
 .card-small, 
 .card-wide, 
@@ -120,7 +115,6 @@
     grid-row: span 1 !important; 
 }
 
-/* CSS untuk membuat tag <img> menutupi box dengan sempurna */
 .product-card img, 
 .new-arrival-card img {
     position: absolute;
@@ -142,7 +136,6 @@
 .card-tall { grid-column: span 2; grid-row: span 2; }
 .card-large-tall { grid-column: span 2; grid-row: span 2; }
 
-/* --- STYLING UNTUK TAGS --- */
 .product-tags {
     position: absolute;
     top: 15px;
@@ -160,7 +153,7 @@
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 11px;
-    font-weight: normal; /* Sesuai request, teks tidak di-bold */
+    font-weight: normal; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     white-space: nowrap;
 }
@@ -177,7 +170,7 @@
     align-items: center;
     transition: all 0.4s ease-in-out;
     opacity: 0;
-    z-index: 4; /* Overlay di atas gambar */
+    z-index: 4; 
 }
 
 .product-card:hover .hover-overlay,
@@ -204,7 +197,6 @@
     background-color: #fff;
 }
 
-/* NEW ARRIVALS SECTION (HORIZONTAL SCROLL) */
 .new-arrivals {
     background-color: #3b322a;
     color: #fff;
@@ -212,8 +204,8 @@
     margin-top: 40px;
     position: relative;
     z-index: 5;
-    display: block; /* Pastikan ini block */
-    clear: both; /* Memaksa section ini tidak mengambang */
+    display: block; 
+    clear: both;
 }
 
 .new-arrivals-header {
@@ -258,16 +250,14 @@
     align-items: center;
 }
 
-/* Container flex untuk memanjang ke samping */
 .new-arrivals-scroll-container {
     display: flex;
     gap: 20px;
-    overflow-x: auto; /* Mengaktifkan scroll horizontal */
-    padding-bottom: 20px; /* Space untuk custom scrollbar */
-    scroll-snap-type: x mandatory; /* Membuat scroll terasa magnetik pada card */
+    overflow-x: auto; 
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory; 
 }
 
-/* Custom Scrollbar untuk bagian New Arrivals agar lebih estetik */
 .new-arrivals-scroll-container::-webkit-scrollbar {
     height: 10px;
 }
@@ -286,23 +276,16 @@
     background: rgba(255, 255, 255, 0.7);
 }
 
-/* Card vertikal yang seragam ukurannya */
 .new-arrival-card {
-    flex: 0 0 320px; /* Lebar box akan selalu tetap 320px (tidak menyusut) */
-    height: 400px; /* Tinggi box dibuat memanjang secara vertikal */
+    flex: 0 0 320px;
+    height: 400px;
     border-radius: 30px;
     position: relative;
     overflow: hidden;
     background-color: #e9e9e9;
-    scroll-snap-align: start; /* Magnetik menempel di ujung box saat discroll */
+    scroll-snap-align: start; 
 }
 
-
-/* =========================================
-   RESPONSIVE DESIGN (ANTI-HANCUR DI HP)
-========================================= */
-
-/* Tablet & Layar Menengah */
 @media (max-width: 900px) {
     .products-header {
         flex-direction: column;
@@ -312,7 +295,7 @@
     .hero-content { width: 70%; }
     
     .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
+        grid-template-columns: repeat(2, 1fr); 
     }
     
     .card-wide, .card-large-square, .card-tall, .card-large-tall { 
@@ -325,7 +308,6 @@
     }
 }
 
-/* HP Biasa (>= 540px ke bawah) */
 @media (max-width: 580px) {
     .hero-content { 
         width: 100%; 
@@ -334,19 +316,18 @@
     .products-header h2 { font-size: 32px; }
     
     .filters {
-        flex-wrap: wrap; /* Filter turun jika tidak muat */
+        flex-wrap: wrap;
         gap: 10px;
         width: 100%;
     }
     .filter-group { width: 100%; }
-    .filter-group select { width: 100%; } /* Select box full width */
+    .filter-group select { width: 100%; } 
 
     .products-grid {
-        grid-template-columns: 1fr; /* 1 kolom penuh untuk HP */
+        grid-template-columns: 1fr; 
         grid-auto-rows: 350px;
     }
 
-    /* Mematikan grid span rumit agar tidak bentrok */
     .card-large-square, .card-small, .card-wide, .card-tall, .card-large-tall {
         grid-column: span 1;
         grid-row: span 1;

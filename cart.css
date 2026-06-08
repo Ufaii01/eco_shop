@@ -1,6 +1,30 @@
-/* --- CART PAGE SPECIFIC STYLES --- */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
 
-/* Container Utama - Diperlebar agar padding kanan kiri tidak terlalu jauh */
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 6px; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+}
+
+.logo-text strong {
+    font-size: 19px;   
+    font-weight: 800;     
+    color: #2c2a27;       
+    letter-spacing: 1.5px; 
+}
+
+.logo-text .page-title {
+    font-size: 17px;      
+    font-weight: 400;     
+    color: #6b7280;      
+    letter-spacing: 1px;
+}
+
 .cart-main-container {
     max-width: 1200px; 
     width: 92%; 
@@ -16,12 +40,10 @@
     color: #2c2a27;
 }
 
-/* Grouping per Toko (Tanpa Box Kotak) */
 .cart-shop-group {
     margin-bottom: 48px;
 }
 
-/* Header Toko - Bersih & Minimalis */
 .shop-header {
     display: flex;
     align-items: center;
@@ -40,7 +62,6 @@
     cursor: pointer;
 }
 
-/* Desain Elemen Baris Produk (Borderless Row) */
 .shop-items-list {
     display: flex;
     flex-direction: column;
@@ -59,7 +80,6 @@
     border-bottom: none; 
 }
 
-/* Custom Checkbox yang Lebih Clean */
 .custom-checkbox {
     appearance: none;
     -webkit-appearance: none;
@@ -92,7 +112,6 @@
     transform: scale(1);
 }
 
-/* Wrapper Foto Produk */
 .product-image-wrapper {
     width: 90px;
     height: 90px;
@@ -108,7 +127,6 @@
     object-fit: cover;
 }
 
-/* Informasi Produk */
 .product-info-details {
     flex-grow: 1;
     display: flex;
@@ -135,7 +153,6 @@
     color: #2c2a27;
 }
 
-/* Pengatur Jumlah (Quantity) - Minimalis */
 .quantity-controller {
     display: flex;
     align-items: center;
@@ -165,7 +182,6 @@
     text-align: center;
 }
 
-/* --- STICKY BOTTOM CHECKOUT BAR --- */
 .checkout-sticky-bar {
     position: fixed;
     bottom: 0;
@@ -248,7 +264,6 @@
     transform: translateY(-1px);
 }
 
-/* --- RESPONSIVE ADJUSTMENT --- */
 @media (min-width: 540px) {
     .cart-item-row {
         gap: 24px; 
