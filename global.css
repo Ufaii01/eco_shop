@@ -252,7 +252,7 @@ a {
 }
 .sidebar::-webkit-scrollbar-track {
     background: transparent; 
-}
+}a
 .sidebar::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.15); 
     border-radius: 10px; 
@@ -374,6 +374,99 @@ a {
     font-weight: bold;
     cursor: pointer;
     width: fit-content;
+}
+
+/* --- AESTHETIC NAVBAR HEADER (Sesuai Gambar 1) --- */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.hamburger {
+    font-size: 32px;
+    font-weight: 300;
+    cursor: pointer;
+    color: #2c2a27;
+    margin-top: -4px; /* Penyesuaian agar sejajar dengan teks */
+}
+
+.logo-text {
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #2c2a27;
+}
+
+.logo-text strong {
+    font-weight: 800;
+}
+
+.logo-text .page-title {
+    font-weight: 400;
+    color: #666; /* Warna abu-abu agar mirip dengan " / CATALOG" di referensi */
+}
+
+/* --- SIDEBAR NAVBAR (Sesuai Gambar 2) --- */
+.sidebar {
+    width: 320px; /* Lebar sidebar */
+    background-color: #383531; /* Warna abu-abu gelap ke arah cokelat */
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 30px;
+    margin-bottom: 40px;
+    direction: ltr;
+}
+
+.sidebar-header .hamburger-inside {
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #fff;
+    margin-top: 2px;
+}
+
+.sidebar-section h4 {
+    color: #a3a3a3;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    border-bottom: none; /* Menghilangkan garis bawah sesuai gambar 2 */
+    display: block;
+}
+
+.sidebar-section ul li {
+    margin-bottom: 18px; /* Memberi jarak agak longgar antar menu */
+}
+
+.sidebar-section ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: color 0.2s;
+    text-transform: uppercase;
+}
+
+.menu-contact a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.menu-contact a span {
+    font-size: 18px; /* Memperbesar sedikit ukuran icon emoji */
 }
 
 @media (max-width: 900px) {
