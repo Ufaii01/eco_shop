@@ -7,20 +7,70 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Koulen&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="checkout.css">
-  <link href="global.css" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="footer.css">
 </head>
 <body>
+
+  <div class="overlay" id="overlay"></div>
+  <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+          <span class="hamburger close-btn" id="close-btn">&#9776;</span>
+          <h2>ECOSHOP</h2>
+      </div>
+      <div class="sidebar-content">
+          <div class="sidebar-section">
+              <h4>PAGE</h4>
+              <ul class="menu-page">
+                  <li><a href="home.html">HOME</a></li>
+                  <li><a href="#">PROFILE</a></li>
+                  <li><a href="catalog.html">PRODUCT CATALOG</a></li>
+                  <li><a href="#">DASHBOARD</a></li>
+                  <li><a href="#">CART</a></li>
+                  <li><a href="checkout.html">CHECKOUT</a></li>
+              </ul>
+          </div>
+
+          <div class="sidebar-section">
+              <h4>CONTACT US</h4>
+              <ul class="menu-contact">
+                  <li><a href="#">@ECOSHOP.ID</a></li>
+                  <li><a href="#">ECOSHOP</a></li>
+                  <li><a href="#">ECOSHOP</a></li>
+              </ul>
+          </div>
+
+          <div class="sidebar-section">
+              <h4>SUPPORT</h4>
+              <ul class="menu-support">
+                  <li><a href="#">CUSTOMER SUPPORT</a></li>
+                  <li><a href="#">SHIPPING & RETURNS</a></li>
+                  <li><a href="#">PRIVACY POLICY</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+  <header class="navbar">
+      <div class="nav-left">
+          <span class="hamburger" id="hamburger-btn">&#9776;</span>
+          <h1 class="logo">ECOSHOP <span>/ CHECKOUT</span></h1>
+      </div>
+      <div class="nav-right">
+          <span class="icon">&#128269;</span>
+          <span class="icon">&#128178;</span>
+          <span class="icon">&#128100;</span>
+      </div>
+  </header>
 
   <main class="checkout-container">
     
     <nav class="breadcrumb">
-      <svg class="breadcrumb__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       <a href="home.html" class="breadcrumb__link">ECOSHOP</a> /
       <a href="catalog.html" class="breadcrumb__link">CATALOG</a> /
-      <a href="#" class="breadcrumb__link">NAMA PRODUK</a> /
       <span class="breadcrumb__current">CHECKOUT</span>
     </nav>
 
@@ -62,62 +112,58 @@
 
         <div class="payment-methods">
           <div class="payment-method is-active" data-method="card">
-            <svg class="payment-method__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
-            <span class="payment-method__name">Credit Card</span>
-            <svg class="payment-method__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span class="payment-method__name">💳 Credit Card</span>
+            <span class="payment-method__check">✔️</span>
           </div>
           <div class="payment-method" data-method="digital">
-            <svg class="payment-method__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
             <div>
-              <span class="payment-method__name" style="display:block;">Digital Wallet</span>
+              <span class="payment-method__name" style="display:block;">📱 Digital Wallet</span>
               <span class="payment-method__sub">Apple Pay, Google Pay</span>
             </div>
-            <svg class="payment-method__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span class="payment-method__check">✔️</span>
           </div>
         </div>
 
         <form id="payment-form">
-          <div class="form-group">
-            <label class="form-label" for="card-name">CARDHOLDER NAME</label>
-            <input class="form-input" type="text" id="card-name" placeholder="Julian Thorne" required>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label" for="card-number">CARD NUMBER</label>
-            <div class="form-input-wrap">
-              <input class="form-input" type="text" id="card-number" placeholder="5547 8890 7600 6620" maxlength="19" required>
-              <svg class="form-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-            </div>
-          </div>
-          
-          <div class="form-row">
+          <div id="cc-input-fields">
             <div class="form-group">
-              <label class="form-label" for="card-expiry">EXPIRY DATE</label>
-              <input class="form-input" type="text" id="card-expiry" placeholder="MM / YY" maxlength="7" required>
+              <label class="form-label" for="card-name">CARDHOLDER NAME</label>
+              <input class="form-input" type="text" id="card-name" placeholder="Julian Thorne" required>
             </div>
+            
             <div class="form-group">
-              <label class="form-label" for="card-cvv">CVC / CVV</label>
-              <input class="form-input" type="password" id="card-cvv" placeholder="***" maxlength="3" required>
+              <label class="form-label" for="card-number">CARD NUMBER</label>
+              <div class="form-input-wrap">
+                <input class="form-input" type="text" id="card-number" placeholder="5547 8890 7600 6620" maxlength="19" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="card-expiry">EXPIRY DATE</label>
+                <input class="form-input" type="text" id="card-expiry" placeholder="MM / YY" maxlength="7" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="card-cvv">CVC / CVV</label>
+                <input class="form-input" type="password" id="card-cvv" placeholder="***" maxlength="3" required>
+              </div>
             </div>
           </div>
 
           <button type="button" class="checkout-btn" id="btn-checkout">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4l3 3"></path></svg> Check Out
+            Check Out 🛒
           </button>
         </form>
 
         <div class="trust-badges">
           <div class="trust-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <span class="trust-badge__label">SECURE PAY</span>
+            <span class="trust-badge__label">🔒 SECURE PAY</span>
           </div>
           <div class="trust-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span class="trust-badge__label">CARBON NEUTRAL</span>
+            <span class="trust-badge__label">🌿 CARBON NEUTRAL</span>
           </div>
           <div class="trust-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-9.28l5.67-5.67"></path></svg>
-            <span class="trust-badge__label">EASY RETURNS</span>
+            <span class="trust-badge__label">↩️ EASY RETURNS</span>
           </div>
         </div>
 
@@ -125,70 +171,69 @@
     </div>
   </main>
 
-  <script src="checkout.js"></script>
+  <footer class="main-footer">
+    <div class="footer-top-header">
+      <div class="footer-badge"></div>
+      <h2 class="footer-tagline">MAKE EARTH MORE GREENER . . .</h2>
+    </div>
 
-  <footer aria-labelledby="footer-heading">
-    <div class="footer__bg" aria-hidden="true" style="background-image: url('assets/AssetFolderHCI-Lec/Обои_imgupscaler.ai_Enhancer_2K.png');"></div>
-    <div class="footer__bg-overlay" aria-hidden="true"></div>
-    <div class="footer__inner">
-
-      <div class="footer__header">
-        <div class="footer__logo-icon" aria-hidden="true">🌿</div>
-        <p class="footer__tagline">Make Earth More Greener . . .</p>
+    <div class="footer-columns">
+      <div class="footer-brand">
+        <h2 class="footer-brand-name">ECOSHOP</h2>
+        <p>A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
       </div>
 
-      <div class="footer__columns">
-        <div class="footer__brand">
-          <p class="footer__brand-name">ecoShop</p>
-          <p class="footer__brand-desc">
-            A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.
-          </p>
-          <div class="footer__socials" aria-label="Social media links">
-            <a href="#" aria-label="Facebook" class="footer__social-icon">f</a>
-            <a href="#" aria-label="Instagram" class="footer__social-icon">in</a>
-            <a href="#" aria-label="LinkedIn" class="footer__social-icon">li</a>
-          </div>
-        </div>
+      <nav class="nav-column" aria-label="Marketplace">
+        <h3>MARKETPLACE</h3>
+        <ul>
+          <li><a href="#">Sustainability Commitments</a></li>
+          <li><a href="#">Verified Sellers</a></li>
+          <li><a href="#">How it Works</a></li>
+        </ul>
+      </nav>
 
-        <div class="footer__links-group">
-          <nav class="footer__col" aria-label="Marketplace links">
-            <p class="footer__col-heading">MARKETPLACE</p>
-            <a href="#">Sustainability Commitments</a>
-            <a href="#">Verified Sellers</a>
-            <a href="#">How it Works</a>
-          </nav>
+      <nav class="nav-column" aria-label="Support">
+        <h3>SUPPORT</h3>
+        <ul>
+          <li><a href="#">Customer Support</a></li>
+          <li><a href="#">Shipping &amp; Returns</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </nav>
 
-          <nav class="footer__col" aria-label="Support links">
-            <p class="footer__col-heading">SUPPORT</p>
-            <a href="#">Customer Support</a>
-            <a href="#">Shipping &amp; Returns</a>
-            <a href="#">Privacy Policy</a>
-          </nav>
-        </div>
-
-        <div class="footer__newsletter">
-          <p class="footer__newsletter-heading">STAY UPDATED</p>
-          <p class="footer__newsletter-sub">Join our newsletter for the latest ethical drops.</p>
-          <div class="footer__newsletter-form">
-            <input
-              class="footer__newsletter-input"
-              type="email"
-              placeholder="Email Address . . ."
-              aria-label="Email address for newsletter"
-            />
-            <button class="footer__newsletter-btn" aria-label="Join newsletter">JOIN</button>
-          </div>
-        </div>
+      <div class="footer-newsletter">
+        <h3>STAY UPDATED</h3>
+        <p>Join our newsletter for the latest ethical drops.</p>
+        <form class="newsletter-form" action="#" method="POST">
+          <input type="email" name="newsletter-email" placeholder="Email Address . . ." required />
+          <button type="submit">JOIN</button>
+        </form>
       </div>
+    </div>
 
-      <div class="footer__divider" role="separator"></div>
+    <hr class="footer-divider" />
 
-      <div class="footer__bottom">
-        <p class="footer__copyright">© 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
-      </div>
-
+    <div class="footer-bottom-bar">
+      <p class="copyright-text">&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
     </div>
   </footer>
 
+  <script src="checkout.js"></script>
+  <script>
+    // Logika Sidebar
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function toggleSidebar() {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+
+    if(hamburgerBtn) hamburgerBtn.addEventListener('click', toggleSidebar);
+    if(closeBtn) closeBtn.addEventListener('click', toggleSidebar);
+    if(overlay) overlay.addEventListener('click', toggleSidebar);
+  </script>
 </body>
 </html>

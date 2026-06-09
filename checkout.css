@@ -9,7 +9,6 @@ body {
   background-color: #FAF7F2;
   color: #3B2A1A;
   line-height: 1.5;
-  /* padding-bottom: 60px; <-- INI YANG BIKIN GAP BAWAH, UDAH DIHAPUS */
 }
 
 button {
@@ -31,7 +30,8 @@ input {
 
 .checkout-container {
   max-width: 1200px;
-  margin: 0 auto;
+  /* Margin top dikasih jarak biar gak numpuk di bawah Navbar */
+  margin: 100px auto 40px; 
   padding: 40px;
 }
 
@@ -44,10 +44,6 @@ input {
   color: #7A6550;
   margin-bottom: 40px;
   letter-spacing: 1px;
-}
-.breadcrumb__icon {
-  color: #3B2A1A;
-  margin-right: 8px;
 }
 .breadcrumb__link {
   color: #7A6550;
@@ -283,14 +279,12 @@ input {
   background-color: #F0F9EE;
 }
 
-.payment-method__icon { color: #3B2A1A; }
-.payment-method__name { font-size: 12px; font-weight: 700; color: #3B2A1A; }
-.payment-method__sub { font-size: 10px; color: #7A6550; }
+.payment-method__name { font-size: 14px; font-weight: 700; color: #3B2A1A; }
+.payment-method__sub { font-size: 12px; color: #7A6550; }
 .payment-method__check {
   position: absolute;
   top: 12px;
   right: 12px;
-  color: #4CAF50;
   display: none;
 }
 .payment-method.is-active .payment-method__check { display: block; }
@@ -338,14 +332,6 @@ input {
   color: #A08878;
 }
 
-.form-icon {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #A08878;
-}
-
 .checkout-btn {
   width: 100%;
   background-color: #5CB85C;
@@ -381,7 +367,7 @@ input {
 }
 
 .trust-badge__label {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -389,7 +375,7 @@ input {
 
 @media screen and (max-width: 1024px) {
   .checkout-grid { grid-template-columns: 1fr; }
-  .checkout-container { padding: 24px; }
+  .checkout-container { padding: 24px; margin-top: 80px; }
   .cart-wrapper, .summary-wrapper { padding: 20px; }
 }
 
@@ -399,203 +385,4 @@ input {
   .cart-item__image-wrap { width: 100%; height: 200px; }
   .form-row { grid-template-columns: 1fr; }
   .payment-methods { grid-template-columns: 1fr; }
-}
-
-/* ================================================================
-   FOOTER (BEM Style dari JLHady)
-================================================================ */
-footer {
-  position: relative;
-  overflow: hidden;
-  /* min-height: 714px; <-- INI YANG BIKIN FOOTER KEPANJANGAN KE BAWAH, UDAH DIHAPUS */
-  background-color: #0c140d; /* Fallback warna hijau daun gelap kalau gambar gagal load */
-  color: #faf9ed;
-  margin-top: 60px;
-}
-.footer__bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-.footer__bg-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(10, 20, 12, 0.85); /* Overlay-nya dibikin rada hijau tua biar nyatu */
-}
-.footer__inner {
-  position: relative;
-  z-index: 1;
-  padding: 54px 68px 24px;
-}
-.footer__header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.footer__logo-icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #faf9ed;
-  border-radius: 50%;
-  color: #1a1a1a;
-  font-size: 24px;
-}
-.footer__tagline {
-  font-family: 'Koulen', sans-serif;
-  font-size: 36px;
-  letter-spacing: 4.68px;
-  color: #faf9ed;
-  opacity: 0.94;
-}
-.footer__columns {
-  display: flex;
-  gap: 0;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 40px;
-}
-.footer__brand { width: 276px; }
-.footer__brand-name {
-  font-family: 'Koulen', sans-serif;
-  font-size: 40px;
-  letter-spacing: 5.2px;
-  color: #faf9ed;
-}
-.footer__brand-desc {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 14px;
-  color: #faf9ed;
-  line-height: 24px;
-  margin-top: 12px;
-}
-.footer__socials {
-  display: flex;
-  gap: 12px;
-  margin-top: 20px;
-}
-.footer__social-icon {
-  width: 24px;
-  height: 24px;
-  background-color: #faf9ed;
-  border-radius: 50%;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #1a1a1a;
-  font-size: 12px;
-}
-.footer__links-group { display: flex; gap: 95px; }
-.footer__col { display: flex; flex-direction: column; gap: 16px; }
-.footer__col-heading {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 1.1px;
-  text-transform: uppercase;
-  color: #faf9ed;
-}
-.footer__col a {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 14px;
-  color: #faf9ed;
-  text-decoration: underline;
-  line-height: 24px;
-}
-.footer__newsletter { width: 337px; }
-.footer__newsletter-heading {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 1.1px;
-  text-transform: uppercase;
-  color: #faf9ed;
-  margin-bottom: 8px;
-}
-.footer__newsletter-sub {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 14px;
-  color: #faf9ed;
-  line-height: 24px;
-  margin-bottom: 16px;
-}
-.footer__newsletter-form {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.footer__newsletter-input {
-  background-color: #f9f9f9;
-  border: 0.756px solid #d1d5dc;
-  border-radius: 36px;
-  padding: 12px 60px 12px 20px;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 12px;
-  color: rgba(0,0,0,0.38);
-  width: 194px;
-  outline: none;
-}
-.footer__newsletter-btn {
-  position: absolute;
-  right: -42px;
-  background: none;
-  border: 6px solid #faf9ed;
-  border-radius: 50px;
-  width: 90px;
-  height: 40px;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  color: #ffffff;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.footer__divider {
-  height: 1px;
-  background-color: rgba(250,249,237,0.3);
-  margin: 0 0 20px;
-}
-.footer__bottom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-}
-.footer__copyright {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  color: #fff7f2;
-  text-align: center;
-}
-.footer__social-links {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-.footer__social-links a {
-  color: #faf9ed;
-  font-size: 14px;
-}
-
-/* RESPONSIVE FOOTER */
-@media (max-width: 1024px) {
-  .footer__columns { flex-direction: column; gap: 40px; }
-  .footer__links-group { gap: 40px; }
-  .footer__newsletter { width: 100%; }
-  .footer__tagline { font-size: 24px; }
-}
-
-@media (max-width: 768px) {
-  .footer__inner { padding: 40px 20px 20px; }
-  .footer__tagline { font-size: 18px; letter-spacing: 2px; }
-  .footer__links-group { flex-direction: column; gap: 24px; }
-  .footer__newsletter-form { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .footer__newsletter-input { width: 100%; }
-  .footer__newsletter-btn { position: static; }
-  .footer__bottom { flex-direction: column; gap: 12px; }
 }

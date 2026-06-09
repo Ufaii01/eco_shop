@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoShop – Nama Produk</title>
   <link rel="stylesheet" href="catalog-detail.css">
+  <link rel="stylesheet" href="footer.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Work+Sans:wght@400;600;700&family=Manrope:wght@700&family=Inter&display=swap" rel="stylesheet" />
@@ -386,80 +387,80 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
   <!-- ================================================================
        FOOTER
   ================================================================ -->
-  <footer aria-labelledby="footer-heading">
-    <div class="footer__bg" aria-hidden="true"></div>
-    <div class="footer__bg-overlay" aria-hidden="true"></div>
-    <div class="footer__inner">
+  <footer class="main-footer" aria-labelledby="footer-heading">
 
-      <!-- Header / tagline -->
-      <div class="footer__header">
-        <div class="footer__logo-icon" aria-hidden="true"></div>
-        <p class="footer__tagline">Make Earth More Greener . . .</p>
+    <div class="footer-top-header">
+      <!-- TODO: add badge image -->
+      <div class="footer-badge">
+        <img src="" alt="">
+      </div>
+      <h2 class="footer-tagline">MAKE EARTH MORE GREENER . . .</h2>
+    </div>
+
+    <div class="footer-columns">
+
+      <div class="footer-brand">
+        <h2 class="footer-brand-name">ECOSHOP</h2>
+        <p>A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
+        <div class="brand-socials">
+          <a href="#" aria-label="Website">
+            <img src="assets/Footer/Icon.png" alt="">
+          </a>
+          <a href="#" aria-label="Email">
+            <img src="assets/Footer/Icon-1.png" alt="">
+          </a>
+          <a href="#" aria-label="Community">
+            <img src="assets/Footer/Icon-2.png" alt="">
+          </a>
+        </div>
       </div>
 
-      <!-- Columns -->
-      <div class="footer__columns">
+      <nav class="nav-column" aria-label="Marketplace">
+        <h3>MARKETPLACE</h3>
+        <ul>
+          <li><a href="#">Sustainability Commitments</a></li>
+          <li><a href="#">Verified Sellers</a></li>
+          <li><a href="#">How it Works</a></li>
+        </ul>
+      </nav>
 
-        <!-- Brand -->
-        <div class="footer__brand">
-          <p class="footer__brand-name">ecoShop</p>
-          <p class="footer__brand-desc">
-            A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.
-          </p>
-          <div class="footer__socials" aria-label="Social media links">
-            <a href="https://www.facebook.com/" aria-label="Facebook" class="footer__social-icon"></a>
-            <a href="https://www.instagram.com/" aria-label="Instagram" class="footer__social-icon"></a>
-            <a href="https://www.linkedin.com/" aria-label="LinkedIn" class="footer__social-icon"></a>
-          </div>
-        </div>
+      <nav class="nav-column" aria-label="Support">
+        <h3>SUPPORT</h3>
+        <ul>
+          <li><a href="#">Customer Support</a></li>
+          <li><a href="#">Shipping &amp; Returns</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </nav>
 
-        <!-- Link groups -->
-        <div class="footer__links-group">
-          <nav class="footer__col" aria-label="Marketplace links">
-            <p class="footer__col-heading">MARKETPLACE</p>
-            <a href="#">Sustainability Commitments</a>
-            <a href="#">Verified Sellers</a>
-            <a href="#">How it Works</a>
-          </nav>
-
-          <nav class="footer__col" aria-label="Support links">
-            <p class="footer__col-heading">SUPPORT</p>
-            <a href="#">Customer Support</a>
-            <a href="#">Shipping &amp; Returns</a>
-            <a href="#">Privacy Policy</a>
-          </nav>
-        </div>
-
-        <!-- Newsletter -->
-        <div class="footer__newsletter">
-          <p class="footer__newsletter-heading">STAY UPDATED</p>
-          <p class="footer__newsletter-sub">Join our newsletter for the latest ethical drops.</p>
-          <div class="footer__newsletter-form">
-            <input
-              class="footer__newsletter-input"
-              type="email"
-              placeholder="Email Address . . ."
-              aria-label="Email address for newsletter"
-            />
-            <button class="footer__newsletter-btn" aria-label="Join newsletter">JOIN</button>
-          </div>
-        </div>
-
-      </div><!-- /footer__columns -->
-
-      <div class="footer__divider" role="separator"></div>
-
-      <!-- Bottom bar -->
-      <div class="footer__bottom">
-        <p class="footer__copyright">© 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
-        <nav class="footer__social-links" aria-label="Footer social links">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">in</a>
-          <a href="#" aria-label="LinkedIn">li</a>
-        </nav>
+      <div class="footer-newsletter">
+        <h3>STAY UPDATED</h3>
+        <p>Join our newsletter for the latest ethical drops.</p>
+        <form class="newsletter-form" action="#" method="POST">
+          <input type="email" name="newsletter-email" placeholder="Email Address . . ." required />
+          <button type="submit">JOIN</button>
+        </form>
       </div>
 
-    </div><!-- /footer__inner -->
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-bottom-bar">
+      <div class="bottom-socials">
+        <a href="#" aria-label="Instagram">
+          <img src="assets/Footer/Clip path group.png" alt="">
+        </a>
+        <a href="#" aria-label="Facebook">
+          <img src="assets/Footer/Vector.png" alt="">
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <img src="assets/Footer/in.png" alt="">
+        </a>
+      </div>
+      <p class="copyright-text">&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
+    </div>
+
   </footer>
 
   <!-- ================================================================

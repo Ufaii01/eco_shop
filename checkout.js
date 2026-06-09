@@ -3,22 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const SHIPPING_COST = 15000;
   const DISCOUNT_RATE = 0.10; 
 
-  
+  // Daftar Produk Asli dari Catalog
   let cartItems = [
-    { id: 1, name: 'PRODUCT NAME', desc: 'PREORDER DAYS', price: 45000, qty: 1, img: 'https://images.unsplash.com/photo-1607006411204-62986420d418?w=200&q=80' },
-    { id: 2, name: 'PRODUCT NAME', desc: 'PREORDER DAYS', price: 45000, qty: 1, img: 'https://images.unsplash.com/photo-1607006411204-62986420d418?w=200&q=80' },
-    { id: 3, name: 'PRODUCT NAME', desc: 'PREORDER DAYS', price: 45000, qty: 1, img: 'https://images.unsplash.com/photo-1607006411204-62986420d418?w=200&q=80' },
-    { id: 4, name: 'PRODUCT NAME', desc: 'PREORDER DAYS', price: 45000, qty: 1, img: 'https://images.unsplash.com/photo-1607006411204-62986420d418?w=200&q=80' }
+    { id: 1, name: 'Eco Cutlery Set', desc: 'BIOLOGICAL PLASTIC - 4 PO DAYS', price: 45000, qty: 1, img: 'assets/AssetFolderHCI-Lec/Sustainable Catering_ How to Reduce Waste and…_imgupscaler.ai_Beta_2K.jpg' },
+    { id: 2, name: 'Recycled Tote Bag', desc: 'RECYCLED COTTON - 2 PO DAYS', price: 85000, qty: 1, img: 'assets/AssetFolderHCI-Lec/NewCatalog2.jpg' },
+    { id: 3, name: 'Stone Paper Notebook', desc: 'RECYCLED PAPER - 4 PO DAYS', price: 65000, qty: 1, img: 'assets/AssetFolderHCI-Lec/This Zero Waste Drawing Might Inspire You to Change Your Life.jpg' },
+    { id: 4, name: 'Bamboo Organizer', desc: 'BAMBOO - 7 PO DAYS', price: 120000, qty: 1, img: 'assets/AssetFolderHCI-Lec/Catalog1.jpeg' }
   ];
 
   const cartContainer = document.getElementById('cart-container');
-  
   
   const formatCurrency = (num) => {
     return 'RP. ' + num.toLocaleString('id-ID').replace(/,/g, '.');
   };
 
-  
   const renderCart = () => {
     if (cartItems.length === 0) {
       cartContainer.innerHTML = '<div style="color: #FAF7F2; text-align: center; padding: 40px;">Your cart is empty.</div>';
@@ -26,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    cartContainer.innerHTML = cartItems.map((item, index) => `
+    cartContainer.innerHTML = cartItems.map((item) => `
       <div class="cart-item">
         <div class="cart-item__image-wrap">
           <img src="${item.img}" alt="Product Image" class="cart-item__image">
@@ -53,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTotals();
   };
 
-  
   const attachCartListeners = () => {
     document.querySelectorAll('.btn-inc').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const id = parseInt(e.currentTarget.dataset.id);
         const item = cartItems.find(i => i.id === id);
-        if (item) item.qty++;
+        if (!item) return; // Guard clause 
+        item.qty++;
         renderCart();
       });
     });
@@ -68,7 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', (e) => {
         const id = parseInt(e.currentTarget.dataset.id);
         const item = cartItems.find(i => i.id === id);
-        if (item && item.qty > 1) item.qty--;
+        if (!item || item.qty <= 1) return; // Guard clause
+        item.qty--;
         renderCart();
       });
     });
@@ -82,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  
   const updateTotals = () => {
     const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
     const discount = cartItems.length > 0 ? Math.round(subtotal * DISCOUNT_RATE) : 0;
@@ -94,15 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('summ-discount').textContent = formatCurrency(discount);
     document.getElementById('summ-total').textContent = formatCurrency(total);
   };
-s
+
+  // ============================================================
+  // LOGIKA KLIK PAYMENT METHOD (BISA MUNCUL/HILANG)
+  // ============================================================
   const paymentTabs = document.querySelectorAll('.payment-method');
+  const ccInputFields = document.getElementById('cc-input-fields');
+
   paymentTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       paymentTabs.forEach(t => t.classList.remove('is-active'));
       tab.classList.add('is-active');
+
+      if (tab.dataset.method === 'digital') {
+        ccInputFields.style.display = 'none'; // Sembunyiin kalau klik e-wallet
+      } else {
+        ccInputFields.style.display = 'block'; // Munculin kalau klik credit card
+      }
     });
   });
-
 
   const cardNumberInput = document.getElementById('card-number');
   if (cardNumberInput) {
@@ -124,13 +132,12 @@ s
     });
   }
 
-
   const checkoutBtn = document.getElementById('btn-checkout');
   if (checkoutBtn) {
     checkoutBtn.addEventListener('click', () => {
       if(cartItems.length === 0) {
         alert('Your cart is empty!');
-        return;
+        return; // Guard clause
       }
       
       checkoutBtn.innerHTML = 'Processing...';
@@ -138,7 +145,7 @@ s
       
       setTimeout(() => {
         alert('Order Placed Successfully!');
-        checkoutBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4l3 3"></path></svg> Check Out';
+        checkoutBtn.innerHTML = 'Check Out ✔️'; 
         checkoutBtn.disabled = false;
         cartItems = [];
         renderCart();
@@ -146,6 +153,5 @@ s
     });
   }
 
-  
   renderCart();
 });
