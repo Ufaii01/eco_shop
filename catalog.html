@@ -4,65 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecoshop Catalog</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="catalog.css">
     <link href="global.css" rel="stylesheet">
     <link rel="stylesheet" href="footer.css">
 </head>
 <body>
-<div class="overlay" id="overlay"></div>
-    <nav class="sidebar" id="sidebar">
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <span class="hamburger close-btn" id="close-btn">&#9776;</span>
+            <span class="hamburger-inside" id="close-sidebar"><i class="fa-solid fa-bars"></i></span>
             <h2>ECOSHOP</h2>
         </div>
         <div class="sidebar-content">
             <div class="sidebar-section">
-                <h4>PAGE</h4>
-                <ul class="menu-page">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">PROFILE</a></li>
-                    <li><a href="#">PRODUCT CATALOG</a></li>
-                    <li><a href="#">DASHBOARD</a></li>
-                    <li><a href="#">CART</a></li>
-                    <li><a href="#">CHECKOUT</a></li>
+                <h4 class="underlined-title">PAGE</h4>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="profile.html">PROFILE</a></li>
+                    <li><a href="catalog.html" class="active-link">PRODUCT CATALOG</a></li>
+                    <li><a href="dashboard.html">DASHBOARD</a></li>
+                    <li><a href="cart.html">CART</a></li>
+                    <li><a href="checkout.html">CHECKOUT</a></li>
                 </ul>
             </div>
-
             <div class="sidebar-section">
-                <h4>CONTACT US</h4>
+                <h4 class="underlined-title">CONTACT US</h4>
                 <ul class="menu-contact">
-                    <li><a href="#"><img src="assets/Footer/Clip path group.png" alt="IG"> @ECOSHOP.ID</a></li>
-                    <li><a href="#"><img src="assets/Footer/Vector.png" alt="FB"> ECOSHOP</a></li>
-                    <li><a href="#"><img src="assets/Footer/in.png" alt="IN"> ECOSHOP</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> @ECOSHOP.ID</a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i> ECOSHOP</a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i> ECOSHOP</a></li>
                 </ul>
             </div>
-
             <div class="sidebar-section">
-                <h4>SUPPORT</h4>
+                <h4 class="underlined-title">SUPPORT</h4>
                 <ul class="menu-support">
                     <li><a href="#">CUSTOMER SUPPORT</a></li>
                     <li><a href="#">SHIPPING & RETURNS</a></li>
                     <li><a href="#">PRIVACY POLICY</a></li>
                 </ul>
             </div>
-
-            <div class="sidebar-section community">
-                <h4>COMMUNITY</h4>
-                <h5>ECO SHOPPER</h5>
-                <p>A community of nature enthusiast who loves eco-product</p>
-                <button class="join-btn">JOIN NOW &mdash; It's Free</button>
+            <div class="sidebar-section">
+                <h4 class="underlined-title">COMMUNITY</h4>
+                <div class="community-box">
+                    <h5>ECO SHOPPER</h5>
+                    <p>A community of nature enthusiast who loves eco-product</p>
+                    <button class="join-btn">JOIN NOW &nbsp;&mdash;&nbsp; <span>It's Free</span></button>
+                </div>
             </div>
         </div>
-    </nav>
+    </aside>
+
     <header class="navbar">
         <div class="nav-left">
-            <span class="hamburger">&#9776;</span>
+            <span class="hamburger" id="hamburger-btn">&#9776;</span>
             <h1 class="logo">ECOSHOP <span>/ CATALOG</span></h1>
         </div>
         <div class="nav-right">
-            <span class="icon">&#128269;</span>
-            <span class="icon">&#128178;</span>
-            <span class="icon">&#128100;</span>
+            <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+            <span class="icon"><i class="fa-regular fa-circle-user"></i></span>
         </div>
     </header>
 
@@ -376,19 +379,28 @@
     </footer>
 
     <script>
-        const hamburgerBtn = document.querySelector('.nav-left .hamburger');
-        const closeBtn = document.getElementById('close-btn');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburgerBtn = document.getElementById("hamburger-btn");
+            const sidebar = document.getElementById("sidebar");
+            const closeSidebarBtn = document.getElementById("close-sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
 
-        function toggleSidebar() {
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
+            function openSidebar() {
+                sidebar.classList.add("active");
+                sidebarOverlay.classList.add("active");
+                document.body.style.overflow = "hidden"; 
+            }
 
-        hamburgerBtn.addEventListener('click', toggleSidebar);
-        closeBtn.addEventListener('click', toggleSidebar);
-        overlay.addEventListener('click', toggleSidebar);
+            function closeSidebar() {
+                sidebar.classList.remove("active");
+                sidebarOverlay.classList.remove("active");
+                document.body.style.overflow = "auto";
+            }
+
+            if(hamburgerBtn) hamburgerBtn.addEventListener("click", openSidebar);
+            if(closeSidebarBtn) closeSidebarBtn.addEventListener("click", closeSidebar);
+            if(sidebarOverlay) sidebarOverlay.addEventListener("click", closeSidebar);
+        });
     </script>
 </body>
 </html>

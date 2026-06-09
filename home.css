@@ -314,3 +314,201 @@ nav {
         transform: translateX(-50%);
     }
 }
+
+.eco-content-wrapper {
+    background: linear-gradient(0deg, rgba(255,248,187,0.2), rgba(255,248,187,0.2)),
+                #f9f9f9;
+    width: 100%;
+}
+
+/* TRUST BADGES */
+.trust-badges {
+    background-color: #392f27;
+    padding: 64px 32px;
+}
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.trust-icon {
+    background: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.trust-icon img { width: 22px; height: auto; }
+.trust-text h4 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #c1b9a6;
+    margin-bottom: 6px;
+}
+.trust-text p {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+/* HOW IT WORKS + SELLERS */
+.how-it-works-block {
+    background-color: #faf9ed;
+    border-radius: 88px;
+    margin: 60px 40px;
+    padding: 92px 42px 156px;
+}
+.hiw-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+.hiw-header h2 {
+    font-family: 'Koulen', sans-serif;
+    font-size: 64px;
+    letter-spacing: 18.56px;
+    color: #392f27;
+    border-bottom: 3px solid #392f27;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+.hiw-sub {
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    color: #392f27;
+}
+.steps-row {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin: 60px 0 80px;
+    flex-wrap: wrap;
+}
+.step-card {
+    text-align: center;
+    width: 220px;
+}
+.step-icon {
+    background: #392f27;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+.step-icon img { width: 28px; height: auto; }
+.step-card h3 {
+    font-family: 'Koulen', sans-serif;
+    font-size: 26px;
+    color: #173124;
+}
+.sellers-spotlight {
+    margin-top: 80px;
+    text-align: center;
+}
+.sellers-spotlight h3 {
+    font-family: 'Koulen', sans-serif;
+    font-size: 40px;
+    letter-spacing: 4px;
+    margin-bottom: 48px;
+    color: #392f27;
+}
+.sellers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+}
+.seller-card {
+    background: #f5f4ef;
+    border: 1px solid #c2c8c2;
+    border-radius: 12px;
+    padding: 32px;
+    width: 280px;
+    text-align: center;
+}
+.seller-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 2px solid #ccead6;
+    margin: 0 auto 16px;
+    background-size: cover;
+    background-position: center;
+}
+.seller-name {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #173124;
+    margin-bottom: 8px;
+}
+.seller-category {
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    color: #4d644f;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+.seller-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+.seller-rating img { width: 14px; }
+.seller-rating span {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #712d09;
+}
+.seller-desc {
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    color: #424844;
+    line-height: 1.4;
+}
+.register-btn {
+    text-align: center;
+    margin-top: 80px;
+}
+.register-btn a {
+    background: #392f27;
+    padding: 12px 34px;
+    border-radius: 39px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #faf9ed;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+}
+.seller-cta {
+    font-family: 'Koulen', sans-serif;
+    font-size: 32px;
+    color: #392f27;
+    text-align: center;
+    margin-top: 40px;
+}
