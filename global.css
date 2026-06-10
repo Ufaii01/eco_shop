@@ -389,12 +389,49 @@ a {
     background-color: #e2e0d7;
 }
 
-@media (max-width: 900px) {
+/* Footer: 2 columns between 540px–900px */
+@media (min-width: 540px) and (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        gap: 24px;
+    }
+    .brand-col h3 { justify-content: center; }
+    .newsletter-form {
+        flex-direction: column;
+        background: none;
+        gap: 10px;
+        align-items: center;
+    }
+    .newsletter-form input {
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        width: 100%;
+    }
+    .newsletter-form button { width: 100%; padding: 12px 20px; }
+}
+
+/* Footer: 1 column below 540px */
+@media (max-width: 539px) {
+    .navbar { padding: 16px 20px; }
+    .footer { padding: 40px 20px 16px; }
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 28px;
     }
-    .brand-col h3 {
-        justify-content: center;
+    .brand-col h3 { justify-content: center; }
+    .newsletter-form {
+        flex-direction: column;
+        background: none;
+        gap: 10px;
+        align-items: center;
     }
+    .newsletter-form input {
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        width: 100%;
+    }
+    .newsletter-form button { width: 100%; padding: 12px 20px; }
+    .sidebar { width: 280px; }
 }

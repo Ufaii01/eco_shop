@@ -344,3 +344,151 @@ h1,h2,h3,h4 {
     width:96px;
     padding:3px 8px;
 }
+
+/* =====================================================
+   RESPONSIVE — 768px (Tablet) & 540px (Mobile)
+   ===================================================== */
+
+/* Tablet: stack sidebar above content */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .profile-card {
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-radius: 16px;
+    }
+
+    .profile-top {
+        width: 100%;
+    }
+
+    .balance {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .transactions {
+        width: 100%;
+    }
+
+    .stats-body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat:not(:last-child) {
+        border-right: none;
+        border-bottom: 2px solid #cfcfcf;
+    }
+
+    /* 2nd stat keeps right border on tablet 2-col grid */
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .orders-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .order-list {
+        height: 240px;
+    }
+}
+
+/* Mobile ≤ 539px */
+@media (max-width: 539px) {
+    .dashboard-header {
+        padding: 0 16px;
+        height: 56px;
+    }
+
+    .left-header h2 {
+        font-size: 22px;
+    }
+
+    .dashboard-container {
+        padding: 12px;
+    }
+
+    .balance h2 {
+        font-size: 28px;
+    }
+
+    .balance h3 {
+        font-size: 16px;
+    }
+
+    .stats-card {
+        border-radius: 20px;
+    }
+
+    .stats-header {
+        font-size: 18px;
+        padding: 10px 16px;
+    }
+
+    .stats-body {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        padding: 16px;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .stat:not(:last-child) {
+        border-right: none;
+        border-bottom: 2px solid #cfcfcf;
+    }
+
+    .stat h2 {
+        font-size: 36px;
+    }
+
+    .stat-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .orders-wrapper {
+        margin-top: 12px;
+        padding: 16px;
+        border-radius: 16px;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .order-panel {
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .order-list {
+        height: 220px;
+    }
+
+    .order-card {
+        padding: 8px;
+    }
+
+    .order-card img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .transaction-list {
+        padding: 8px;
+    }
+}

@@ -653,6 +653,45 @@ body {
 
 /* Responsive Overrides */
 @media (max-width: 1024px) {
+    .top-navbar {
+        padding: 16px 40px;
+    }
+    .menu { display: none; }
+    .signup-container { display: none; }
+
+    .hero-content {
+        flex-direction: column;
+        height: auto;
+        padding: 60px 48px 80px;
+        gap: 40px;
+        text-align: center;
+        align-items: center;
+    }
+    .hero-left {
+        top: 0;
+        align-items: center;
+    }
+    .hero-left p { max-width: 100%; max-height: none; }
+    .social-media {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .social-line { display: none; }
+    .hero-right img {
+        width: 100%;
+        max-width: 380px;
+        height: 300px;
+    }
+
+    .how-it-works-block {
+        margin: 40px 24px 0;
+        padding: 60px 32px 60px;
+        border-radius: 60px;
+    }
+    .hiw-header h2 {
+        font-size: 44px;
+        letter-spacing: 8px;
+    }
     .trust-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
@@ -663,8 +702,52 @@ body {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 540px) {
+    .top-navbar {
+        padding: 14px 20px;
+    }
+    .login { display: none; }
+
+    .hero {
+        padding: 12px;
+        padding-top: 80px;
+    }
+    .hero-content {
+        padding: 40px 24px 60px;
+        border-radius: 40px;
+        gap: 28px;
+    }
+    .hero-left h1 { font-size: 48px; }
+    .hero-left p { font-size: 17px; }
+    .hero-right img {
+        max-width: 100%;
+        height: 240px;
+    }
+
+    .how-it-works-block {
+        margin: 20px 12px 0;
+        padding: 40px 20px 48px;
+        border-radius: 36px;
+    }
+    .hiw-header h2 {
+        font-size: 32px;
+        letter-spacing: 4px;
+    }
+    .hiw-sub { font-size: 14px; }
+    .steps-row { gap: 24px; margin: 40px 0 60px; }
+    .step-card { width: 160px; }
+
+    .sellers-spotlight h3 {
+        font-size: 28px;
+        letter-spacing: 2px;
+        margin-bottom: 28px;
+    }
+    .seller-card { width: 100%; max-width: 320px; }
+
+    .trust-badges { padding: 40px 20px 60px; }
     .trust-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
+    .seller-cta { font-size: 22px; margin: 48px auto 20px; }
 }
