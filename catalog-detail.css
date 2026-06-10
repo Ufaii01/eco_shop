@@ -6,6 +6,7 @@ body {
   color: #392f27;
   overflow-x: hidden;
 }
+
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; border: none; background: none; font: inherit; }
@@ -18,12 +19,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   background-color: #392f27;
-  height: 72px;
+  height: 60px;
   display: flex;
   align-items: center;
-  padding: 0 29px;
+  padding: 0 40px; /* Diubah dari 20px agar sejajar konten bawah */
   gap: 16px;
 }
+
 .header__hamburger {
   display: none;
   flex-direction: column;
@@ -190,11 +192,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .product-hero__title-wrap {
   text-align: left;
-  padding: 40px 29px 0;
+  padding: 24px 100px 0;
 }
 .product-hero__title {
   font-family: 'Koulen', sans-serif;
-  font-size: 100px;
+  font-size: 55px;
   letter-spacing: 13px;
   color: #ffffff;
   line-height: 1.35;
@@ -204,7 +206,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .product-images {
   background-color: #392f27;
-  padding: 28px 29px 0;
+  padding: 24px 100px 0;
   width: 100%;
   overflow: hidden; 
 }
@@ -242,7 +244,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* Navigasi Panah Melayang Fleksibel */
 .product-images__nav {
   position: absolute;
-  top: 72%;
+  top: 65%;
   left: 20px;
   right: 20px;
   transform: translateY(-50%);
@@ -284,14 +286,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ========================================================================== */
 .product-info {
   background-color: #392f27;
-  padding: 48px 29px 60px;
+  padding: 48px 100px 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px 60px;
 }
 .product-info__label {
   font-family: 'Koulen', sans-serif;
-  font-size: 40px;
+  font-size: 25px;
   letter-spacing: 0.8px;
   color: #ffffff;
   line-height: 1.809;
@@ -315,14 +317,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .product-info__value {
   font-family: 'Koulen', sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   color: #ffffff;
   line-height: 1.809;
   letter-spacing: 0.8px;
 }
 .product-info__desc-text {
   font-family: 'Inter', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   color: #ffffff;
   line-height: normal;
 }
@@ -367,14 +369,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .product-info__desc-label {
   font-family: 'Koulen', sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   letter-spacing: 0.8px;
   color: #ffffff;
   line-height: 1.809;
 }
 .product-info__desc-body {
   font-family: 'Inter', sans-serif;
-  font-size: 24px;
+  font-size: 40px;
   color: #ffffff;
   line-height: normal;
   white-space: pre-wrap;
@@ -385,7 +387,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ========================================================================== */
 .product-video {
   background-color: #392f27;
-  padding: 0 62px 60px;
+  padding: 0 100px 60px;
 }
 .product-video__box {
   background-color: #d9d9d9;
@@ -622,10 +624,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .also-like__heading {
   font-family: 'Koulen', sans-serif;
-  font-size: 40px;
+  font-size: 50px;
   color: #392f27;
   line-height: normal;
-  padding: 0 29px;
+  padding: 0 50px 29px;
   margin-bottom: 24px;
 }
 
@@ -637,7 +639,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   scroll-behavior: smooth;      /* Efek geser jadi halus */
   width: 100%;
   height: auto;                 /* Mengikuti tinggi item agar tidak terpotong */
-  padding: 10px 29px 24px;      /* Padding kiri-kanan disamakan dengan heading */
+  padding: 10px 40px 24px;      /* Padding kiri-kanan disamakan dengan heading */
   align-items: stretch;
   scroll-snap-type: x mandatory; 
   scrollbar-width: thin;                  /* Bikin scrollbar jadi tipis */
