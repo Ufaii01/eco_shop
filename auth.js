@@ -156,7 +156,7 @@ function initLogin() {
     showFormBanner(form, "Login successful! Redirecting to Home…", "success");
 
     setTimeout(function () {
-      window.location.href = "home.html";
+      window.location.href = "index.html";
     }, 1300);
   });
 }
@@ -234,7 +234,7 @@ function initRegister() {
     showFormBanner(form, "Account created! Redirecting to Home…", "success");
 
     setTimeout(function () {
-      window.location.href = "home.html"; 
+      window.location.href = "index.html.html"; 
     }, 1500);
   });
 }

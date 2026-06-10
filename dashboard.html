@@ -4,163 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="dashboard.css">
     <title>Dashboard</title>
 </head>
 <body>
-<header>
-    <div class="left-header">
-        <span class="menu">☰</span>
-        <h2>PROFILE</h2>
-    </div>
-    <h1>DASHBOARD</h1>
-</header>
-<main class="dashboard-container">
-    <aside class="sidebar">
-        <div class="profile-card">
-            <div class="profile-top">
-                <div class="user-section">
-                    <div class="profile-icon">○</div>
-                    <div>
-                        <h4>USER'S NAME</h4>
-                        <p>DKI JAKARTA, INDONESIA</p>
-                    </div>
-                </div>
-                <button class="edit-btn">✎</button>
+
+    <!-- ===== SLIDING NAV DRAWER ===== -->
+    <div class="overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="hamburger-inside" id="close-sidebar"><i class="fa-solid fa-bars"></i></span>
+            <h2>ECOSHOP</h2>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h4 class="underlined-title">PAGE</h4>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="profile.html">PROFILE</a></li>
+                    <li><a href="catalog.html">PRODUCT CATALOG</a></li>
+                    <li><a href="dashboard.html" class="active-link">DASHBOARD</a></li>
+                    <li><a href="cart.html">CART</a></li>
+                    <li><a href="checkout.html">CHECKOUT</a></li>
+                </ul>
             </div>
-            <div class="balance">
-                <h2>BALANCE</h2>
-                <h3>RP. X.XXX.XXX,XX</h3>
+            <div class="sidebar-section">
+                <h4 class="underlined-title">CONTACT US</h4>
+                <ul class="menu-contact">
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> @ECOSHOP.ID</a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i> ECOSHOP</a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i> ECOSHOP</a></li>
+                </ul>
             </div>
-            <div class="transactions">
-                <h3>RECENT TRANSACTION</h3>
-                <div class="transaction-list">
-                    <div class="transaction-card">
-                        <img src="assets/product.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>RP. XX.XXX</p>
-                            <span>SUNDAY, XX / XX / XXXX</span>
-                        </div>
-                    </div>
-                    <div class="transaction-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>RP. XX.XXX</p>
-                            <span>SUNDAY, XX / XX / XXXX</span>
-                        </div>
-                    </div>
-                    <div class="transaction-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>RP. XX.XXX</p>
-                            <span>SUNDAY, XX / XX / XXXX</span>
-                        </div>
-                    </div>
-                    <div class="transaction-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>RP. XX.XXX</p>
-                            <span>SUNDAY, XX / XX / XXXX</span>
-                        </div>
-                    </div>
+            <div class="sidebar-section">
+                <h4 class="underlined-title">SUPPORT</h4>
+                <ul class="menu-support">
+                    <li><a href="#">CUSTOMER SUPPORT</a></li>
+                    <li><a href="#">SHIPPING &amp; RETURNS</a></li>
+                    <li><a href="#">PRIVACY POLICY</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h4 class="underlined-title">COMMUNITY</h4>
+                <div class="community-box">
+                    <h5>ECO SHOPPER</h5>
+                    <p>A community of nature enthusiast who loves eco-product</p>
+                    <button class="join-btn">JOIN NOW &nbsp;&mdash;&nbsp; <span>It's Free</span></button>
                 </div>
-                <button class="logout-btn">
-                    LOG OUT
-                </button>
             </div>
         </div>
     </aside>
-    <section class="content">
-        <div class="stats-card">
-            <div class="stats-header">YOUR STATISTIC</div>
-            <div class="stats-body">
-                <div class="stat">
-                    <h2>8</h2>
-                    <p>PRE ORDERS</p>
-                </div>
-                <div class="stat">
-                    <h2>5</h2>
-                    <p>ON DELIVERY</p>
-                </div>
-                <div class="stat">
-                    <h2>23</h2>
-                    <p>COMPLETED ORDERS</p>
-                </div>
-            </div>
+
+    <!-- ===== TOP HEADER ===== -->
+    <header>
+        <div class="left-header">
+            <span class="menu" id="hamburger-btn">☰</span>
+            <h2>PROFILE</h2>
         </div>
-        <div class="orders-wrapper">
-            <div class="order-panel">
-                <h3>PENDING ORDERS</h3>
-                <div class="order-list">
-                    <div class="order-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
+        <h1>DASHBOARD</h1>
+    </header>
+
+    <!-- ===== MAIN LAYOUT ===== -->
+    <main class="dashboard-container">
+
+        <!-- STICKY PROFILE SIDEBAR -->
+        <aside class="profile-sidebar">
+            <div class="profile-card">
+                <div class="profile-top">
+                    <div class="user-section">
+                        <div class="profile-icon">○</div>
                         <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>DAYS LEFT : 5</p>
+                            <h4>USER'S NAME</h4>
+                            <p>DKI JAKARTA, INDONESIA</p>
                         </div>
                     </div>
-                    <div class="order-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>DAYS LEFT : 5</p>
+                    <button class="edit-btn">✎</button>
+                </div>
+                <div class="balance">
+                    <h2>BALANCE</h2>
+                    <h3>RP. X.XXX.XXX,XX</h3>
+                </div>
+                <div class="transactions">
+                    <h3>RECENT TRANSACTION</h3>
+                    <div class="transaction-list">
+                        <div class="transaction-card">
+                            <img src="assets/product.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>RP. XX.XXX</p>
+                                <span>SUNDAY, XX / XX / XXXX</span>
+                            </div>
+                        </div>
+                        <div class="transaction-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>RP. XX.XXX</p>
+                                <span>SUNDAY, XX / XX / XXXX</span>
+                            </div>
+                        </div>
+                        <div class="transaction-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>RP. XX.XXX</p>
+                                <span>SUNDAY, XX / XX / XXXX</span>
+                            </div>
+                        </div>
+                        <div class="transaction-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>RP. XX.XXX</p>
+                                <span>SUNDAY, XX / XX / XXXX</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="order-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>DAYS LEFT : 5</p>
+                    <button class="logout-btn">LOG OUT</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <section class="content">
+            <div class="stats-card">
+                <div class="stats-header">YOUR STATISTIC</div>
+                <div class="stats-body">
+                    <div class="stat">
+                        <h2>8</h2>
+                        <p>PRE ORDERS</p>
+                    </div>
+                    <div class="stat">
+                        <h2>5</h2>
+                        <p>ON DELIVERY</p>
+                    </div>
+                    <div class="stat">
+                        <h2>23</h2>
+                        <p>COMPLETED ORDERS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="orders-wrapper">
+                <div class="order-panel">
+                    <h3>PENDING ORDERS</h3>
+                    <div class="order-list">
+                        <div class="order-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>DAYS LEFT : 5</p>
+                            </div>
+                        </div>
+                        <div class="order-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>DAYS LEFT : 5</p>
+                            </div>
+                        </div>
+                        <div class="order-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>DAYS LEFT : 5</p>
+                            </div>
+                        </div>
+                        <div class="order-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>DAYS LEFT : 5</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="order-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>DAYS LEFT : 5</p>
+                </div>
+                <div class="order-panel">
+                    <h3>UPCOMING PRE-ORDER</h3>
+                    <div class="order-list">
+                        <div class="order-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>DAYS LEFT : 5</p>
+                            </div>
+                        </div>
+                        <div class="order-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>DAYS LEFT : 5</p>
+                            </div>
+                        </div>
+                        <div class="order-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>DAYS LEFT : 5</p>
+                            </div>
+                        </div>
+                        <div class="order-card">
+                            <img src="assets/AssetFolderHCI-Lec/profile.png">
+                            <div>
+                                <h4>PRODUCT NAME</h4>
+                                <p>DAYS LEFT : 5</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="order-panel">
-                <h3>UPCOMING PRE-ORDER</h3>
-                <div class="order-list">
-                    <div class="order-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>DAYS LEFT : 5</p>
-                        </div>
-                    </div>
-                    <div class="order-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>DAYS LEFT : 5</p>
-                        </div>
-                    </div>
-                    <div class="order-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>DAYS LEFT : 5</p>
-                        </div>
-                    </div>
-                    <div class="order-card">
-                        <img src="assets/AssetFolderHCI-Lec/profile.png">
-                        <div>
-                            <h4>PRODUCT NAME</h4>
-                            <p>DAYS LEFT : 5</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburgerBtn   = document.getElementById("hamburger-btn");
+            const sidebar        = document.getElementById("sidebar");
+            const closeSidebarBtn = document.getElementById("close-sidebar");
+            const overlay        = document.getElementById("sidebar-overlay");
+
+            function openSidebar() {
+                sidebar.classList.add("active");
+                overlay.classList.add("active");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove("active");
+                overlay.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+
+            if (hamburgerBtn)    hamburgerBtn.addEventListener("click", openSidebar);
+            if (closeSidebarBtn) closeSidebarBtn.addEventListener("click", closeSidebar);
+            if (overlay)         overlay.addEventListener("click", closeSidebar);
+        });
+    </script>
 </body>
 </html>
