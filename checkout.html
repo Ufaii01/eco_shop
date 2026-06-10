@@ -17,49 +17,58 @@
 <body>
   <script src="navbar-scroll.js" defer></script>
 
-  <div class="overlay" id="overlay"></div>
-  <nav class="sidebar" id="sidebar">
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-          <span class="hamburger close-btn" id="close-btn">&#9776;</span>
+          <span class="hamburger-inside" id="close-sidebar"><i class="fa-solid fa-bars"></i></span>
           <h2>ECOSHOP</h2>
       </div>
       <div class="sidebar-content">
           <div class="sidebar-section">
               <h4 class="underlined-title">PAGE</h4>
-              <ul class="menu-page">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="catalog.html">CATALOG</a></li>
-                <li><a href="dashboard.html">DASHBOARD</a></li>
-                <li><a href="cart.html">CART</a></li>
-                <li><a href="checkout.html" class="active-link">CHECKOUT</a></li>
+              <ul>
+                  <li><a href="index.html">HOME</a></li>
+                  <li><a href="profile.html">PROFILE</a></li>
+                  <li><a href="catalog.html">CATALOG</a></li>
+                  <li><a href="dashboard.html">DASHBOARD</a></li>
+                  <li><a href="cart.html">CART</a></li>
+                  <li><a href="checkout.html" class="active-link">CHECKOUT</a></li>
               </ul>
           </div>
-
           <div class="sidebar-section">
-              <h4>CONTACT US</h4>
+              <h4 class="underlined-title">CONTACT US</h4>
               <ul class="menu-contact">
-                  <li><a href="#">@ECOSHOP.ID</a></li>
-                  <li><a href="#">ECOSHOP</a></li>
-                  <li><a href="#">ECOSHOP</a></li>
+                  <li><a href="#"><i class="fa-brands fa-instagram"></i> @ECOSHOP.ID</a></li>
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i> ECOSHOP</a></li>
+                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i> ECOSHOP</a></li>
               </ul>
           </div>
-
           <div class="sidebar-section">
-              <h4>SUPPORT</h4>
+              <h4 class="underlined-title">SUPPORT</h4>
               <ul class="menu-support">
                   <li><a href="#">CUSTOMER SUPPORT</a></li>
                   <li><a href="#">SHIPPING & RETURNS</a></li>
                   <li><a href="#">PRIVACY POLICY</a></li>
               </ul>
           </div>
+          <div class="sidebar-section">
+              <h4 class="underlined-title">COMMUNITY</h4>
+              <div class="community-box">
+                  <h5>ECO SHOPPER</h5>
+                  <p>A community of nature enthusiast who loves eco-product</p>
+                  <button class="join-btn">JOIN NOW &nbsp;&mdash;&nbsp; <span>It's Free</span></button>
+              </div>
+          </div>
       </div>
-  </nav>
+  </aside>
 
   <header class="navbar">
-      <div class="nav-left">
-          <span class="hamburger" id="hamburger-btn">&#9776;</span>
-          <a href="index.html" style="text-decoration: none; color: inherit;">
-            <h1 class="logo">ECOSHOP <span>/ CHECKOUT</span></h1>
+      <div class="nav-left" style="display: flex; align-items: center; gap: 16px;">
+          <span class="hamburger" id="hamburger-btn" style="cursor: pointer;">&#9776;</span>
+          <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+              <h1 class="logo" style="font-size: 18px; margin: 0; font-weight: 1000; display: inline-block;">
+                  ECOSHOP <span style="font-size: 15px; font-weight: 400; margin-left: 5px;">/ CHECKOUT</span>
+              </h1>
           </a>
       </div>
       <div class="nav-right">
@@ -256,9 +265,9 @@
   <script src="checkout.js"></script>
   <script>
     const hamburgerBtn = document.getElementById('hamburger-btn');
-    const closeBtn = document.getElementById('close-btn');
+    const closeBtn = document.getElementById('close-sidebar'); // ID sudah disamakan
     const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
+    const overlay = document.getElementById('sidebar-overlay'); // ID sudah disamakan
 
     function toggleSidebar() {
         sidebar.classList.toggle('active');

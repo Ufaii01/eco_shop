@@ -3,19 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dashboard.css">
     <title>Dashboard</title>
 </head>
 <body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="globalSidebar">
+    <div class="sidebar-header">
+        <span class="hamburger-inside" id="closeSidebarBtn">☰</span>
+        <h2>ECOSHOP</h2>
+    </div>
+    <div class="sidebar-content">
+        <div class="sidebar-section">
+            <h4 class="underlined-title">PAGE</h4>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="profile.html">PROFILE</a></li>
+                <li><a href="catalog.html">CATALOG</a></li>
+                <li><a href="dashboard.html" class="active-link">DASHBOARD</a></li>
+                <li><a href="cart.html">CART</a></li>
+                <li><a href="checkout.html">CHECKOUT</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h4 class="underlined-title">CONTACT US</h4>
+            <ul class="menu-contact">
+                <li><a href="#"><i class="fa-brands fa-instagram"></i> @ECOSHOP.ID</a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i> ECOSHOP</a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i> ECOSHOP</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h4 class="underlined-title">SUPPORT</h4>
+            <ul class="menu-support">
+                <li><a href="#">CUSTOMER SUPPORT</a></li>
+                <li><a href="#">SHIPPING & RETURNS</a></li>
+                <li><a href="#">PRIVACY POLICY</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <div class="community-box">
+                <h5>ECO SHOPPER</h5>
+                <p>A community of nature enthusiast who loves eco-product</p>
+                <button class="join-btn">JOIN NOW <span>— It's Free</span></button>
+            </div>
+        </div>
+    </div>
+</aside>
+
 <header class="dashboard-header">
     <div class="left-header">
-        <span class="menu">☰</span>
+        <span class="menu" id="openSidebarBtn" style="cursor: pointer;">☰</span>
         <h2>DASHBOARD</h2>
     </div>
 </header>
+
 <main class="dashboard-container">
-    <aside class="sidebar">
+    <aside class="profile-sidebar">
         <div class="profile-card">
             <div class="profile-top">
                 <div class="user-section">
@@ -75,12 +122,13 @@
                         </div>
                     </div>
                 </div>
-                <button class="logout-btn">
+                <button href="index.html" class="logout-btn">
                     LOG OUT
                 </button>
             </div>
         </div>
     </aside>
+    
     <section class="content">
         <div class="stats-card">
             <div class="stats-header">YOUR STATISTICS</div>
@@ -178,5 +226,21 @@
         </div>
     </section>
 </main>
+
+<script>
+    const openSidebarBtn = document.getElementById('openSidebarBtn');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const globalSidebar = document.getElementById('globalSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+        globalSidebar.classList.toggle('active');
+        sidebarOverlay.classList.toggle('active');
+    }
+
+    openSidebarBtn.addEventListener('click', toggleSidebar);
+    closeSidebarBtn.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+</script>
 </body>
 </html>

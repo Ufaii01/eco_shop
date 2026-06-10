@@ -43,7 +43,6 @@ a {
   text-decoration: none;
 }
 
-
 .page-container {
   display: flex;
   flex-direction: column;
@@ -143,7 +142,6 @@ a {
   opacity: 0.75;
 }
 
-
 .form-section {
   flex: 1;
   display: flex;
@@ -174,7 +172,6 @@ a {
   color: var(--text-muted);
   line-height: 1.5;
 }
-
 
 .auth-form {
   display: flex;
@@ -374,7 +371,6 @@ a {
 .redirect-text a:hover {
   opacity: 0.7;
 }
-
 
 .main-footer {
   position: relative;
@@ -639,7 +635,6 @@ a {
   letter-spacing: 0.2px;
 }
 
-
 @media (max-width: 1024px) {
   .auth-wrapper {
     flex-direction: column;
@@ -667,7 +662,69 @@ a {
   }
 }
 
+/* ============================================================
+   RESPONSIVE OPTIMIZATION AT 540PX (Bagian yang disempurnakan)
+   ============================================================ */
 @media (max-width: 540px) {
+  .page-container {
+    gap: 48px;
+  }
+
+  .auth-wrapper {
+    padding: 24px 14px;
+    gap: 24px;
+  }
+
+  /* Hero Banner Adjustments */
+  .hero-banner {
+    min-height: 280px;
+    padding: 32px 24px;
+    border-radius: 36px;
+  }
+
+  .hero-title {
+    font-size: 32px; /* Dikecilkan dari 50px agar tidak overflow */
+  }
+
+  .hero-description {
+    font-size: 13px;
+    margin-top: 12px;
+  }
+
+  .stats-number {
+    font-size: 38px; /* Dikecilkan dari 52px */
+  }
+
+  /* Form Header Adjustments */
+  .auth-header {
+    margin-bottom: 30px;
+  }
+
+  .auth-header h1 {
+    font-size: 28px; /* Dikecilkan dari 38px agar pas di satu baris HP */
+  }
+
+  /* Form Elements Stack */
+  .auth-form {
+    gap: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column; /* Membuat checkbox 'remember me' dan link berbaris vertikal */
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .social-auth {
+    flex-direction: column; /* Tombol Google dan Apple menumpuk vertikal di HP */
+    gap: 10px;
+  }
+
+  .btn-social {
+    width: 100%;
+  }
+
+  /* Footer Adjustments */
   .main-footer {
     padding: 56px 20px 32px;
   }
@@ -677,26 +734,14 @@ a {
     letter-spacing: 2px;
   }
 
-  .social-auth {
-    flex-direction: column;
+  .footer-brand-name {
+    font-size: 28px; /* Dikecilkan dari 38px */
   }
 
-  .auth-wrapper {
-    padding: 24px 14px;
-    gap: 24px;
-  }
-
-  .hero-banner {
-    min-height: 280px;
-    padding: 32px 24px;
-    border-radius: 36px;
-  }
-
-  .page-container {
-    gap: 48px;
+  .newsletter-form {
+    max-width: 100%;
   }
 }
-
 
 /* ============================================================
    AUTH.JS — Inline validation styles

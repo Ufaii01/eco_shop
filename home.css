@@ -5,15 +5,17 @@
 }
 
 body {
-    background-color: #F4F1E8;
+    background-color: #f6f5ef;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
+/* ==================== NAVBAR ==================== */
 .top-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 93px 20px 103px;
+    padding: 10px 93px 19.7px 93px;
     background-color: rgba(244, 241, 232, 0.97);
     position: fixed;
     top: 0;
@@ -23,9 +25,8 @@ body {
     transition: background-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Scrolled state — full white so it's always readable */
 .top-navbar.scrolled {
-    background-color: #ffffff;
+    background-color: #f6f5ef;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.09);
 }
 
@@ -63,11 +64,9 @@ body {
     position: absolute;
     left: 0;
     bottom: -4px;
-
     width: 100%;
     height: 2px;
     background-color: #392F27;
-
     transform: scaleY(0) translateY(4px);
     transform-origin: bottom;
     transition: transform 0.2s ease;
@@ -121,11 +120,9 @@ body {
     position: absolute;
     left: 0;
     bottom: -4px;
-
     width: 100%;
     height: 2px;
     background-color: #392F27;
-
     transform: scaleY(0) translateY(4px);
     transform-origin: bottom;
     transition: transform 0.2s ease;
@@ -139,10 +136,8 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-
     border: 4px solid #392F27;
     border-radius: 65.5px;
-
     padding: 10px 20px;
 }
 
@@ -156,7 +151,6 @@ body {
 .signup-text {
     text-decoration: none;
     color: #392F27;
-
     font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-weight: 700;
@@ -172,33 +166,32 @@ body {
     transform: translateY(-1px);
 }
 
-/* HERO SECTION*/
+/* ==================== HERO SECTION ==================== */
 .hero {
     padding: 20px 24px;
-    padding-top: 100px; /* Offset for fixed navbar */
+    padding-top: 100px; 
 }
 
 .hero-content {
     background-color: #392F27;
     border-radius: 74px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding-bottom: 96px;
     padding-left: 103px;
     padding-right: 99px;
     padding-top: 96px;
-    width: 1393;
-    height: 733px;
+    width: 100%; /* Diubah agar menyesuaikan layar */
+    max-width: 1393px; /* Maksimal lebarnya agar tidak terlalu ditarik di monitor besar */
+    box-sizing: border-box; /* Memastikan padding tidak membuat elemen melebihi layar */
+    height: auto; /* Biarkan height otomatis, bukan fix 733px */
 }
 
 .hero-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     position: relative;
     top: -100px;
 }
@@ -206,7 +199,7 @@ body {
 .hero-left h1 {
     font-family: 'Koulen', sans-serif;
     font-size: 64px;
-    letter-spacing: 95%;
+    letter-spacing: 50%;
     color: #FAF9ED;
     margin-bottom: 20px;
 }
@@ -214,9 +207,9 @@ body {
 .hero-left p {
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
-    font-size: 23.33px;
-    line-height: 'auto';
-    max-width: 582px;
+    font-size: 17px;
+    line-height: normal;
+    max-width: 500px;
     max-height: 96px;
     margin-bottom: 40px;
 }
@@ -224,14 +217,11 @@ body {
 .shop-btn {
     display: inline-flex;
     align-items: center;
-
     background: #F4F1E8;
     border-radius: 999px;
-
     height: 52px;
     padding: 6px 6px 6px 24px;
     gap: 18px;
-
     width: fit-content;
     cursor: pointer;
 }
@@ -242,23 +232,24 @@ body {
     font-weight: 700;
     color: #3A2D25;
     letter-spacing: 0.3px;
+    transition: transform 10s ease; 
+}
+
+.shop-btn:hover {
+    transform: translateY(-3px);
 }
 
 .arrow-circle {
     width: 40px;
     height: 40px;
-
     border-radius: 50%;
     background: #3A2D25;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #F4F1E8;
     font-size: 18px;
     font-weight: 700;
-
     flex-shrink: 0;
 }
 
@@ -287,6 +278,7 @@ body {
     border-radius: 40px;
 }
 
+/* ==================== BRANDS SECTION ==================== */
 .brands {
     overflow: hidden;
     width: 100%;
@@ -303,7 +295,6 @@ body {
     align-items: center;
     gap: 100px;
     width: max-content;
-
     animation: scrollLogo 20s linear infinite;
 }
 
@@ -320,23 +311,334 @@ body {
     from {
         transform: translateX(0);
     }
-
     to {
         transform: translateX(-50%);
     }
 }
 
+/* ==================== ECO WRAPPER & BACKGROUND TEXT ==================== */
 .eco-content-wrapper {
-    background: linear-gradient(0deg, rgba(255,248,187,0.2), rgba(255,248,187,0.2)),
-                #f9f9f9;
+    background-color: #392f27;
+    position: relative;
     width: 100%;
+    overflow: hidden;
+    padding-top: 60px; /* Jarak untuk teks pattern */
 }
 
-/* TRUST BADGES */
+.bg-text-pattern {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    padding-top: 50px;
+    z-index: 0; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.bg-text-pattern p {
+    font-family: 'Koulen', sans-serif;
+    font-size: 40px; 
+    color: rgba(250, 249, 237, 0.08); 
+    margin: -10px 0; 
+    letter-spacing: 17px;
+    white-space: nowrap;
+}
+/* ==================== MAIN OVERLAY CARD ==================== */
+.main-content-card {
+    background-color: #faf9ed;
+    border-radius: 40px;
+    width: 1100px;
+    max-width: 90%; 
+    margin: 150px auto 60px auto; 
+    padding: 40px; 
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+/* ==================== SLIDER CSS ==================== */
+.slider-container {
+    position: relative;
+    height: 480px; /* <--- Tingkatkan tinggi untuk menampung item yang membesar (384px) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 100px; /* <--- Jarak atas dari teks pattern */
+    margin-bottom: 0; /* <--- Jarak ke kartu di bawah (0 karena kartu punya margin atas auto) */
+    
+    perspective: 1000px;
+    z-index: 5;
+}
+
+.slide-item {
+    position: absolute;
+    width: 250px; /* Sedikit dilebarkan menyerupai mockup */
+    height: 400px; /* Ditinggikan menyerupai mockup */
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-active {
+    transform: translateX(0) scale(1.2);
+    z-index: 5; /* Pastikan yang aktif paling depan */
+    opacity: 1;
+}
+
+.slide-left {
+    transform: translateX(-280px) scale(0.9); /* Sedikit lebih lebar ke kiri */
+    z-index: 4;
+    opacity: 0.6;
+}
+
+.slide-right {
+    transform: translateX(280px) scale(0.9); /* Sedikit lebih lebar ke kanan */
+    z-index: 4;
+    opacity: 0.6;
+}
+
+.slide-hidden {
+    transform: translateX(0) scale(0.5);
+    z-index: 1;
+    opacity: 0;
+}
+
+.slide-item {
+    position: absolute;
+    width: 250px;
+    height: 400px;
+    border-radius: 24px;
+    overflow: hidden;
+    /* Pastikan transisi ini ada di semua slide-item */
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* ==================== HOW IT WORKS ==================== */
+.how-it-works-container {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.hiw-header {
+    padding-top: -1000px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hiw-header h2 {
+    font-family: 'Koulen', sans-serif;
+    font-size: 38px;
+    color: #392f27;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hiw-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #5c4e43;
+    margin-top: 8px;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.step-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-circle {
+    background: #392f27;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.icon-circle img {
+    width: 24px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.step-item h4 {
+    font-family: 'Koulen', sans-serif;
+    font-size: 20px;
+    color: #392f27;
+    letter-spacing: 1px;
+}
+
+.step-arrow {
+    font-size: 32px;
+    color: #392f27;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* ==================== VERIFIED SELLERS SPOTLIGHT ==================== */
+.sellers-spotlight {
+    margin-top: 80px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.sellers-spotlight h3 {
+    font-family: 'Koulen', sans-serif;
+    font-size: 32px;
+    color: #392f27;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.sellers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seller-card {
+    background: #ffffff;
+    border: 2px solid #ecdcb9;
+    border-radius: 24px;
+    padding: 28px 20px;
+    box-shadow: 0 8px 20px rgba(57, 47, 39, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seller-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(57, 47, 39, 0.08);
+}
+
+.seller-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 16px;
+    border: 3px solid #392f27;
+}
+
+.seller-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #392f27;
+    margin-bottom: 4px;
+}
+
+.seller-category {
+    font-family: 'Koulen', sans-serif;
+    font-size: 12px;
+    color: #a48a71;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.seller-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #392f27;
+    margin-bottom: 14px;
+}
+
+.seller-rating img {
+    width: 16px;
+    height: 16px;
+}
+
+.seller-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6e6053;
+}
+
+/* ==================== CALL TO ACTION (CTA) ==================== */
+.register-cta-container {
+    text-align: center;
+}
+
+.seller-cta {
+    font-family: 'Koulen', sans-serif;
+    font-size: 18px;
+    color: #392f27;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.btn-register-business {
+    background: #392f27;
+    color: #faf9ed;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px 10px 10px 32px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.2s;
+}
+
+.btn-register-business:hover {
+    transform: translateY(-3px);
+}
+
+.btn-icon {
+    background: #faf9ed;
+    color: #392f27;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ==================== TRUST BADGES ==================== */
 .trust-badges {
     background-color: #392f27;
-    padding: 64px 32px;
+    padding: 40px 32px 60px 32px;
 }
+
 .trust-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -344,11 +646,13 @@ body {
     max-width: 1440px;
     margin: 0 auto;
 }
+
 .trust-item {
     display: flex;
     align-items: center;
     gap: 16px;
 }
+
 .trust-icon {
     background: white;
     width: 48px;
@@ -359,7 +663,12 @@ body {
     justify-content: center;
     flex-shrink: 0;
 }
-.trust-icon img { width: 22px; height: auto; }
+
+.trust-icon img { 
+    width: 22px; 
+    height: auto; 
+}
+
 .trust-text h4 {
     font-family: "Work Sans", sans-serif;
     font-weight: 400;
@@ -367,6 +676,7 @@ body {
     color: #c1b9a6;
     margin-bottom: 6px;
 }
+
 .trust-text p {
     font-family: "Work Sans", sans-serif;
     font-weight: 400;
@@ -376,504 +686,16 @@ body {
     line-height: 1.4;
 }
 
-/* --- ECO CONTENT & CONTAINER ARRANGEMENTS --- */
-.eco-content-wrapper {
-    background-color: #392f27; /* Dark background container makes the inner block pop */
-    width: 100%;
-    padding: 1px 0 0 0;
-}
-
-/* HOW IT WORKS + SELLERS */
-.how-it-works-block {
-    background-color: #faf9ed;
-    border-radius: 88px;
-    margin: 60px 40px 0px 40px; /* Reduced bottom margin to dock cleanly with trust badges */
-    padding: 92px 42px 80px;
-}
-
-.hiw-header {
-    text-align: center;
-    margin-bottom: 48px;
-}
-
-.hiw-header h2 {
-    font-family: 'Koulen', sans-serif;
-    font-size: 64px;
-    letter-spacing: 18.56px;
-    color: #392f27;
-    border-bottom: 3px solid #392f27;
-    display: inline-block;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-}
-
-.hiw-sub {
-    font-family: "Work Sans", sans-serif;
-    font-size: 16px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-    color: #392f27;
-}
-
-/* Steps Row and Dynamic Connecting Arrows */
-.steps-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin: 60px 0 80px;
-    flex-wrap: wrap;
-}
-
-.step-card {
-    text-align: center;
-    width: 220px;
-}
-
-.step-icon {
-    background: #392f27;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-}
-
-.step-icon img { 
-    width: 28px; 
-    height: auto; 
-}
-
-.step-card h3 {
-    font-family: 'Koulen', sans-serif;
-    font-size: 18px;
-    color: #392f27;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 12px;
-}
-
-/* Horizontal Connector Arrows between steps */
-.step-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 44px;
-    color: #392f27;
-    font-weight: 300;
-    margin-bottom: 40px;
-}
-
-/* Verified Sellers Spotlight Grid Layout */
-.sellers-spotlight {
-    margin-top: 80px;
-    text-align: center;
-}
-
-.sellers-spotlight h3 {
-    font-family: 'Koulen', sans-serif;
-    font-size: 40px;
-    letter-spacing: 4px;
-    margin-bottom: 48px;
-    color: #392f27;
-}
-
-.sellers-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-}
-
-.seller-card {
-    background: #faf9ed;
-    border: 1px solid #e5e2d5;
-    border-radius: 16px;
-    padding: 32px 24px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-}
-
-/* Fixed Avatar Box to display structural content images correctly */
-.seller-avatar {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    margin: 0 auto 16px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: block; /* Guarantees rendering bounds */
-}
-
-.seller-name {
-    font-family: "Manrope", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    color: #392f27;
-    margin-bottom: 6px;
-}
-
-.seller-category {
-    font-family: "Work Sans", sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    color: #7d7568;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-}
-
-.seller-rating {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 16px;
-}
-
-.seller-rating img { 
-    width: 14px; 
-    height: 14px;
-}
-
-.seller-rating span {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    color: #712d09;
-}
-
-.seller-desc {
-    font-family: "Work Sans", sans-serif;
-    font-size: 13px;
-    color: #605a50;
-    line-height: 1.5;
-}
-
-/* Premium Bottom CTA Area Elements */
-.seller-cta {
-    font-family: 'Koulen', sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
-    color: #392f27;
-    text-align: center;
-    margin: 80px auto 24px;
-    text-transform: uppercase;
-}
-
-.register-btn {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.register-btn a {
-    background: #392f27;
-    padding: 8px 8px 8px 28px;
-    border-radius: 40px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    color: #faf9ed;
-    display: inline-flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 13px;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: transform 0.2s ease;
-}
-
-.register-btn a:hover {
-    transform: translateY(-2px);
-}
-
-.btn-arrow-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #faf9ed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #392f27;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-/* TRUST BADGES LOWER STRIP */
-.trust-badges {
-    background-color: #392f27;
-    padding: 60px 40px 80px;
-}
-
-.trust-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.trust-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.trust-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.trust-icon img { 
-    width: 40px; 
-    height: auto; 
-}
-
-.trust-text h4 {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    color: #fff;
-    margin-bottom: 4px;
-}
-
-.trust-text p {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 400;
-    font-size: 13px;
-    color: #b5b0a5;
-    line-height: 1.4;
-}
-
-/* Hamburger button — hidden on desktop, shown on mobile */
-.hamburger-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 26px;
-    color: #392F27;
-    cursor: pointer;
-    line-height: 1;
-    padding: 4px;
-    order: -1; /* Appears before logo */
-}
-
-/* ── Mobile Nav Drawer ─────────────────────────────── */
-.mobile-nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 99;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.mobile-nav-overlay.visible {
-    display: block;
-    opacity: 1;
-}
-
-.mobile-nav-drawer {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: min(300px, 85vw);
-    height: 100dvh;
-    background: #392F27;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    padding: 28px 32px 40px;
-    transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-y: auto;
-}
-.mobile-nav-drawer.open {
-    left: 0;
-}
-
-.mobile-nav-close {
-    align-self: flex-end;
-    background: none;
-    border: none;
-    color: #F4F1E8;
-    font-size: 22px;
-    cursor: pointer;
-    margin-bottom: 32px;
-    padding: 4px;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-}
-.mobile-nav-close:hover { opacity: 1; }
-
-.mobile-nav-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    flex: 1;
-}
-.mobile-nav-links li {
-    border-bottom: 1px solid rgba(244, 241, 232, 0.15);
-}
-.mobile-nav-links a {
-    display: block;
-    padding: 18px 0;
-    color: #F4F1E8;
-    font-family: 'Koulen', sans-serif;
-    font-size: 22px;
-    letter-spacing: 3px;
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
-.mobile-nav-links a:hover { opacity: 0.7; }
-
-.mobile-nav-footer {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 36px;
-}
-.mobile-login-btn {
-    display: block;
-    text-align: center;
-    padding: 12px;
-    color: #F4F1E8;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    text-decoration: none;
-    border: 2px solid rgba(244, 241, 232, 0.4);
-    border-radius: 40px;
-    transition: background 0.2s;
-}
-.mobile-login-btn:hover { background: rgba(244, 241, 232, 0.1); }
-
-.mobile-signup-btn {
-    display: block;
-    text-align: center;
-    padding: 14px 20px;
-    background: #F4F1E8;
-    color: #392F27;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    text-decoration: none;
-    border-radius: 40px;
-    letter-spacing: 0.5px;
-    transition: opacity 0.2s;
-}
-.mobile-signup-btn:hover { opacity: 0.85; }
-
-/* ── Responsive Overrides ──────────────────────────── */
-@media (max-width: 1024px) {
-    .top-navbar {
-        padding: 16px 40px;
-    }
-    .hamburger-btn { display: block; }
-    .menu { display: none; }
-    .signup-container { display: none; }
-    .login { display: none; }
-    .user-icon { display: none; }
-    .divider { display: none; }
-    /* Center logo when hamburger is visible */
-    .top-navbar {
-        justify-content: space-between;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        height: auto;
-        padding: 60px 48px 80px;
-        gap: 40px;
-        text-align: center;
-        align-items: center;
-    }
-    .hero-left {
-        top: 0;
-        align-items: center;
-    }
-    .hero-left p { max-width: 100%; max-height: none; }
-    .social-media {
-        flex-direction: row;
-        justify-content: center;
-    }
-    .social-line { display: none; }
-    .hero-right img {
-        width: 100%;
-        max-width: 380px;
-        height: 300px;
-    }
-
-    .how-it-works-block {
-        margin: 40px 24px 0;
-        padding: 60px 32px 60px;
-        border-radius: 60px;
-    }
-    .hiw-header h2 {
-        font-size: 44px;
-        letter-spacing: 8px;
-    }
+/* ==================== MEDIA QUERIES (RESPONSIVE) ==================== */
+@media (max-width: 768px) {
+    .slide-left { transform: translateX(-120px) scale(0.85); }
+    .slide-right { transform: translateX(120px) scale(0.85); }
+    .slide-item { width: 160px; height: 240px; }
+    .step-arrow { transform: rotate(90deg); margin: 10px 0; }
+    .process-steps { flex-direction: column; gap: 10px; }
+    .main-content-card { margin: 0 20px; padding: 40px 10px; }
+    
     .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        grid-template-columns: repeat(2, 1fr); /* Penyesuaian trust badges di mobile */
     }
-    .step-arrow {
-        transform: rotate(90deg);
-        margin: 0;
-    }
-}
-
-@media (max-width: 540px) {
-    .top-navbar {
-        padding: 14px 20px;
-    }
-
-    .hero {
-        padding: 12px;
-        padding-top: 80px;
-    }
-    .hero-content {
-        padding: 40px 24px 60px;
-        border-radius: 40px;
-        gap: 28px;
-    }
-    .hero-left h1 { font-size: 48px; }
-    .hero-left p { font-size: 17px; }
-    .hero-right img {
-        max-width: 100%;
-        height: 240px;
-    }
-
-    .how-it-works-block {
-        margin: 20px 12px 0;
-        padding: 40px 20px 48px;
-        border-radius: 36px;
-    }
-    .hiw-header h2 {
-        font-size: 32px;
-        letter-spacing: 4px;
-    }
-    .hiw-sub { font-size: 14px; }
-    .steps-row { gap: 24px; margin: 40px 0 60px; }
-    .step-card { width: 160px; }
-
-    .sellers-spotlight h3 {
-        font-size: 28px;
-        letter-spacing: 2px;
-        margin-bottom: 28px;
-    }
-    .seller-card { width: 100%; max-width: 320px; }
-
-    .trust-badges { padding: 40px 20px 60px; }
-    .trust-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-    .seller-cta { font-size: 22px; margin: 48px auto 20px; }
 }

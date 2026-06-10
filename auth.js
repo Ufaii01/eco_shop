@@ -234,7 +234,7 @@ function initRegister() {
     showFormBanner(form, "Account created! Redirecting to Home…", "success");
 
     setTimeout(function () {
-      window.location.href = "index.html.html"; 
+      window.location.href = "index.html"; 
     }, 1500);
   });
 }
