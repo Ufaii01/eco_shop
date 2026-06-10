@@ -27,6 +27,7 @@ h1, h2, h3, h4 {
 header {
     height: 80px;
     background: var(--cream);
+    color: var(--brown); /* FIX: cream bg needs dark text */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,6 +119,7 @@ header h1 {
 
 .balance {
     background: var(--cream);
+    color: var(--brown); /* FIX: cream bg needs dark text */
     padding: 20px;
 }
 
@@ -197,6 +199,7 @@ header h1 {
 
 .stats-card {
     background: var(--cream);
+    color: var(--brown); /* FIX: cream bg needs dark text */
     border-radius: 30px;
     overflow: hidden;
 }
@@ -233,6 +236,7 @@ header h1 {
 .orders-wrapper {
     margin-top: 30px;
     background: var(--cream);
+    color: var(--brown); /* FIX: cream bg needs dark text */
     border-radius: 35px;
     padding: 30px;
     display: grid;
