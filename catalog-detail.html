@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoShop – Nama Produk</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="catalog-detail.js" defer></script>
   <link rel="stylesheet" href="catalog-detail.css">
+  <link rel="stylesheet" href="global2.css">
   <link rel="stylesheet" href="footer.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,48 +16,73 @@
 </head>
 <body>
 
-  <!-- ================================================================
-       HEADER
-  ================================================================ -->
-  <header class="header">
-    <!-- Hamburger (tablet/mobile) -->
-    <button
-      class="header__hamburger"
-      aria-label="Toggle navigation"
-      aria-expanded="false"
-      aria-controls="mobile-nav"
-      id="hamburger-btn"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<div class="overlay" id="overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="hamburger close-btn" id="close-btn">&#9776;</span>
+            <h2>ECOSHOP</h2>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h4>PAGE</h4>
+                <ul class="menu-page">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="profile.html">PROFILE</a></li>
+                    <li><a href="catalog.html">PRODUCT CATALOG</a></li>
+                    <li><a href="dashboard.html">DASHBOARD</a></li>
+                    <li><a href="cart.html">CART</a></li>
+                    <li><a href="checkout.html">CHECKOUT</a></li>
+                </ul>\
 
-    <!-- Logo / breadcrumb -->
-    <a href="home.html" class="header__logo">ECOSHOP</a>
-    <span class="header__sep">|</span>
-    <a href="catalog.html" class="header__breadcrumb">catalog</a>
-    <span class="header__sep">|</span>
-    <span class="header__breadcrumb header__breadcrumb--active">nama produk</span>
+            </div>
 
-    <!-- Icons -->
-    <div class="header__icons" aria-hidden="true">
-      <!-- Search -->
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#faf9ed" stroke-width="2" fill="none" stroke-linecap="round"/>
-      </svg>
-      <!-- Cart -->
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="#faf9ed" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M3 6h18M16 10a4 4 0 0 1-8 0" stroke="#faf9ed" stroke-width="2" fill="none" stroke-linecap="round"/>
-      </svg>
-      <!-- User -->
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="#faf9ed" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </header>
+            <div class="sidebar-section">
+                <h4>CONTACT US</h4>
+                <ul class="menu-contact">
+                    <li><a href="#"><img src="assets/Footer/Clip path group.png" alt="IG"> @ECOSHOP.ID</a></li>
+                    <li><a href="#"><img src="assets/Footer/Vector.png" alt="FB"> ECOSHOP</a></li>
+                    <li><a href="#"><img src="assets/Footer/in.png" alt="IN"> ECOSHOP</a></li>
+                </ul>
+            </div>
 
+            <div class="sidebar-section">
+                <h4>SUPPORT</h4>
+                <ul class="menu-support">
+                    <li><a href="#">CUSTOMER SUPPORT</a></li>
+                    <li><a href="#">SHIPPING & RETURNS</a></li>
+                    <li><a href="#">PRIVACY POLICY</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section community">
+                <h4>COMMUNITY</h4>
+                <h5>ECO SHOPPER</h5>
+                <p>A community of nature enthusiast who loves eco-product</p>
+                <button class="join-btn">JOIN NOW &mdash; It's Free</button>
+            </div>
+        </div>
+    </nav>
+    <header class="navbar">
+        <div class="nav-left">
+            <span class="hamburger" style="color: white;">&#9776;</span>
+            <h1 class="logo"><a href="index.html">
+                ECOSHOP 
+            </a>
+              <a href="catalog.html">
+                <span>/ CATALOG</span> 
+              </a>
+              <span>/ DETAIL</span></h1>
+        </div>
+        <div class="nav-right">
+            <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <a href="catalog.html">
+              <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+            </a>
+            <a href="Login.HTML">
+              <span class="icon"><i class="fa-regular fa-circle-user"></i></span>
+            </a>
+        </div>
+    </header>
   <main>
 
     <section class="product-hero" aria-labelledby="product-title">
@@ -67,47 +95,59 @@
       <div class="product-images__track" id="img-track" role="list">
         <div class="product-images__slide" role="listitem">
           <img
-            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
             alt="Product view 1"
           />
         </div>
         <div class="product-images__slide" role="listitem">
           <img
-            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
             alt="Product view 2"
           />
         </div>
         <div class="product-images__slide" role="listitem">
           <img
-            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
             alt="Product view 3"
           />
         </div>
         <div class="product-images__slide" role="listitem">
           <img
-            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
             alt="Product view 4"
           />
         </div>
         <div class="product-images__slide" role="listitem">
           <img
-            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
             alt="Product view 5"
           />
         </div>
         <div class="product-images__slide" role="listitem">
           <img
-            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
             alt="Product view 6"
           />
         </div>
         <div class="product-images__slide" role="listitem">
           <img
-            src="https://www.figma.com/api/mcp/asset/a2107d60-634f-41bc-b4aa-49cb05ae6894"
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
             alt="Product view 7"
           />
         </div>
       </div>
+    <div class="product-images__nav">
+      <button class="product-images__arrow product-images__arrow--left" aria-label="Previous image">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+        </svg>
+      </button>
+      <button class="product-images__arrow product-images__arrow--right" aria-label="Next image">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+        </svg>
+      </button>
+    </div>
     </section>
 
     <!-- ── PRODUCT INFO ──────────────────────────────────── -->
@@ -155,8 +195,8 @@
 
         <!-- CTA buttons -->
         <div class="product-info__actions">
-          <button class="btn-add-cart" aria-label="Add to cart">ADD TO CART +</button>
-          <button class="btn-buy-now" aria-label="Buy now">BUY NOW</button>
+            <button class="btn-add-cart" aria-label="Add to cart" id="btnCart"><a href="cart.html">ADD TO CART +</a></button>
+            <button class="btn-buy-now" aria-label="Buy now" id="btnBuy"><a href="checkout.html">BUY NOW</a></button>
         </div>
       </div>
 
@@ -171,11 +211,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 
     <!-- ── VIDEO PLACEHOLDER ─────────────────────────────── -->
     <section class="product-video" aria-label="Product video">
-      <div class="product-video__box">
-        <div class="product-video__play" role="img" aria-label="Play video">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l14 9-14 9V3z"/></svg>
-        </div>
-      </div>
+    <div class="product-video__box" style="position: relative; overflow: hidden;">
+        
+        <video id="my-product-video" width="100%" height="100%" controls style="object-fit: cover; display: block;">
+        <source src="/assets/Proses Pembuatan Sabun Eco Enzyme.mp4" type="video/mp4">
+        Browser kamu tidak mendukung pemutar video.
+        </video>
+
+    </div>
     </section>
 
     <!-- ── SHOP / SELLER INFO ────────────────────────────── -->
@@ -186,7 +229,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
       <article class="shop-card">
         <div class="shop-card__avatar">
           <img
-            src="https://www.figma.com/api/mcp/asset/db0db346-3911-424a-ae0d-7ac4fa8a981e"
+            src="/assets/toko organik.png"
             alt="Shop avatar"
           />
         </div>
@@ -199,7 +242,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
       <div class="rating-card">
         <div class="rating-box">
           <span class="rating-box__label">RATING:</span>
-          <span class="rating-box__value">?/5</span>
+          <span class="rating-box__value">4/5</span>
         </div>
         <div class="rating-stars-box" aria-label="4 out of 5 stars rating">
           <!-- 4 filled large stars -->
@@ -384,115 +427,129 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 
   </main>
 
-  <!-- ================================================================
-       FOOTER
-  ================================================================ -->
-  <footer class="main-footer" aria-labelledby="footer-heading">
+    <footer class="main-footer">
 
-    <div class="footer-top-header">
-      <!-- TODO: add badge image -->
-      <div class="footer-badge">
-        <img src="" alt="">
+      <div class="footer-top-header">
+        <div class="footer-badge">
+          <img src="" alt="">
+        </div>
+        <h2 class="footer-tagline">MAKE EARTH MORE GREENER . . .</h2>
       </div>
-      <h2 class="footer-tagline">MAKE EARTH MORE GREENER . . .</h2>
-    </div>
 
-    <div class="footer-columns">
+      <div class="footer-columns">
 
-      <div class="footer-brand">
-        <h2 class="footer-brand-name">ECOSHOP</h2>
-        <p>A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
-        <div class="brand-socials">
-          <a href="#" aria-label="Website">
-            <img src="assets/Footer/Icon.png" alt="">
+        <div class="footer-brand">
+          <h2 class="footer-brand-name">ECOSHOP</h2>
+          <p>A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
+          <div class="brand-socials">
+            <a href="#" aria-label="Website">
+              <img src="assets/Footer/Icon.png" alt="">
+            </a>
+            <a href="#" aria-label="Email">
+              <img src="assets/Footer/Icon-1.png" alt="">
+            </a>
+            <a href="#" aria-label="Community">
+              <img src="assets/Footer/Icon-2.png" alt="">
+            </a>
+          </div>
+        </div>
+
+        <nav class="nav-column" aria-label="Marketplace">
+          <h3>MARKETPLACE</h3>
+          <ul>
+            <li><a href="#">Sustainability Commitments</a></li>
+            <li><a href="#">Verified Sellers</a></li>
+            <li><a href="#">How it Works</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-column" aria-label="Support">
+          <h3>SUPPORT</h3>
+          <ul>
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-newsletter">
+          <h3>STAY UPDATED</h3>
+          <p>Join our newsletter for the latest ethical drops.</p>
+          <form class="newsletter-form" action="#" method="POST">
+            <input type="email" name="newsletter-email" placeholder="Email Address . . ." required />
+            <button type="submit">JOIN</button>
+          </form>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom-bar">
+        <div class="bottom-socials">
+          <a href="#" aria-label="Instagram">
+            <img src="assets/Footer/Clip path group.png" alt="">
           </a>
-          <a href="#" aria-label="Email">
-            <img src="assets/Footer/Icon-1.png" alt="">
+          <a href="#" aria-label="Facebook">
+            <img src="assets/Footer/Vector.png" alt="">
           </a>
-          <a href="#" aria-label="Community">
-            <img src="assets/Footer/Icon-2.png" alt="">
+          <a href="#" aria-label="LinkedIn">
+            <img src="assets/Footer/in.png" alt="">
           </a>
         </div>
+        <p class="copyright-text">&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
       </div>
 
-      <nav class="nav-column" aria-label="Marketplace">
-        <h3>MARKETPLACE</h3>
-        <ul>
-          <li><a href="#">Sustainability Commitments</a></li>
-          <li><a href="#">Verified Sellers</a></li>
-          <li><a href="#">How it Works</a></li>
-        </ul>
-      </nav>
+    </footer>
 
-      <nav class="nav-column" aria-label="Support">
-        <h3>SUPPORT</h3>
-        <ul>
-          <li><a href="#">Customer Support</a></li>
-          <li><a href="#">Shipping &amp; Returns</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </nav>
+    <script>
+        const hamburgerBtn = document.querySelector('.nav-left .hamburger');
+        const closeBtn = document.getElementById('close-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
 
-      <div class="footer-newsletter">
-        <h3>STAY UPDATED</h3>
-        <p>Join our newsletter for the latest ethical drops.</p>
-        <form class="newsletter-form" action="#" method="POST">
-          <input type="email" name="newsletter-email" placeholder="Email Address . . ." required />
-          <button type="submit">JOIN</button>
-        </form>
-      </div>
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
 
-    </div>
+        hamburgerBtn.addEventListener('click', toggleSidebar);
+        closeBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
 
-    <hr class="footer-divider" />
+      const track = document.querySelector('.carousel-fan');
 
-    <div class="footer-bottom-bar">
-      <div class="bottom-socials">
-        <a href="#" aria-label="Instagram">
-          <img src="assets/Footer/Clip path group.png" alt="">
-        </a>
-        <a href="#" aria-label="Facebook">
-          <img src="assets/Footer/Vector.png" alt="">
-        </a>
-        <a href="#" aria-label="LinkedIn">
-          <img src="assets/Footer/in.png" alt="">
-        </a>
-      </div>
-      <p class="copyright-text">&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
-    </div>
+      if (track) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-  </footer>
+        // FITUR DRAG PAKAI MOUSE (Klik, Tahan, Geser Kanan-Kiri)
+        track.addEventListener('mousedown', (e) => {
+          isDown = true;
+          track.style.cursor = 'grabbing';
+          startX = e.pageX - track.offsetLeft;
+          scrollLeft = track.scrollLeft;
+        });
 
-  <!-- ================================================================
-       JAVASCRIPT
-  ================================================================ -->
-  <script>
-    // ── Hamburger toggle ────────────────────────────────────
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileNav    = document.getElementById('mobile-nav');
+        track.addEventListener('mouseleave', () => {
+          isDown = false;
+          track.style.cursor = 'grab';
+        });
 
-    hamburgerBtn.addEventListener('click', () => {
-      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-      hamburgerBtn.setAttribute('aria-expanded', String(!expanded));
-      mobileNav.classList.toggle('is-open');
-    });
+        track.addEventListener('mouseup', () => {
+          isDown = false;
+          track.style.cursor = 'grab';
+        });
 
-    // Close mobile nav when a link is clicked
-    mobileNav.querySelectorAll('.header__mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-        mobileNav.classList.remove('is-open');
-      });
-    });
-
-    // Close mobile nav on outside click
-    document.addEventListener('click', (e) => {
-      if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-        mobileNav.classList.remove('is-open');
+        track.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - track.offsetLeft;
+          const walk = (x - startX) * 2; // Naikkan angka ini kalau berasa kurang cepat gesernya
+          track.scrollLeft = scrollLeft - walk;
+        });
       }
-    });
-  </script>
-
+    </script>
 </body>
 </html>

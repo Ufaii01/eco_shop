@@ -9,7 +9,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-nav {
+.top-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -365,17 +365,26 @@ nav {
     line-height: 1.4;
 }
 
+/* --- ECO CONTENT & CONTAINER ARRANGEMENTS --- */
+.eco-content-wrapper {
+    background-color: #392f27; /* Dark background container makes the inner block pop */
+    width: 100%;
+    padding: 1px 0 0 0;
+}
+
 /* HOW IT WORKS + SELLERS */
 .how-it-works-block {
     background-color: #faf9ed;
     border-radius: 88px;
-    margin: 60px 40px;
-    padding: 92px 42px 156px;
+    margin: 60px 40px 0px 40px; /* Reduced bottom margin to dock cleanly with trust badges */
+    padding: 92px 42px 80px;
 }
+
 .hiw-header {
     text-align: center;
     margin-bottom: 48px;
 }
+
 .hiw-header h2 {
     font-family: 'Koulen', sans-serif;
     font-size: 64px;
@@ -386,6 +395,7 @@ nav {
     padding-bottom: 8px;
     margin-bottom: 20px;
 }
+
 .hiw-sub {
     font-family: "Work Sans", sans-serif;
     font-size: 16px;
@@ -394,17 +404,22 @@ nav {
     text-align: center;
     color: #392f27;
 }
+
+/* Steps Row and Dynamic Connecting Arrows */
 .steps-row {
     display: flex;
     justify-content: center;
-    gap: 120px;
+    align-items: center;
+    gap: 40px;
     margin: 60px 0 80px;
     flex-wrap: wrap;
 }
+
 .step-card {
     text-align: center;
     width: 220px;
 }
+
 .step-icon {
     background: #392f27;
     width: 70px;
@@ -415,16 +430,38 @@ nav {
     justify-content: center;
     margin: 0 auto 16px;
 }
-.step-icon img { width: 28px; height: auto; }
+
+.step-icon img { 
+    width: 28px; 
+    height: auto; 
+}
+
 .step-card h3 {
     font-family: 'Koulen', sans-serif;
-    font-size: 26px;
-    color: #173124;
+    font-size: 18px;
+    color: #392f27;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 12px;
 }
+
+/* Horizontal Connector Arrows between steps */
+.step-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    color: #392f27;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+/* Verified Sellers Spotlight Grid Layout */
 .sellers-spotlight {
     margin-top: 80px;
     text-align: center;
 }
+
 .sellers-spotlight h3 {
     font-family: 'Koulen', sans-serif;
     font-size: 40px;
@@ -432,43 +469,53 @@ nav {
     margin-bottom: 48px;
     color: #392f27;
 }
+
 .sellers-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 32px;
+    gap: 24px;
 }
+
 .seller-card {
-    background: #f5f4ef;
-    border: 1px solid #c2c8c2;
-    border-radius: 12px;
-    padding: 32px;
+    background: #faf9ed;
+    border: 1px solid #e5e2d5;
+    border-radius: 16px;
+    padding: 32px 24px;
     width: 280px;
     text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
+
+/* Fixed Avatar Box to display structural content images correctly */
 .seller-avatar {
     width: 96px;
     height: 96px;
     border-radius: 50%;
-    border: 2px solid #ccead6;
     margin: 0 auto 16px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    display: block; /* Guarantees rendering bounds */
 }
+
 .seller-name {
     font-family: "Manrope", sans-serif;
     font-weight: 700;
     font-size: 18px;
-    color: #173124;
-    margin-bottom: 8px;
+    color: #392f27;
+    margin-bottom: 6px;
 }
+
 .seller-category {
     font-family: "Work Sans", sans-serif;
-    font-size: 12px;
-    color: #4d644f;
-    letter-spacing: 0.5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #7d7568;
+    letter-spacing: 1px;
     margin-bottom: 12px;
 }
+
 .seller-rating {
     display: flex;
     justify-content: center;
@@ -476,39 +523,137 @@ nav {
     gap: 6px;
     margin-bottom: 16px;
 }
-.seller-rating img { width: 14px; }
+
+.seller-rating img { 
+    width: 14px; 
+    height: 14px;
+}
+
 .seller-rating span {
     font-family: "Work Sans", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 13px;
     color: #712d09;
 }
+
 .seller-desc {
     font-family: "Work Sans", sans-serif;
-    font-size: 14px;
-    color: #424844;
-    line-height: 1.4;
+    font-size: 13px;
+    color: #605a50;
+    line-height: 1.5;
 }
+
+/* Premium Bottom CTA Area Elements */
+.seller-cta {
+    font-family: 'Koulen', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #392f27;
+    text-align: center;
+    margin: 80px auto 24px;
+    text-transform: uppercase;
+}
+
 .register-btn {
     text-align: center;
-    margin-top: 80px;
+    margin-bottom: 20px;
 }
+
 .register-btn a {
     background: #392f27;
-    padding: 12px 34px;
-    border-radius: 39px;
+    padding: 8px 8px 8px 28px;
+    border-radius: 40px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: #faf9ed;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    font-size: 16px;
+    gap: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease;
 }
-.seller-cta {
-    font-family: 'Koulen', sans-serif;
-    font-size: 32px;
+
+.register-btn a:hover {
+    transform: translateY(-2px);
+}
+
+.btn-arrow-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #faf9ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #392f27;
-    text-align: center;
-    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* TRUST BADGES LOWER STRIP */
+.trust-badges {
+    background-color: #392f27;
+    padding: 60px 40px 80px;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.trust-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.trust-icon img { 
+    width: 40px; 
+    height: auto; 
+}
+
+.trust-text h4 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.trust-text p {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #b5b0a5;
+    line-height: 1.4;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
 }
