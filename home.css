@@ -13,10 +13,20 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 103px;
-    padding-top: 27px;
-    padding-right: 93px;
-    background-color: #F4F1E8;
+    padding: 20px 93px 20px 103px;
+    background-color: rgba(244, 241, 232, 0.97);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Scrolled state — full white so it's always readable */
+.top-navbar.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.09);
 }
 
 .logo {
@@ -165,6 +175,7 @@ body {
 /* HERO SECTION*/
 .hero {
     padding: 20px 24px;
+    padding-top: 100px; /* Offset for fixed navbar */
 }
 
 .hero-content {
