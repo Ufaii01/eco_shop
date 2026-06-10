@@ -4,64 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoShop – Nama Produk</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="global.css" rel="stylesheet"> 
+  <script src="catalog-detail.js" defer></script>
   <link rel="stylesheet" href="catalog-detail.css">
+  <link rel="stylesheet" href="global2.css">
   <link rel="stylesheet" href="footer.css">
-  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Work+Sans:wght@400;600;700&family=Manrope:wght@700&family=Inter&display=swap" rel="stylesheet" />
+
 </head>
 <body>
-  <script src="navbar-scroll.js" defer></script>
 
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-    <aside class="sidebar" id="sidebar">
+<div class="overlay" id="overlay"></div>
+    <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <span class="hamburger-inside" id="close-sidebar"><i class="fa-solid fa-bars"></i></span>
+            <span class="hamburger close-btn" id="close-btn">&#9776;</span>
             <h2>ECOSHOP</h2>
         </div>
         <div class="sidebar-content">
             <div class="sidebar-section">
-                <h4 class="underlined-title">PAGE</h4>
-                <ul>
+                <h4>PAGE</h4>
+                <ul class="menu-page">
                     <li><a href="index.html">HOME</a></li>
-                    <li><a href="catalog.html">CATALOG</a></li>
-                    <li><a href="catalog-detail.html" class="active-link">DETAIL</a></li>
+                    <li><a href="profile.html">PROFILE</a></li>
+                    <li><a href="catalog.html">PRODUCT CATALOG</a></li>
                     <li><a href="dashboard.html">DASHBOARD</a></li>
                     <li><a href="cart.html">CART</a></li>
                     <li><a href="checkout.html">CHECKOUT</a></li>
-                </ul>
+                </ul>\
+
             </div>
+
             <div class="sidebar-section">
-                <h4 class="underlined-title">CONTACT US</h4>
+                <h4>CONTACT US</h4>
                 <ul class="menu-contact">
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i> @ECOSHOP.ID</a></li>
-                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i> ECOSHOP</a></li>
-                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i> ECOSHOP</a></li>
+                    <li><a href="#"><img src="assets/Footer/Clip path group.png" alt="IG"> @ECOSHOP.ID</a></li>
+                    <li><a href="#"><img src="assets/Footer/Vector.png" alt="FB"> ECOSHOP</a></li>
+                    <li><a href="#"><img src="assets/Footer/in.png" alt="IN"> ECOSHOP</a></li>
                 </ul>
             </div>
+
             <div class="sidebar-section">
-                <h4 class="underlined-title">SUPPORT</h4>
+                <h4>SUPPORT</h4>
                 <ul class="menu-support">
                     <li><a href="#">CUSTOMER SUPPORT</a></li>
                     <li><a href="#">SHIPPING & RETURNS</a></li>
                     <li><a href="#">PRIVACY POLICY</a></li>
                 </ul>
             </div>
-            <div class="sidebar-section">
-                <h4 class="underlined-title">COMMUNITY</h4>
-                <div class="community-box">
-                    <h5>ECO SHOPPER</h5>
-                    <p>A community of nature enthusiast who loves eco-product</p>
-                    <button class="join-btn">JOIN NOW &nbsp;&mdash;&nbsp; <span>It's Free</span></button>
-                </div>
+
+            <div class="sidebar-section community">
+                <h4>COMMUNITY</h4>
+                <h5>ECO SHOPPER</h5>
+                <p>A community of nature enthusiast who loves eco-product</p>
+                <button class="join-btn">JOIN NOW &mdash; It's Free</button>
             </div>
         </div>
-    </aside>
-
+    </nav>
     <header class="navbar">
         <div class="nav-left">
             <span class="hamburger" id="hamburger-btn">&#9776;</span>
@@ -76,36 +75,57 @@
             <a href="dashboard.html" class="icon"><i class="fa-regular fa-circle-user"></i></a>
         </div>
     </header>
-
   <main>
+
     <section class="product-hero" aria-labelledby="product-title">
       <div class="product-hero__title-wrap">
-        <h1 class="product-hero__title" id="product-title">Vely Herbal Soap Bar</h1>
+        <h1 class="product-hero__title" id="product-title">Nama produk</h1>
       </div>
     </section>
 
     <section class="product-images" aria-label="Product images">
       <div class="product-images__track" id="img-track" role="list">
         <div class="product-images__slide" role="listitem">
-          <img src="/assets/AssetFolderHCI-Lec/profile.png" alt="Product view 1" />
+          <img
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
+            alt="Product view 1"
+          />
         </div>
         <div class="product-images__slide" role="listitem">
-          <img src="/assets/AssetFolderHCI-Lec/profile.png" alt="Product view 2" />
+          <img
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
+            alt="Product view 2"
+          />
         </div>
         <div class="product-images__slide" role="listitem">
-          <img src="/assets/AssetFolderHCI-Lec/profile.png" alt="Product view 3" />
+          <img
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
+            alt="Product view 3"
+          />
         </div>
         <div class="product-images__slide" role="listitem">
-          <img src="/assets/AssetFolderHCI-Lec/profile.png" alt="Product view 4" />
+          <img
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
+            alt="Product view 4"
+          />
         </div>
         <div class="product-images__slide" role="listitem">
-          <img src="/assets/AssetFolderHCI-Lec/profile.png" alt="Product view 5" />
+          <img
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
+            alt="Product view 5"
+          />
         </div>
         <div class="product-images__slide" role="listitem">
-          <img src="/assets/AssetFolderHCI-Lec/profile.png" alt="Product view 6" />
+          <img
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
+            alt="Product view 6"
+          />
         </div>
         <div class="product-images__slide" role="listitem">
-          <img src="/assets/AssetFolderHCI-Lec/profile.png" alt="Product view 7" />
+          <img
+            src="/assets/AssetFolderHCI-Lec/image 4.jpg"
+            alt="Product view 7"
+          />
         </div>
       </div>
     <div class="product-images__nav">
@@ -122,13 +142,18 @@
     </div>
     </section>
 
+    <!-- ── PRODUCT INFO ──────────────────────────────────── -->
     <section class="product-info" aria-labelledby="product-info-heading">
       <h2 id="product-info-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden;">Product Details</h2>
 
+      <!-- Left col -->
       <div class="product-info__left">
+
+        <!-- Rating row -->
         <div class="product-info__row" style="align-items:center; gap:16px; flex-wrap:wrap;">
           <span class="product-info__label">rating:</span>
           <div class="stars" aria-label="4 out of 5 stars">
+            <!-- 4 filled stars -->
             <span class="stars__icon star-filled" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
             </span>
@@ -141,76 +166,108 @@
             <span class="stars__icon star-filled" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
             </span>
+            <!-- 1 half/empty star -->
             <span class="stars__icon star-empty" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#888"/></svg>
             </span>
           </div>
         </div>
 
+        <!-- Price row -->
         <div class="product-info__row">
           <span class="product-info__label">price :</span>
           <span class="product-info__value">Rp. 87.000,00</span>
         </div>
 
+        <!-- Materials row -->
         <div class="product-info__row" style="flex-direction:column; gap:4px; align-items:flex-start;">
           <span class="product-info__label">Materials:</span>
-          <p class="product-info__desc-text">Organic Coconut Oil, Sustainable Palm Oil, Olive Oil Extract, Shea Butter</p>
+          <p class="product-info__desc-text">Lorem ipsum dolor sit amet.</p>
         </div>
 
+        <!-- CTA buttons -->
         <div class="product-info__actions">
-            <button class="btn-add-cart" aria-label="Add to cart" id="btnCart"><a href="cart.html">ADD TO CART +</a></button>
-            <button class="btn-buy-now" aria-label="Buy now" id="btnBuy"><a href="checkout.html">BUY NOW</a></button>
+            <button class="btn-add-cart" aria-label="Add to cart" id="btnCart">ADD TO CART +</button>
+            <button class="btn-buy-now" aria-label="Buy now" id="btnBuy">BUY NOW</button>
         </div>
       </div>
 
+      <!-- Right col: Description -->
       <div class="product-info__right">
         <p class="product-info__desc-label">Desc:</p>
-        <p class="product-info__desc-body">Experience a refreshing and sustainable cleansing ritual with the Vely Herbal Soap Bar. Crafted using carefully selected natural ingredients, this soap effectively removes impurities while helping maintain your skin's natural moisture balance. The integrated hanging rope allows for easy storage and better drying, extending the life of the soap and reducing unnecessary waste.</p>
+        <p class="product-info__desc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </section>
 
+    <!-- ── VIDEO PLACEHOLDER ─────────────────────────────── -->
     <section class="product-video" aria-label="Product video">
     <div class="product-video__box" style="position: relative; overflow: hidden;">
+        
         <video id="my-product-video" width="100%" height="100%" controls style="object-fit: cover; display: block;">
         <source src="/assets/Proses Pembuatan Sabun Eco Enzyme.mp4" type="video/mp4">
         Browser kamu tidak mendukung pemutar video.
         </video>
+
     </div>
     </section>
 
+    <!-- ── SHOP / SELLER INFO ────────────────────────────── -->
     <section class="shop-info" aria-labelledby="shop-info-heading">
       <h2 id="shop-info-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden;">Seller Information</h2>
 
+      <!-- Shop card -->
       <article class="shop-card">
         <div class="shop-card__avatar">
-          <img src="/assets/toko organik.png" alt="Shop avatar" />
+          <img
+            src="/assets/toko organik.png"
+            alt="Shop avatar"
+          />
         </div>
         <p class="shop-card__name">Nama toko</p>
         <p class="shop-card__location">Lokasi</p>
         <button class="btn-visit" aria-label="Visit seller store">VISIT</button>
       </article>
 
+      <!-- Rating boxes -->
       <div class="rating-card">
         <div class="rating-box">
           <span class="rating-box__label">RATING:</span>
           <span class="rating-box__value">4/5</span>
         </div>
         <div class="rating-stars-box" aria-label="4 out of 5 stars rating">
-          <span class="star-lg star-filled" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg></span>
-          <span class="star-lg star-filled" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg></span>
-          <span class="star-lg star-filled" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg></span>
-          <span class="star-lg star-filled" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg></span>
-          <span class="star-lg star-empty" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#aaa"/></svg></span>
+          <!-- 4 filled large stars -->
+          <span class="star-lg star-filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+          </span>
+          <span class="star-lg star-filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+          </span>
+          <span class="star-lg star-filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+          </span>
+          <span class="star-lg star-filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+          </span>
+          <!-- 1 empty -->
+          <span class="star-lg star-empty" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#aaa"/></svg>
+          </span>
         </div>
       </div>
     </section>
 
+    <!-- ── CUSTOMERS RATING ──────────────────────────────── -->
     <section class="customers-rating" aria-labelledby="customers-heading">
       <h2 class="customers-rating__heading" id="customers-heading">Costumers Rating</h2>
       <p class="customers-rating__sub">What our costumers said about Our Products</p>
 
       <div class="customers-rating__track-wrap">
         <div class="customers-rating__track" role="list">
+
+          <!-- Seller card template — repeated -->
+          <!-- 1 -->
           <article class="seller-card" role="listitem">
             <div class="seller-card__avatar">
               <img src="https://img.magnific.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80" alt="EcoWeave Studios avatar" />
@@ -225,6 +282,24 @@
             </div>
             <p class="seller-card__desc">Specializing in zero-waste home textiles and circular fashion.</p>
           </article>
+
+          <!-- 2 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://www.perfocal.com/blog/content/images/size/w960/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg" alt="EcoWeave Studios avatar" />
+            </div>
+            <p class="seller-card__name">EcoWeave Studios</p>
+            <p class="seller-card__category">RECYCLED TEXTILES</p>
+            <div class="seller-card__rating" aria-label="4.9 out of 5, 1.2k reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">4.9 (1.2k)</span>
+            </div>
+            <p class="seller-card__desc">Specializing in zero-waste home textiles and circular fashion.</p>
+          </article>
+
+          <!-- 3 -->
           <article class="seller-card" role="listitem">
             <div class="seller-card__avatar">
               <img src="https://t3.ftcdn.net/jpg/06/99/46/60/360_F_699466075_DaPTBNlNQTOwwjkOiFEoOvzDV0ByXR9E.jpg" alt="PureRoot Labs avatar" />
@@ -239,29 +314,113 @@
             </div>
             <p class="seller-card__desc">Innovators in plant-based resins and biodegradable electronics.</p>
           </article>
+
+          <!-- 4 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://t4.ftcdn.net/jpg/04/31/64/75/360_F_431647519_usrbQ8Z983hTYe8zgA7t1XVc5fEtqcpa.jpg" alt="TimberSoul avatar" />
+            </div>
+            <p class="seller-card__name">TimberSoul</p>
+            <p class="seller-card__category">RECLAIMED FURNITURE</p>
+            <div class="seller-card__rating" aria-label="5.0 out of 5, 540 reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">5.0 (540)</span>
+            </div>
+            <p class="seller-card__desc">Master craftsmen turning urban salvaged timber into heirloom pieces.</p>
+          </article>
+
+          <!-- 5 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=" alt="Gaia Essentials avatar" />
+            </div>
+            <p class="seller-card__name">Gaia Essentials</p>
+            <p class="seller-card__category">ETHICAL APOTHECARY</p>
+            <div class="seller-card__rating" aria-label="4.9 out of 5, 2.1k reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">4.9 (2.1k)</span>
+            </div>
+            <p class="seller-card__desc">Clean beauty and skincare formulated with regenerative forest botanicals.</p>
+          </article>
+
+          <!-- 6 -->
+          <article class="seller-card" role="listitem">
+            <div class="seller-card__avatar">
+              <img src="https://media.easy-peasy.ai/4e600a82-8aac-4abb-95cd-f87cc9125a0f/18ea5802-d34e-4fbb-91e2-99baebb2eac9_medium.webp" alt="EcoWeave Studios avatar" />
+            </div>
+            <p class="seller-card__name">EcoWeave Studios</p>
+            <p class="seller-card__category">RECYCLED TEXTILES</p>
+            <div class="seller-card__rating" aria-label="4.9 out of 5, 1.2k reviews">
+              <span class="star-sm star-filled" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f9c74f"/></svg>
+              </span>
+              <span class="seller-card__rating-val">4.9 (1.2k)</span>
+            </div>
+            <p class="seller-card__desc">Specializing in zero-waste home textiles and circular fashion.</p>
+          </article>
+
         </div>
       </div>
     </section>
 
+    <!-- ── YOU MAY ALSO LIKE ──────────────────────────────── -->
     <section class="also-like" aria-labelledby="also-like-heading">
       <h2 class="also-like__heading" id="also-like-heading">YOU MAY ALSO LIKE THIS</h2>
+
+      <!-- Divider -->
       <div class="divider-line" style="margin-bottom:24px;"></div>
+
+      <!-- Fan carousel -->
       <div class="carousel-fan" aria-label="Related products image gallery">
         <div class="carousel-fan__track">
-          <div class="carousel-fan__item carousel-fan__item--xs"><img src="assets\AssetFolderHCI-Lec\Simple Daily Habits to Make Your Lifestyle More Eco-Friendly.jpg" alt="Related product 1" /></div>
-          <div class="carousel-fan__item carousel-fan__item--xs"><img src="assets\AssetFolderHCI-Lec\NewCatalog1.jpg" alt="Related product 2" /></div>
-          <div class="carousel-fan__item carousel-fan__item--xs"><img src="assets\AssetFolderHCI-Lec\Sustainability.jpg" alt="Related product 3" /></div>
-          <div class="carousel-fan__item carousel-fan__item--sm"><img src="assets\AssetFolderHCI-Lec\image 3.jpg" alt="Related product 4" /></div>
-          <div class="carousel-fan__item carousel-fan__item--md"><img src="assets\AssetFolderHCI-Lec\NewCatalog2.jpg" alt="Related product 5" /></div>
-          <div class="carousel-fan__item carousel-fan__item--lg"><img src="assets\AssetFolderHCI-Lec\Catalog1.jpeg" alt="Related product 6 – featured" /></div>
-          <div class="carousel-fan__item carousel-fan__item--md"><img src="assets\AssetFolderHCI-Lec\image 3.jpg" alt="Related product 7" /></div>
-          <div class="carousel-fan__item carousel-fan__item--sm"><img src="assets\AssetFolderHCI-Lec\unduhan (3).jpg" alt="Related product 8" /></div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="assets\AssetFolderHCI-Lec\Simple Daily Habits to Make Your Lifestyle More Eco-Friendly.jpg" alt="Related product 1" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="assets\AssetFolderHCI-Lec\NewCatalog1.jpg" alt="Related product 2" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="assets\AssetFolderHCI-Lec\Sustainability.jpg" alt="Related product 3" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--sm">
+            <img src="assets\AssetFolderHCI-Lec\image 3.jpg" alt="Related product 4" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--md">
+            <img src="assets\AssetFolderHCI-Lec\NewCatalog2.jpg" alt="Related product 5" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--lg">
+            <img src="assets\AssetFolderHCI-Lec\Catalog1.jpeg" alt="Related product 6 – featured" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--md">
+            <img src="assets\AssetFolderHCI-Lec\image 3.jpg" alt="Related product 7" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--sm">
+            <img src="assets\AssetFolderHCI-Lec\unduhan (3).jpg" alt="Related product 8" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="assets\AssetFolderHCI-Lec\image 1.jpg" alt="Related product 9" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="assets\AssetFolderHCI-Lec\image 3.jpg" alt="Related product 10" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="assets\AssetFolderHCI-Lec\image 4.jpg" alt="Related product 11" />
+          </div>
+          <div class="carousel-fan__item carousel-fan__item--xs">
+            <img src="assets\AssetFolderHCI-Lec\image 1.jpg" alt="Related product 12" />
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
     <footer class="main-footer">
+
       <div class="footer-top-header">
         <div class="footer-badge">
           <img src="" alt="">
@@ -270,15 +429,23 @@
       </div>
 
       <div class="footer-columns">
+
         <div class="footer-brand">
           <h2 class="footer-brand-name">ECOSHOP</h2>
           <p>A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
           <div class="brand-socials">
-            <a href="#" aria-label="Website"><img src="assets/Footer/Icon.png" alt=""></a>
-            <a href="#" aria-label="Email"><img src="assets/Footer/Icon-1.png" alt=""></a>
-            <a href="#" aria-label="Community"><img src="assets/Footer/Icon-2.png" alt=""></a>
+            <a href="#" aria-label="Website">
+              <img src="assets/Footer/Icon.png" alt="">
+            </a>
+            <a href="#" aria-label="Email">
+              <img src="assets/Footer/Icon-1.png" alt="">
+            </a>
+            <a href="#" aria-label="Community">
+              <img src="assets/Footer/Icon-2.png" alt="">
+            </a>
           </div>
         </div>
+
         <nav class="nav-column" aria-label="Marketplace">
           <h3>MARKETPLACE</h3>
           <ul>
@@ -287,6 +454,7 @@
             <li><a href="#">How it Works</a></li>
           </ul>
         </nav>
+
         <nav class="nav-column" aria-label="Support">
           <h3>SUPPORT</h3>
           <ul>
@@ -295,6 +463,7 @@
             <li><a href="#">Privacy Policy</a></li>
           </ul>
         </nav>
+
         <div class="footer-newsletter">
           <h3>STAY UPDATED</h3>
           <p>Join our newsletter for the latest ethical drops.</p>
@@ -303,87 +472,76 @@
             <button type="submit">JOIN</button>
           </form>
         </div>
+
       </div>
 
       <hr class="footer-divider" />
+
       <div class="footer-bottom-bar">
         <div class="bottom-socials">
-          <a href="#" aria-label="Instagram"><img src="assets/Footer/Clip path group.png" alt=""></a>
-          <a href="#" aria-label="Facebook"><img src="assets/Footer/Vector.png" alt=""></a>
-          <a href="#" aria-label="LinkedIn"><img src="assets/Footer/in.png" alt=""></a>
+          <a href="#" aria-label="Instagram">
+            <img src="assets/Footer/Clip path group.png" alt="">
+          </a>
+          <a href="#" aria-label="Facebook">
+            <img src="assets/Footer/Vector.png" alt="">
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <img src="assets/Footer/in.png" alt="">
+          </a>
         </div>
         <p class="copyright-text">&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
       </div>
+
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // 1. Sidebar Toggle Logic (Dari Catalog)
-            const hamburgerBtn = document.getElementById("hamburger-btn");
-            const sidebar = document.getElementById("sidebar");
-            const closeSidebarBtn = document.getElementById("close-sidebar");
-            const sidebarOverlay = document.getElementById("sidebar-overlay");
-            const navbar = document.querySelector('.navbar'); 
+        const hamburgerBtn = document.querySelector('.nav-left .hamburger');
+        const closeBtn = document.getElementById('close-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
 
-            function openSidebar() {
-                sidebar.classList.add("active");
-                sidebarOverlay.classList.add("active");
-                document.body.style.overflow = "hidden"; 
-            }
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
 
-            function closeSidebar() {
-                sidebar.classList.remove("active");
-                sidebarOverlay.classList.remove("active");
-                document.body.style.overflow = "auto";
-            }
+        hamburgerBtn.addEventListener('click', toggleSidebar);
+        closeBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
 
-            if(hamburgerBtn) hamburgerBtn.addEventListener("click", openSidebar);
-            if(closeSidebarBtn) closeSidebarBtn.addEventListener("click", closeSidebar);
-            if(sidebarOverlay) sidebarOverlay.addEventListener("click", closeSidebar);
+      const track = document.querySelector('.carousel-fan');
 
-            // 2. Navbar Scroll Logic (Dari Catalog)
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled'); 
-                }
-            });
+      if (track) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-            // 3. FITUR DRAG PAKAI MOUSE CAROUSEL (Sama persis seperti punya Anda)
-            const track = document.querySelector('.carousel-fan');
-
-            if (track) {
-                let isDown = false;
-                let startX;
-                let scrollLeft;
-
-                track.addEventListener('mousedown', (e) => {
-                    isDown = true;
-                    track.style.cursor = 'grabbing';
-                    startX = e.pageX - track.offsetLeft;
-                    scrollLeft = track.scrollLeft;
-                });
-
-                track.addEventListener('mouseleave', () => {
-                    isDown = false;
-                    track.style.cursor = 'grab';
-                });
-
-                track.addEventListener('mouseup', () => {
-                    isDown = false;
-                    track.style.cursor = 'grab';
-                });
-
-                track.addEventListener('mousemove', (e) => {
-                    if (!isDown) return;
-                    e.preventDefault();
-                    const x = e.pageX - track.offsetLeft;
-                    const walk = (x - startX) * 2; 
-                    track.scrollLeft = scrollLeft - walk;
-                });
-            }
+        // FITUR DRAG PAKAI MOUSE (Klik, Tahan, Geser Kanan-Kiri)
+        track.addEventListener('mousedown', (e) => {
+          isDown = true;
+          track.style.cursor = 'grabbing';
+          startX = e.pageX - track.offsetLeft;
+          scrollLeft = track.scrollLeft;
         });
+
+        track.addEventListener('mouseleave', () => {
+          isDown = false;
+          track.style.cursor = 'grab';
+        });
+
+        track.addEventListener('mouseup', () => {
+          isDown = false;
+          track.style.cursor = 'grab';
+        });
+
+        track.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - track.offsetLeft;
+          const walk = (x - startX) * 2; // Naikkan angka ini kalau berasa kurang cepat gesernya
+          track.scrollLeft = scrollLeft - walk;
+        });
+      }
     </script>
 </body>
 </html>

@@ -6,7 +6,6 @@ body {
   color: #392f27;
   overflow-x: hidden;
 }
-
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; border: none; background: none; font: inherit; }
@@ -26,7 +25,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   padding: 0 clamp(16px, 3vw, 40px); /* responsive horizontal padding */
   gap: 16px;
 }
-
 .header__hamburger {
   display: none;
   flex-direction: column;
@@ -206,11 +204,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .product-hero__title-wrap {
   text-align: left;
-  padding: 24px 100px 0;
+  padding: 40px 29px 0;
 }
 .product-hero__title {
   font-family: 'Koulen', sans-serif;
-  font-size: 55px;
+  font-size: 100px;
   letter-spacing: 13px;
   color: #ffffff;
   line-height: 1.35;
@@ -220,7 +218,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .product-images {
   background-color: #392f27;
-  padding: 24px 100px 0;
+  padding: 28px 29px 0;
   width: 100%;
   overflow: hidden; 
 }
@@ -258,7 +256,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* Navigasi Panah Melayang Fleksibel */
 .product-images__nav {
   position: absolute;
-  top: 65%;
+  top: 72%;
   left: 20px;
   right: 20px;
   transform: translateY(-50%);
@@ -300,14 +298,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ========================================================================== */
 .product-info {
   background-color: #392f27;
-  padding: 48px 100px 60px;
+  padding: 48px 29px 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px 60px;
 }
 .product-info__label {
   font-family: 'Koulen', sans-serif;
-  font-size: 25px;
+  font-size: 40px;
   letter-spacing: 0.8px;
   color: #ffffff;
   line-height: 1.809;
@@ -331,14 +329,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .product-info__value {
   font-family: 'Koulen', sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   color: #ffffff;
   line-height: 1.809;
   letter-spacing: 0.8px;
 }
 .product-info__desc-text {
   font-family: 'Inter', sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   color: #ffffff;
   line-height: normal;
 }
@@ -383,14 +381,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .product-info__desc-label {
   font-family: 'Koulen', sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   letter-spacing: 0.8px;
   color: #ffffff;
   line-height: 1.809;
 }
 .product-info__desc-body {
   font-family: 'Inter', sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   color: #ffffff;
   line-height: normal;
   white-space: pre-wrap;
@@ -401,7 +399,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ========================================================================== */
 .product-video {
   background-color: #392f27;
-  padding: 0 100px 60px;
+  padding: 0 62px 60px;
 }
 .product-video__box {
   background-color: #d9d9d9;
@@ -638,10 +636,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .also-like__heading {
   font-family: 'Koulen', sans-serif;
-  font-size: 50px;
+  font-size: 40px;
   color: #392f27;
   line-height: normal;
-  padding: 0 50px 29px;
+  padding: 0 29px;
   margin-bottom: 24px;
 }
 
@@ -653,7 +651,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   scroll-behavior: smooth;      /* Efek geser jadi halus */
   width: 100%;
   height: auto;                 /* Mengikuti tinggi item agar tidak terpotong */
-  padding: 10px 40px 24px;      /* Padding kiri-kanan disamakan dengan heading */
+  padding: 10px 29px 24px;      /* Padding kiri-kanan disamakan dengan heading */
   align-items: stretch;
   scroll-snap-type: x mandatory; 
   scrollbar-width: thin;                  /* Bikin scrollbar jadi tipis */
@@ -955,6 +953,7 @@ footer {
   .customers-rating__track { padding: 0 16px; }
   .also-like__heading { font-size: 28px; }
   
+  /* 🟢 Responsif Sempurna untuk "You May Also Like" di HP agar tidak kebesaran */
   .carousel-fan { 
     height: auto; 
     padding: 10px 16px 20px;
@@ -976,96 +975,4 @@ footer {
   .footer__newsletter-input { width: 100%; }
   .footer__newsletter-btn { position: static; }
   .footer__bottom { flex-direction: column; gap: 12px; }
-}
-/* =====================================================
-   RESPONSIVE — ≤ 539px (Mobile below 540px)
-   ===================================================== */
-@media (max-width: 539px) {
-  .product-hero__title-wrap { padding: 16px 16px 0; }
-  .product-hero__title {
-    font-size: 28px;
-    letter-spacing: 3px;
-  }
-
-  .product-images { padding: 14px 8px 0; }
-  .product-images__slide {
-    width: 220px;
-    height: 258px;
-    border-radius: 24px;
-  }
-  .product-images__arrow {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-  }
-  .product-images__arrow svg { width: 18px; height: 18px; }
-  .product-images__nav { left: 4px; right: 4px; }
-
-  .product-info {
-    padding: 24px 14px 32px;
-    gap: 16px;
-  }
-  .product-info__label { font-size: 18px; }
-  .product-info__value { font-size: 18px; }
-  .product-info__desc-text { font-size: 15px; }
-  .product-info__desc-body { font-size: 15px; }
-  .btn-add-cart, .btn-buy-now {
-    font-size: 20px;
-    height: 54px;
-    border-radius: 16px;
-  }
-
-  .product-video { padding: 0 8px 28px; }
-  .product-video__box {
-    height: 200px;
-    border-radius: 28px;
-    border-width: 6px;
-  }
-
-  .shop-info { padding: 24px 10px; gap: 16px; }
-  .shop-card { padding: 24px 18px; min-height: auto; }
-  .shop-card__name { font-size: 28px; letter-spacing: 4px; }
-  .shop-card__location { font-size: 22px; }
-  .btn-visit {
-    width: 100%;
-    max-width: 200px;
-    height: 56px;
-    font-size: 26px;
-  }
-  .shop-card__avatar { width: 110px; height: 110px; }
-
-  .rating-box {
-    padding: 14px 18px;
-    gap: 12px;
-  }
-  .rating-box__label, .rating-box__value { font-size: 24px; }
-  .rating-stars-box { padding: 14px 18px; gap: 8px; }
-  .star-lg { width: 36px; height: 36px; }
-
-  .customers-rating__heading {
-    font-size: 28px;
-    letter-spacing: 3px;
-  }
-  .customers-rating__sub { font-size: 14px; }
-  .customers-rating__track { gap: 20px; }
-  .seller-card { width: 240px; padding: 20px; }
-
-  .also-like { padding: 40px 0 24px; }
-  .also-like__heading {
-    font-size: 24px;
-    padding: 0 16px 16px;
-    margin-bottom: 16px;
-  }
-  .carousel-fan {
-    padding: 8px 14px 16px;
-    gap: 14px;
-  }
-  .carousel-fan__item {
-    flex: 0 0 190px;
-    height: 260px;
-    border-radius: 16px;
-  }
-
-  .footer__inner { padding: 32px 14px 16px; }
-  .footer__tagline { font-size: 16px; letter-spacing: 2px; }
 }
