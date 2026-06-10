@@ -47,13 +47,13 @@ h1,h2,h3,h4 {
 
 .dashboard-container {
     display:flex;
-    gap:18px;
+    gap:12px;
     padding:18px 20px;
     align-items:flex-start;
 }
 
 .sidebar {
-    width:245px;
+    width:320px;
     display:flex;
 }
 
@@ -128,13 +128,14 @@ h1,h2,h3,h4 {
     margin-top:18px;
 }
 
-.transactions{
+.transactions {
     flex:1;
     display:flex;
     flex-direction:column;
 }
 
 .transactions h3 {
+    color:#F4F1E8;
     padding:15px 0 15px 18px;
     border-top:1px solid white;
     border-bottom:1px solid white;
@@ -259,8 +260,17 @@ h1,h2,h3,h4 {
 }
 
 .stat {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
     padding:22px;
-    text-align:center;
+}
+
+.stat-info {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
 }
 
 .stat:not(:last-child) {
@@ -268,17 +278,20 @@ h1,h2,h3,h4 {
 }
 
 .stat h2 {
-    font-size:42px;
+    font-size:48px;
+    line-height:1;
+    margin:0;
 }
 
 .stat-icon {
-    width:46px;
-    height:46px;
+    width:75px;
+    height:75px;
     object-fit:contain;
     margin-bottom:8px;
 }
 
 .stat p {
+    margin-top:4px;
     color:#888;
 }
 
