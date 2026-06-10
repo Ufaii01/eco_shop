@@ -20,7 +20,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center; 
-  padding: 20px 40px; 
+  padding: 20px clamp(16px, 3vw, 40px); 
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -242,8 +242,9 @@ a {
     top: 0;
     left: 0;
     transform: translateX(-100%);
-    width: 320px;
-    height: 100vh;
+    width: min(320px, 85vw);    /* shrinks on narrow viewports & high zoom */
+    height: 100vh;              /* fallback */
+    height: 100dvh;             /* dynamic: accounts for mobile browser chrome */
     background-color: #38342e; 
     color: #fff;
     z-index: 1001;
@@ -414,7 +415,7 @@ a {
 
 /* Footer: 1 column below 540px */
 @media (max-width: 539px) {
-    .navbar { padding: 16px 20px; }
+    .navbar { padding: 14px 16px; }
     .footer { padding: 40px 20px 16px; }
     .footer-content {
         grid-template-columns: 1fr;
@@ -434,5 +435,5 @@ a {
         width: 100%;
     }
     .newsletter-form button { width: 100%; padding: 12px 20px; }
-    .sidebar { width: 280px; }
+    .sidebar { width: min(280px, 85vw); }
 }

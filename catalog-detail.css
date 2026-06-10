@@ -19,10 +19,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   background-color: #392f27;
-  height: 60px;
+  min-height: 60px;            /* was: height: 60px — won't clip icons when zoomed */
+  height: auto;
   display: flex;
   align-items: center;
-  padding: 0 40px; /* Diubah dari 20px agar sejajar konten bawah */
+  padding: 0 clamp(16px, 3vw, 40px); /* responsive horizontal padding */
   gap: 16px;
 }
 

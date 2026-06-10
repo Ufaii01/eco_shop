@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+/* ==================== ROOT VARIABLES ==================== */
+:root {
+    --nav-height: 68px;          /* approx height of .top-navbar — used by hero */
+    --hero-float: clamp(40px, 6.5vw, 100px); /* how far hero-left floats above card */
+}
+
 body {
     background-color: #f6f5ef;
     font-family: 'Inter', sans-serif;
@@ -15,7 +21,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 93px 19.7px 93px;
+    padding: 14px clamp(16px, 5vw, 93px);   /* responsive side padding */
     background-color: rgba(244, 241, 232, 0.97);
     position: fixed;
     top: 0;
@@ -30,17 +36,140 @@ body {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.09);
 }
 
+/* ── Hamburger button (hidden on desktop, shown on mobile) ── */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    color: #392F27;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+/* ── Mobile nav overlay (dark backdrop) ── */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.50);
+    z-index: 98;
+    transition: opacity 0.3s ease;
+}
+.mobile-nav-overlay.visible {
+    display: block;
+}
+
+/* ── Mobile nav drawer ── */
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(300px, 85vw);   /* shrinks when zoomed in */
+    height: 100vh;
+    height: 100dvh;            /* dynamic — avoids iOS address-bar overflow */
+    background-color: #392F27;
+    color: #fff;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 32px 28px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+.mobile-nav-drawer.open {
+    transform: translateX(0);
+}
+
+.mobile-nav-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 32px;
+    padding: 4px;
+    line-height: 1;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+}
+.mobile-nav-links li {
+    margin-bottom: 22px;
+}
+.mobile-nav-links li a {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.mobile-nav-links li a:hover {
+    opacity: 0.7;
+}
+
+.mobile-nav-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.mobile-login-btn {
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.50);
+    padding: 11px 20px;
+    border-radius: 40px;
+    transition: border-color 0.2s;
+}
+.mobile-login-btn:hover {
+    border-color: #fff;
+}
+.mobile-signup-btn {
+    display: block;
+    text-align: center;
+    color: #392F27;
+    background: #f6f5ef;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 40px;
+    transition: background 0.2s;
+}
+.mobile-signup-btn:hover {
+    background: #fff;
+}
+
 .logo {
     font-family: 'Koulen', sans-serif;
-    font-size: 36px;
-    letter-spacing: 13%;
+    font-size: clamp(22px, 2.8vw, 36px);   /* was: fixed 36px — now scales with viewport */
+    letter-spacing: clamp(2px, 0.7vw, 6px);
     color: #392F27;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .menu {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: clamp(8px, 1.2vw, 18px);   /* was: fixed 18px */
     list-style: none;
 }
 
@@ -48,8 +177,9 @@ body {
     text-decoration: none;
     color: #392F27;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: clamp(12px, 1.1vw, 16px);   /* was: fixed 16px */
     font-weight: 600;
+    white-space: nowrap;
     position: relative;
     display: inline-block;
     transition: transform 0.2s ease;
@@ -77,13 +207,15 @@ body {
 }
 
 .dot {
-    font-size: 20px;
+    font-size: clamp(14px, 1.3vw, 20px);   /* was: fixed 20px */
+    flex-shrink: 0;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: clamp(8px, 1.2vw, 18px);   /* was: fixed 18px */
+    flex-shrink: 0;
 }
 
 .user-icon img {
@@ -104,8 +236,9 @@ body {
     text-decoration: none;
     color: #392F27;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: clamp(12px, 1.1vw, 16px);   /* was: fixed 16px */
     font-weight: 600;
+    white-space: nowrap;
     position: relative;
     display: inline-block;
     transition: transform 0.2s ease;
@@ -135,30 +268,32 @@ body {
 .signup-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: clamp(6px, 0.7vw, 10px);         /* was: fixed 10px */
     border: 4px solid #392F27;
     border-radius: 65.5px;
-    padding: 10px 20px;
+    padding: clamp(7px, 0.8vw, 10px) clamp(12px, 1.3vw, 20px);  /* was: fixed 10px 20px */
+    white-space: nowrap;
 }
 
 .signup-line {
-    width: 16px;
+    width: clamp(10px, 1vw, 16px);        /* was: fixed 16px */
     height: 3px;
     background-color: #392F27;
     border-radius: 999px;
+    flex-shrink: 0;
 }
 
 .signup-text {
     text-decoration: none;
     color: #392F27;
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: clamp(10px, 0.85vw, 13px); /* was: fixed 13px */
     font-weight: 700;
 }
 
 .signup-container span {
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: clamp(10px, 0.85vw, 13px); /* was: fixed 13px */
     font-weight: 400;
 }
 
@@ -168,24 +303,30 @@ body {
 
 /* ==================== HERO SECTION ==================== */
 .hero {
-    padding: 20px 24px;
-    padding-top: 100px; 
+    /* 
+     * padding-top = navbar height + breathing room + float offset
+     * var(--hero-float) creates space above the card for the hero-left text to float into.
+     * This is coordinated with hero-left's margin-top below.
+     */
+    padding-top: calc(var(--nav-height) + var(--hero-float) + clamp(16px, 2vw, 32px));
+    padding-right: clamp(12px, 2.5vw, 24px);
+    padding-bottom: clamp(16px, 2vw, 20px);
+    padding-left: clamp(12px, 2.5vw, 24px);
 }
 
 .hero-content {
     background-color: #392F27;
-    border-radius: 74px;
+    border-radius: clamp(32px, 5vw, 74px);   /* scales with viewport */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 96px;
-    padding-left: 103px;
-    padding-right: 99px;
-    padding-top: 96px;
-    width: 100%; /* Diubah agar menyesuaikan layar */
-    max-width: 1393px; /* Maksimal lebarnya agar tidak terlalu ditarik di monitor besar */
-    box-sizing: border-box; /* Memastikan padding tidak membuat elemen melebihi layar */
-    height: auto; /* Biarkan height otomatis, bukan fix 733px */
+    padding: clamp(48px, 6.5vw, 96px) clamp(32px, 7.5vw, 103px);
+    width: 100%;
+    max-width: 1393px;
+    margin: 0 auto;                           /* centre on wide screens */
+    box-sizing: border-box;
+    min-height: clamp(360px, 50vh, 580px);    /* stays tall enough at any zoom */
+    gap: 24px;
 }
 
 .hero-left {
@@ -193,7 +334,12 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    top: -100px;
+    /*
+     * Pull the left column UP by var(--hero-float) so it "floats"
+     * into the space we reserved in hero's padding-top above.
+     * Uses the same variable → always coordinated, never overlaps navbar.
+     */
+    margin-top: calc(-1 * var(--hero-float));
 }
 
 .hero-left h1 {
@@ -208,9 +354,8 @@ body {
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
     font-size: 17px;
-    line-height: normal;
+    line-height: 1.6;
     max-width: 500px;
-    max-height: 96px;
     margin-bottom: 40px;
 }
 
@@ -273,9 +418,12 @@ body {
 }
 
 .hero-right img {
-    width: 367px;
-    height: 541px;
+    width: clamp(200px, 26vw, 367px);  /* scales with viewport */
+    height: auto;
+    aspect-ratio: 367 / 541;           /* maintains proportion */
     border-radius: 40px;
+    object-fit: cover;
+    display: block;
 }
 
 /* ==================== BRANDS SECTION ==================== */
@@ -687,15 +835,116 @@ body {
 }
 
 /* ==================== MEDIA QUERIES (RESPONSIVE) ==================== */
+
+/* ── Tablet: 769px – 1100px ─────────────────────────────── */
+@media (max-width: 1100px) {
+    /* Hero */
+    .hero-left h1 { font-size: 52px; }
+    .social-media { display: none; }              /* hide the thin middle column */
+
+    /* Mid-nav: drop signup pill & divider before they overflow */
+    .signup-container { display: none; }
+    .divider { display: none; }
+}
+
+/* ── Mobile: ≤ 768px ─────────────────────────────────────── */
 @media (max-width: 768px) {
-    .slide-left { transform: translateX(-120px) scale(0.85); }
-    .slide-right { transform: translateX(120px) scale(0.85); }
-    .slide-item { width: 160px; height: 240px; }
-    .step-arrow { transform: rotate(90deg); margin: 10px 0; }
-    .process-steps { flex-direction: column; gap: 10px; }
-    .main-content-card { margin: 0 20px; padding: 40px 10px; }
-    
-    .trust-grid {
-        grid-template-columns: repeat(2, 1fr); /* Penyesuaian trust badges di mobile */
+
+    /* — Navbar — */
+    .hamburger-btn { display: block; }
+    .menu, .nav-right { display: none; }
+
+    /* — Hero — */
+    .hero {
+        /* On mobile the float effect is removed — card stacks normally below navbar */
+        padding-top: calc(var(--nav-height) + clamp(16px, 4vw, 28px));
+        padding-right: 14px;
+        padding-bottom: 24px;
+        padding-left: 14px;
     }
+
+    .hero-content {
+        flex-direction: column;          /* stack: text → image */
+        align-items: center;
+        text-align: center;
+        padding: 36px 24px 44px;
+        border-radius: 32px;
+        gap: 28px;
+        min-height: unset;               /* let content determine height on mobile */
+    }
+
+    .hero-left {
+        margin-top: 0;                   /* remove the float offset on mobile */
+        align-items: center;
+    }
+
+    .hero-left h1 {
+        font-size: 44px;
+        letter-spacing: 3px;
+    }
+
+    .hero-left p {
+        font-size: 15px;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .social-media { display: none; }
+
+    .hero-right img {
+        width: min(260px, 70vw);         /* fill up to 70 % of screen width */
+        border-radius: 24px;
+    }
+
+    /* — Slider — */
+    .slider-container { height: 320px; margin-top: 60px; }
+    .slide-item       { width: 160px;  height: 240px; }
+    .slide-left       { transform: translateX(-120px) scale(0.85); }
+    .slide-right      { transform: translateX(120px)  scale(0.85); }
+
+    /* — How It Works — */
+    .step-arrow    { transform: rotate(90deg); margin: 10px 0; }
+    .process-steps { flex-direction: column; gap: 10px; }
+
+    /* — Main card — */
+    .main-content-card {
+        margin: 60px 14px 40px;          /* was: 150px auto — far too large */
+        padding: 32px 20px;
+        border-radius: 24px;
+    }
+
+    /* — Trust grid — */
+    .trust-grid    { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .trust-badges  { padding: 32px 20px 40px; }
+}
+
+/* ── Small mobile: ≤ 480px ───────────────────────────────── */
+@media (max-width: 480px) {
+    .hero {
+        padding-top: calc(var(--nav-height) + 14px);
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 20px;
+    }
+
+    .hero-left { margin-top: 0; }
+
+    .hero-content {
+        padding: 28px 16px 36px;
+        border-radius: 20px;
+    }
+
+    .hero-left h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    .hero-left p { font-size: 13px; }
+
+    .hero-right img { width: min(200px, 65vw); }
+
+    .shop-btn { width: 100%; justify-content: space-between; }
+
+    /* Trust: single column on very narrow screens */
+    .trust-grid { grid-template-columns: 1fr; }
 }
