@@ -894,7 +894,6 @@ footer {
   .customers-rating__track { padding: 0 16px; }
   .also-like__heading { font-size: 28px; }
   
-  /* 🟢 Responsif Sempurna untuk "You May Also Like" di HP agar tidak kebesaran */
   .carousel-fan { 
     height: auto; 
     padding: 10px 16px 20px;
