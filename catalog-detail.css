@@ -120,6 +120,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: #ffffff;
   transition: color 0.35s ease;
 }
+/* Ensure anchor tags inside logo inherit the animated color */
+.navbar .logo a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.35s ease;
+}
 .navbar .logo span {
   color: rgba(255, 255, 255, 0.60);
   transition: color 0.35s ease;
@@ -141,7 +147,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .nav-right .icon:hover { opacity: 1; }
 
-/* Scrolled: dark text/icons over white background */
+/* Scrolled: dark text/icons over solid warm-white background */
+.navbar.scrolled {
+  background-color: #faf9ed;
+  box-shadow: 0 2px 20px rgba(57, 47, 39, 0.12);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
 .navbar.scrolled .logo {
   color: #392f27;
 }
@@ -150,9 +162,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .navbar.scrolled .nav-left .hamburger {
   color: #392f27;
+  opacity: 1;
 }
 .navbar.scrolled .nav-right .icon {
-  color: #392f27;           /* dark over white scrolled bg */
+  color: #392f27;           /* dark over light scrolled bg */
   opacity: 1;
 }
 .header__mobile-nav {

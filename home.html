@@ -7,13 +7,16 @@
 
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="footer.css">
+    <script src="navbar-scroll.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Koulen&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <nav class="top-navbar">
+        <button class="hamburger-btn" id="home-hamburger" aria-label="Open menu">&#9776;</button>
+
         <div class="logo">ECOSHOP</div>
 
         <ul class="menu">
@@ -40,6 +43,41 @@
             </div>
         </div>
     </nav>
+
+    <!-- Mobile menu drawer -->
+    <div class="mobile-nav-overlay" id="home-overlay"></div>
+    <div class="mobile-nav-drawer" id="home-drawer">
+        <button class="mobile-nav-close" id="home-drawer-close">&#10005;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="catalog.html">SHOP</a></li>
+            <li><a href="#">DASHBOARD</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="Login.HTML" class="mobile-login-btn">Log In</a>
+            <a href="Register.HTML" class="mobile-signup-btn">SIGN IN NOW — It's Free</a>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('home-hamburger');
+        const drawer = document.getElementById('home-drawer');
+        const overlay = document.getElementById('home-overlay');
+        const closeBtn = document.getElementById('home-drawer-close');
+        function openDrawer() {
+            drawer.classList.add('open');
+            overlay.classList.add('visible');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeDrawer() {
+            drawer.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        hamburger.addEventListener('click', openDrawer);
+        closeBtn.addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', closeDrawer);
+    </script>
 
     <section class="hero">
         <div class="hero-content">

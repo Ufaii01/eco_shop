@@ -651,13 +651,140 @@ body {
     line-height: 1.4;
 }
 
-/* Responsive Overrides */
+/* Hamburger button — hidden on desktop, shown on mobile */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #392F27;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+    order: -1; /* Appears before logo */
+}
+
+/* ── Mobile Nav Drawer ─────────────────────────────── */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.mobile-nav-overlay.visible {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: min(300px, 85vw);
+    height: 100dvh;
+    background: #392F27;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 32px 40px;
+    transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+.mobile-nav-drawer.open {
+    left: 0;
+}
+
+.mobile-nav-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: #F4F1E8;
+    font-size: 22px;
+    cursor: pointer;
+    margin-bottom: 32px;
+    padding: 4px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+.mobile-nav-close:hover { opacity: 1; }
+
+.mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+}
+.mobile-nav-links li {
+    border-bottom: 1px solid rgba(244, 241, 232, 0.15);
+}
+.mobile-nav-links a {
+    display: block;
+    padding: 18px 0;
+    color: #F4F1E8;
+    font-family: 'Koulen', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.mobile-nav-links a:hover { opacity: 0.7; }
+
+.mobile-nav-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 36px;
+}
+.mobile-login-btn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    color: #F4F1E8;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    border: 2px solid rgba(244, 241, 232, 0.4);
+    border-radius: 40px;
+    transition: background 0.2s;
+}
+.mobile-login-btn:hover { background: rgba(244, 241, 232, 0.1); }
+
+.mobile-signup-btn {
+    display: block;
+    text-align: center;
+    padding: 14px 20px;
+    background: #F4F1E8;
+    color: #392F27;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 40px;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+}
+.mobile-signup-btn:hover { opacity: 0.85; }
+
+/* ── Responsive Overrides ──────────────────────────── */
 @media (max-width: 1024px) {
     .top-navbar {
         padding: 16px 40px;
     }
+    .hamburger-btn { display: block; }
     .menu { display: none; }
     .signup-container { display: none; }
+    .login { display: none; }
+    .user-icon { display: none; }
+    .divider { display: none; }
+    /* Center logo when hamburger is visible */
+    .top-navbar {
+        justify-content: space-between;
+    }
 
     .hero-content {
         flex-direction: column;
@@ -706,7 +833,6 @@ body {
     .top-navbar {
         padding: 14px 20px;
     }
-    .login { display: none; }
 
     .hero {
         padding: 12px;
