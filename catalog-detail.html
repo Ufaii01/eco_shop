@@ -505,42 +505,40 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
         hamburgerBtn.addEventListener('click', toggleSidebar);
         closeBtn.addEventListener('click', toggleSidebar);
         overlay.addEventListener('click', toggleSidebar);
-    </script>
 
-    <script>
- const track = document.querySelector('.carousel-fan');
+      const track = document.querySelector('.carousel-fan');
 
-  if (track) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+      if (track) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-    // FITUR DRAG PAKAI MOUSE (Klik, Tahan, Geser Kanan-Kiri)
-    track.addEventListener('mousedown', (e) => {
-      isDown = true;
-      track.style.cursor = 'grabbing';
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-    });
+        // FITUR DRAG PAKAI MOUSE (Klik, Tahan, Geser Kanan-Kiri)
+        track.addEventListener('mousedown', (e) => {
+          isDown = true;
+          track.style.cursor = 'grabbing';
+          startX = e.pageX - track.offsetLeft;
+          scrollLeft = track.scrollLeft;
+        });
 
-    track.addEventListener('mouseleave', () => {
-      isDown = false;
-      track.style.cursor = 'grab';
-    });
+        track.addEventListener('mouseleave', () => {
+          isDown = false;
+          track.style.cursor = 'grab';
+        });
 
-    track.addEventListener('mouseup', () => {
-      isDown = false;
-      track.style.cursor = 'grab';
-    });
+        track.addEventListener('mouseup', () => {
+          isDown = false;
+          track.style.cursor = 'grab';
+        });
 
-    track.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 2; // Naikkan angka ini kalau berasa kurang cepat gesernya
-      track.scrollLeft = scrollLeft - walk;
-    });
-  }
+        track.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - track.offsetLeft;
+          const walk = (x - startX) * 2; // Naikkan angka ini kalau berasa kurang cepat gesernya
+          track.scrollLeft = scrollLeft - walk;
+        });
+      }
     </script>
 </body>
 </html>
