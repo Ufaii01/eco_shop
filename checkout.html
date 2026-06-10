@@ -27,12 +27,11 @@
           <div class="sidebar-section">
               <h4 class="underlined-title">PAGE</h4>
               <ul class="menu-page">
-                  <li><a href="index.html">HOME</a></li>
-                  <li><a href="#">PROFILE</a></li>
-                  <li><a href="catalog.html">PRODUCT CATALOG</a></li>
-                  <li><a href="dashboard.html">DASHBOARD</a></li>
-                  <li><a href="cart.html">CART</a></li>
-                  <li><a href="checkout.html">CHECKOUT</a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="catalog.html">CATALOG</a></li>
+                <li><a href="dashboard.html">DASHBOARD</a></li>
+                <li><a href="cart.html">CART</a></li>
+                <li><a href="checkout.html" class="active-link">CHECKOUT</a></li>
               </ul>
           </div>
 
@@ -75,13 +74,6 @@
   </header>
 
   <main class="checkout-container">
-    
-    <nav class="breadcrumb">
-      <a href="index.html" class="breadcrumb__link">ECOSHOP</a> /
-      <a href="catalog.html" class="breadcrumb__link">CATALOG</a> /
-      <span class="breadcrumb__current">CHECKOUT</span>
-    </nav>
-
     <header class="header">
       <h1 class="header__title title-font">CHECKOUT</h1>
       <p class="header__subtitle">
@@ -169,7 +161,7 @@
           </div>
 
           <button type="button" class="checkout-btn" id="btn-checkout">
-            Check Out 🛒
+            Check Out 
           </button>
         </form>
 
@@ -263,7 +255,6 @@
 
   <script src="checkout.js"></script>
   <script>
-    // Logika buka-tutup Sidebar
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const closeBtn = document.getElementById('close-btn');
     const sidebar = document.getElementById('sidebar');

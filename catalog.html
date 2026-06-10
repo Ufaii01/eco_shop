@@ -24,8 +24,7 @@
                 <h4 class="underlined-title">PAGE</h4>
                 <ul>
                     <li><a href="index.html">HOME</a></li>
-                    <li><a href="profile.html">PROFILE</a></li>
-                    <li><a href="catalog.html" class="active-link">PRODUCT CATALOG</a></li>
+                    <li><a href="catalog.html" class="active-link">CATALOG</a></li>
                     <li><a href="dashboard.html">DASHBOARD</a></li>
                     <li><a href="cart.html">CART</a></li>
                     <li><a href="checkout.html">CHECKOUT</a></li>
@@ -65,8 +64,8 @@
         </div>
         <div class="nav-right">
             <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
-            <span class="icon"><i class="fa-regular fa-circle-user"></i></span>
+            <a href="cart.html" class="icon"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="dashboard.html" class="icon"><i class="fa-regular fa-circle-user"></i></a>
         </div>
     </header>
 
@@ -74,7 +73,7 @@
         <img src="assets/AssetFolderHCI-Lec/Sustainable Catering_ How to Reduce Waste and…_imgupscaler.ai_Beta_2K.jpg" alt="Hero Image" class="hero-bg">
         
         <div class="hero-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Explore our curated catalog of sustainable products designed to support a greener lifestyle. From reusable essentials to eco-conscious innovations, every item is selected with care for you and the planet.</p>
         </div>
     </section>
 
@@ -401,6 +400,16 @@
             if(hamburgerBtn) hamburgerBtn.addEventListener("click", openSidebar);
             if(closeSidebarBtn) closeSidebarBtn.addEventListener("click", closeSidebar);
             if(sidebarOverlay) sidebarOverlay.addEventListener("click", closeSidebar);
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbar = document.querySelector('.navbar'); 
+            window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled'); 
+            }
+            });
         });
     </script>
 </body>

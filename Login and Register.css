@@ -667,18 +667,33 @@ a {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 540px) {
   .main-footer {
-    padding: 56px 24px 32px;
+    padding: 56px 20px 32px;
   }
 
   .footer-tagline {
-    font-size: 22px;
-    letter-spacing: 3px;
+    font-size: 20px;
+    letter-spacing: 2px;
   }
 
   .social-auth {
     flex-direction: column;
+  }
+
+  .auth-wrapper {
+    padding: 24px 14px;
+    gap: 24px;
+  }
+
+  .hero-banner {
+    min-height: 280px;
+    padding: 32px 24px;
+    border-radius: 36px;
+  }
+
+  .page-container {
+    gap: 48px;
   }
 }
 

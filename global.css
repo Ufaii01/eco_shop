@@ -16,25 +16,28 @@ a {
     color: inherit;
 }
 
-/* NAVBAR (Global) */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 50;
-    transition: background-color 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 20px 40px; 
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: transparent; 
+  backdrop-filter: none; 
+  -webkit-backdrop-filter: none; 
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Navbar scrolled state — white background, readable over any content */
 .navbar.scrolled {
-    background-color: #ffffff;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.10);
+  background-color: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 }
 
 .nav-left {
@@ -71,7 +74,6 @@ a {
     cursor: pointer;
 }
 
-/* FOOTER (Global) */
 .footer {
     position: relative;
     background-color: #0c140d; /* Very dark green/black */
@@ -216,26 +218,24 @@ a {
     color: #777;
 }
 
-/* --- SIDEBAR & OVERLAY CSS --- */
-.overlay {
+.sidebar-overlay { 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Gelap transparan */
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
-    z-index: 99;
+    z-index: 1000; 
 }
 
-.overlay.active {
+.sidebar-overlay.active {
     opacity: 1;
     visibility: visible;
 }
 
-/* --- SIDEBAR CONTAINER --- */
 .sidebar {
     position: fixed;
     top: 0;
@@ -243,9 +243,9 @@ a {
     transform: translateX(-100%);
     width: 320px;
     height: 100vh;
-    background-color: #38342e; /* Cokelat tua persis gambar */
+    background-color: #38342e; 
     color: #fff;
-    z-index: 100;
+    z-index: 1001;
     overflow-y: auto;
     transition: transform 0.3s ease-in-out;
     padding: 40px 0;
@@ -389,12 +389,49 @@ a {
     background-color: #e2e0d7;
 }
 
-@media (max-width: 900px) {
+/* Footer: 2 columns between 540px–900px */
+@media (min-width: 540px) and (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        gap: 24px;
+    }
+    .brand-col h3 { justify-content: center; }
+    .newsletter-form {
+        flex-direction: column;
+        background: none;
+        gap: 10px;
+        align-items: center;
+    }
+    .newsletter-form input {
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        width: 100%;
+    }
+    .newsletter-form button { width: 100%; padding: 12px 20px; }
+}
+
+/* Footer: 1 column below 540px */
+@media (max-width: 539px) {
+    .navbar { padding: 16px 20px; }
+    .footer { padding: 40px 20px 16px; }
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 28px;
     }
-    .brand-col h3 {
-        justify-content: center;
+    .brand-col h3 { justify-content: center; }
+    .newsletter-form {
+        flex-direction: column;
+        background: none;
+        gap: 10px;
+        align-items: center;
     }
+    .newsletter-form input {
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        width: 100%;
+    }
+    .newsletter-form button { width: 100%; padding: 12px 20px; }
+    .sidebar { width: 280px; }
 }
