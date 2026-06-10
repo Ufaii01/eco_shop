@@ -108,6 +108,53 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   margin-left: 24px;
 }
 .header__icons svg { width: 20px; height: 20px; fill: #faf9ed; opacity: 0.85; }
+
+/* ==========================================================================
+   NAVBAR COLORS — catalog-detail page starts over dark #392f27 background
+   ========================================================================== */
+
+/* Default: white logo, hamburger, and PNG icons (via filter) */
+.navbar .logo {
+  color: #ffffff;
+  transition: color 0.35s ease;
+}
+.navbar .logo span {
+  color: rgba(255, 255, 255, 0.60);
+  transition: color 0.35s ease;
+}
+.nav-left .hamburger {
+  color: #ffffff;
+  font-size: 24px;
+  opacity: 0.9;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.35s ease, opacity 0.2s;
+}
+.nav-left .hamburger:hover { opacity: 1; }
+
+.nav-right .icon img {
+  filter: brightness(0) invert(1); /* turns PNG icons white */
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: filter 0.35s ease, opacity 0.2s;
+}
+.nav-right .icon:hover img { opacity: 1; }
+
+/* Scrolled: dark text/icons over white background */
+.navbar.scrolled .logo {
+  color: #392f27;
+}
+.navbar.scrolled .logo span {
+  color: rgba(57, 47, 39, 0.55);
+}
+.navbar.scrolled .nav-left .hamburger {
+  color: #392f27;
+}
+.navbar.scrolled .nav-right .icon img {
+  filter: brightness(0); /* restores original dark PNG color */
+}
 .header__mobile-nav {
   display: none;
   flex-direction: column;

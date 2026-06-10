@@ -323,3 +323,20 @@
         font-size: 12px;
     }
 }
+/* ==========================================================================
+   NAVBAR COLORS — cart page starts over light background
+   ========================================================================== */
+
+/* Default: dark text/icons (always readable on light bg) */
+.navbar .hamburger {
+    color: #2c2a27;
+    transition: color 0.35s ease;
+}
+.navbar .logo-text strong {
+    transition: color 0.35s ease;
+}
+
+/* Scrolled: same dark text, white background added by global.css */
+.navbar.scrolled .hamburger {
+    color: #2c2a27;
+}
