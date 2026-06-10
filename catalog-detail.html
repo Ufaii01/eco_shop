@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoShop – Nama Produk</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="catalog-detail.js" defer></script>
   <link rel="stylesheet" href="catalog-detail.css">
   <link rel="stylesheet" href="global2.css">
@@ -542,6 +543,34 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
           track.scrollLeft = scrollLeft - walk;
         });
       }
+
+          const trackImages = document.getElementById('img-track');
+    const btnLeft = document.querySelector('.product-images__arrow--left');
+    const btnRight = document.querySelector('.product-images__arrow--right');
+
+    if (trackImages && btnLeft && btnRight) {
+        // Fungsi menghitung jarak geser (lebar 1 gambar + jarak antar gambar)
+        const getScrollAmount = () => {
+            const slide = trackImages.querySelector('.product-images__slide');
+            return slide ? slide.getBoundingClientRect().width + 18 : 500;
+        };
+
+        // Klik panah kanan
+        btnRight.addEventListener('click', function() {
+            trackImages.scrollBy({
+                left: getScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+
+        // Klik panah kiri
+        btnLeft.addEventListener('click', function() {
+            trackImages.scrollBy({
+                left: -getScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+    }
     </script>
 </body>
 </html>
