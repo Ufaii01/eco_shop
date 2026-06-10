@@ -132,15 +132,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .nav-left .hamburger:hover { opacity: 1; }
 
-.nav-right .icon img {
-  filter: brightness(0) invert(1); /* turns PNG icons white */
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+.nav-right .icon {
+  color: #ffffff;           /* white over dark hero */
   opacity: 0.9;
-  transition: filter 0.35s ease, opacity 0.2s;
+  transition: color 0.35s ease, opacity 0.2s;
 }
-.nav-right .icon:hover img { opacity: 1; }
+.nav-right .icon:hover { opacity: 1; }
 
 /* Scrolled: dark text/icons over white background */
 .navbar.scrolled .logo {
@@ -152,8 +149,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .navbar.scrolled .nav-left .hamburger {
   color: #392f27;
 }
-.navbar.scrolled .nav-right .icon img {
-  filter: brightness(0); /* restores original dark PNG color */
+.navbar.scrolled .nav-right .icon {
+  color: #392f27;           /* dark over white scrolled bg */
+  opacity: 1;
 }
 .header__mobile-nav {
   display: none;
