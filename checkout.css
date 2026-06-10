@@ -386,3 +386,29 @@ input {
   .form-row { grid-template-columns: 1fr; }
   .payment-methods { grid-template-columns: 1fr; }
 }
+/* ==========================================================================
+   NAVBAR COLORS — checkout page starts over light #FAF7F2 background
+   ========================================================================== */
+
+/* Default: dark text (always readable on light bg) */
+.navbar .logo {
+  color: #3B2A1A;
+  transition: color 0.35s ease;
+}
+.navbar .logo span {
+  color: rgba(59, 42, 26, 0.60);
+  transition: color 0.35s ease;
+}
+.navbar .hamburger {
+  color: #3B2A1A;
+  transition: color 0.35s ease;
+}
+.navbar .nav-right .icon {
+  color: #3B2A1A;
+  transition: color 0.35s ease;
+}
+
+/* Scrolled: same dark text, white background added by global.css */
+.navbar.scrolled .logo   { color: #3B2A1A; }
+.navbar.scrolled .hamburger { color: #3B2A1A; }
+.navbar.scrolled .nav-right .icon { color: #3B2A1A; }

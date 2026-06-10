@@ -343,3 +343,38 @@
         padding: 5px 10px;
     }
 }
+/* ==========================================================================
+   NAVBAR COLORS — catalog page starts over a dark hero image
+   ========================================================================== */
+
+/* Default: white text/icons over dark hero */
+.navbar .logo {
+    color: #ffffff;
+    transition: color 0.35s ease;
+}
+.navbar .logo span {
+    color: rgba(255, 255, 255, 0.65);
+    transition: color 0.35s ease;
+}
+.navbar .hamburger {
+    color: #ffffff;
+    transition: color 0.35s ease;
+}
+.navbar .nav-right .icon {
+    color: #ffffff;
+    transition: color 0.35s ease;
+}
+
+/* Scrolled: dark text over white background */
+.navbar.scrolled .logo {
+    color: #3b322a;
+}
+.navbar.scrolled .logo span {
+    color: rgba(59, 50, 42, 0.60);
+}
+.navbar.scrolled .hamburger {
+    color: #3b322a;
+}
+.navbar.scrolled .nav-right .icon {
+    color: #3b322a;
+}
