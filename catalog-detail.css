@@ -376,7 +376,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .product-info__desc-body {
   font-family: 'Inter', sans-serif;
-  font-size: 40px;
+  font-size: 20px;
   color: #ffffff;
   line-height: normal;
   white-space: pre-wrap;
