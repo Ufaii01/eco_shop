@@ -30,9 +30,9 @@ input {
 
 .checkout-container {
   max-width: 1200px;
-  /* Margin top dikasih jarak biar gak numpuk di bawah Navbar */
   margin: 100px auto 40px; 
-  padding: 40px;
+  padding: 20px;
+  padding-top: -40px;
 }
 
 .breadcrumb {
@@ -386,11 +386,7 @@ input {
   .form-row { grid-template-columns: 1fr; }
   .payment-methods { grid-template-columns: 1fr; }
 }
-/* ==========================================================================
-   NAVBAR COLORS — checkout page starts over light #FAF7F2 background
-   ========================================================================== */
 
-/* Default: dark text (always readable on light bg) */
 .navbar .logo {
   color: #3B2A1A;
   transition: color 0.35s ease;
