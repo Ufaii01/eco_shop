@@ -179,9 +179,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
 }
-.product-images__track::-webkit-scrollbar { 
-  
-}
 
 .product-images__slide {
   flex-shrink: 0;
