@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #F4F1E8;
+    background-color: #f6f5ef;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 93px 20px 93px;
+    padding: 10px 93px 19.7px 93px;
     background-color: rgba(244, 241, 232, 0.97);
     position: fixed;
     top: 0;
@@ -26,7 +26,7 @@ body {
 }
 
 .top-navbar.scrolled {
-    background-color: #ffffff;
+    background-color: #f6f5ef;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.09);
 }
 

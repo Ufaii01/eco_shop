@@ -121,10 +121,12 @@
   opacity: 1;
 }
 
-.brand-socials svg {
+.brand-socials svg,
+.brand-socials img {
   width: 20px;
   height: 20px;
   fill: var(--footer-text);
+  object-fit: contain;
 }
 
 .main-footer .nav-column {
@@ -267,10 +269,12 @@
   opacity: 1;
 }
 
-.bottom-socials svg {
+.bottom-socials svg,
+.bottom-socials img {
   width: 22px;
   height: 22px;
   fill: var(--footer-text);
+  object-fit: contain;
 }
 
 .copyright-text {
@@ -287,6 +291,7 @@
 
   .footer-bottom-bar {
     flex-direction: column-reverse;
+    align-items: center;
     text-align: center;
   }
 
@@ -296,13 +301,59 @@
   }
 }
 
-@media (max-width: 640px) {
+/* 540px–768px: 2-column grid
+   Brand + newsletter span full width; nav columns sit side-by-side */
+@media (min-width: 540px) and (max-width: 768px) {
   .main-footer {
-    padding: 56px 24px 32px;
+    padding: 60px 28px 40px; /* Reduce the 60px side padding down from 80px */
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  /* Bug fix: footer-brand was not full-width, leaving an orphan empty cell */
+  .footer-brand {
+    flex: none;
+    grid-column: 1 / -1;
+  }
+
+  /* Newsletter stays full-width at the bottom */
+  .footer-newsletter {
+    flex: none;
+    grid-column: 1 / -1;
+  }
+
+  /* Allow form to fill the full grid width */
+  .main-footer .newsletter-form {
+    max-width: 100%;
   }
 
   .footer-tagline {
-    font-size: 22px;
+    font-size: 24px;
     letter-spacing: 3px;
   }
+}
+
+/* Bug fix: was max-width: 540px — overlapped with the min-width: 540px rule above.
+   At exactly 540px, the later single-column rule was winning and killing the grid.
+   Corrected to max-width: 539px so breakpoints no longer overlap. */
+@media (max-width: 539px) {
+  .main-footer {
+    padding: 48px 20px 32px;
+  }
+  .footer-tagline {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  .footer-top-header { margin-bottom: 48px; }
+  .footer-columns {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .footer-brand, .footer-newsletter { flex: none; width: 100%; }
+  .main-footer .newsletter-form { max-width: 100%; }
+  .footer-brand-name { font-size: 30px; }
 }
