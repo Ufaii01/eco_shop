@@ -23,6 +23,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -77,17 +78,9 @@ button {
   transition: width 0.3s, opacity 0.3s, transform 0.3s;
 }
 
-.header__hamburger span:nth-child(1) {
-  width: 28px;
-}
-
-.header__hamburger span:nth-child(2) {
-  width: 28px;
-}
-
-.header__hamburger span:nth-child(3) {
-  width: 19px;
-}
+.header__hamburger span:nth-child(1) { width: 28px; }
+.header__hamburger span:nth-child(2) { width: 28px; }
+.header__hamburger span:nth-child(3) { width: 19px; }
 
 .header__hamburger[aria-expanded="true"] span:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
@@ -128,11 +121,11 @@ button {
   color: #faf9ed;
   opacity: 0.5;
   text-transform: lowercase;
+  white-space: nowrap;
 }
 
 .header__breadcrumb--active {
   opacity: 1;
-  font-size: 18px;
 }
 
 .header__nav {
@@ -169,7 +162,7 @@ button {
   opacity: 0.85;
 }
 
-/* Navbar Colors */
+/* Navbar Scrolled Component Integration */
 .navbar .logo {
   color: #ffffff;
   transition: color 0.35s ease;
@@ -177,14 +170,11 @@ button {
 
 .navbar .logo a {
   color: inherit;
-  text-decoration: none;
-  transition: color 0.35s ease;
   font-size: 18px;
 }
 
 .navbar .logo span {
   color: rgba(255, 255, 255, 0.60);
-  transition: color 0.35s ease;
   font-size: 15px;
 }
 
@@ -193,46 +183,22 @@ button {
   font-size: 24px;
   opacity: 0.9;
   cursor: pointer;
-  line-height: 1;
   transition: color 0.35s ease, opacity 0.2s;
 }
 
-.nav-left .hamburger:hover {
-  opacity: 1;
-}
-
-.nav-right .icon {
-  color: #faf9ed;
-  opacity: 0.9;
-  transition: color 0.35s ease, opacity 0.2s;
-}
-
-.nav-right .icon:hover {
-  opacity: 1;
-}
+.nav-left .hamburger:hover { opacity: 1; }
+.nav-right .icon { color: #faf9ed; opacity: 0.9; transition: color 0.35s ease, opacity 0.2s; }
+.nav-right .icon:hover { opacity: 1; }
 
 .navbar.scrolled {
   background-color: #faf9ed;
   box-shadow: 0 2px 20px rgba(57, 47, 39, 0.12);
 }
 
-.navbar.scrolled .logo {
-  color: #392f27;
-}
-
-.navbar.scrolled .logo span {
-  color: rgba(57, 47, 39, 0.55);
-}
-
-.navbar.scrolled .nav-left .hamburger {
-  color: #392f27;
-  opacity: 1;
-}
-
-.navbar.scrolled .nav-right .icon {
-  color: #392f27;
-  opacity: 1;
-}
+.navbar.scrolled .logo { color: #392f27; }
+.navbar.scrolled .logo span { color: rgba(57, 47, 39, 0.55); }
+.navbar.scrolled .nav-left .hamburger { color: #392f27; opacity: 1; }
+.navbar.scrolled .nav-right .icon { color: #392f27; opacity: 1; }
 
 .header__mobile-nav {
   display: none;
@@ -287,13 +253,13 @@ button {
   line-height: 1.35;
   text-transform: uppercase;
   position: relative;
+  word-wrap: break-word;
 }
 
 .product-images {
   background-color: #392f27;
   padding: 28px 120px 0;
   width: 100%;
-  overflow: hidden;
 }
 
 .product-images__wrapper {
@@ -317,8 +283,8 @@ button {
 
 .product-images__slide {
   flex-shrink: 0;
-  width: 561px;
-  height: 657px;
+  width: 400px;
+  height: 600px;
   border-radius: 80px;
   overflow: hidden;
   scroll-snap-align: center;
@@ -332,7 +298,7 @@ button {
 
 .product-images__nav {
   position: absolute;
-  top: 50%;
+  top: 63%;
   left: 20px;
   right: 20px;
   transform: translateY(-50%);
@@ -344,8 +310,6 @@ button {
 
 .product-images__arrow {
   pointer-events: all;
-  position: relative;
-  top: 110px;
   width: 67px;
   height: 67px;
   background-color: rgba(57, 47, 39, 0.6);
@@ -357,23 +321,10 @@ button {
   transition: background-color 0.2s, transform 0.1s;
 }
 
-.product-images__arrow:hover {
-  background-color: #000000;
-}
-
-.product-images__arrow:active {
-  transform: scale(0.92);
-}
-
-.product-images__arrow svg {
-  width: 32px;
-  height: 32px;
-  fill: #faf9ed;
-}
-
-.product-images__arrow--left svg {
-  transform: scaleX(-1);
-}
+.product-images__arrow:hover { background-color: #000000; }
+.product-images__arrow:active { transform: scale(0.92); }
+.product-images__arrow svg { width: 32px; height: 32px; fill: #faf9ed; }
+.product-images__arrow--left svg { transform: scaleX(-1); }
 
 /* ==========================================================================
    PRODUCT INFO & DETAILS
@@ -405,10 +356,7 @@ button {
   height: 38.6px;
 }
 
-.stars__icon svg {
-  width: 100%;
-  height: 100%;
-}
+.stars__icon svg { width: 100%; height: 100%; }
 
 .product-info__row {
   display: flex;
@@ -451,15 +399,11 @@ button {
   color: #392f27;
   letter-spacing: 3.2px;
   transition: background-color 0.2s;
+  width: 100%;
 }
 
-.btn-add-cart:hover {
-  background-color: #c8c8c5;
-}
-
-.btn-buy-now:hover {
-  background-color: #e8e7d8;
-}
+.btn-add-cart:hover { background-color: #c8c8c5; }
+.btn-buy-now:hover { background-color: #e8e7d8; }
 
 .product-info__desc-label {
   font-family: 'Koulen', sans-serif;
@@ -619,10 +563,7 @@ button {
   height: 53px;
 }
 
-.star-lg svg {
-  width: 100%;
-  height: 100%;
-}
+.star-lg svg { width: 100%; height: 100%; }
 
 /* ==========================================================================
    CUSTOMERS REVIEW TRACK
@@ -652,6 +593,7 @@ button {
   overflow-x: auto;
   scrollbar-width: none;
   margin-top: 40px;
+  padding: 0 24px;
 }
 
 .customers-rating__track-wrap::-webkit-scrollbar {
@@ -661,7 +603,6 @@ button {
 .customers-rating__track {
   display: flex;
   gap: 32px;
-  padding: 0 29px;
   width: max-content;
 }
 
@@ -709,7 +650,6 @@ button {
 .seller-card__rating {
   display: flex;
   align-items: center;
-  font-size: 100%;
   gap: 8px;
   margin-top: 4px;
   color: #000000;
@@ -750,7 +690,7 @@ button {
   overflow-x: auto;
   scroll-behavior: smooth;
   width: 100%;
-  padding: 10px 29px 24px;
+  padding: 10px 24px 24px;
   align-items: stretch;
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
@@ -922,13 +862,14 @@ footer {
   padding: 12px 60px 12px 20px;
   font-family: 'Work Sans', sans-serif;
   font-size: 12px;
-  width: 194px;
+  width: 100%;
+  max-width: 240px;
   outline: none;
 }
 
 .footer__newsletter-btn {
   position: absolute;
-  right: -42px;
+  left: 200px;
   background: none;
   border: 6px solid #faf9ed;
   border-radius: 50px;
@@ -961,7 +902,7 @@ footer {
 }
 
 /* ==========================================================================
-   MEDIA QUERIES (OPTIMASI DI LAPTOP KECIL, TABLET & MOBILE HP)
+   MEDIA QUERIES (LAPTOP KECIL, TABLET & MOBILE SMARTPHONE)
    ========================================================================== */
 
 @media (max-width: 1024px) {
@@ -972,10 +913,6 @@ footer {
   .header__nav,
   .header__icons {
     display: none;
-  }
-
-  .header__mobile-nav {
-    display: flex;
   }
 
   .product-hero__title-wrap {
@@ -995,11 +932,6 @@ footer {
     width: 440px;
     height: 500px;
     border-radius: 40px;
-  }
-
-  .product-images__arrow {
-    width: 55px;
-    height: 55px;
   }
 
   .product-info {
@@ -1174,7 +1106,6 @@ footer {
   }
 
   .customers-rating__track {
-    padding: 0 24px;
     gap: 20px;
   }
 
@@ -1221,7 +1152,6 @@ footer {
     gap: 32px;
   }
 
-  /* Perbaikan Form Newsletter agar tidak keluar layar HP */
   .footer__newsletter-form {
     display: flex;
     flex-direction: row;
@@ -1233,18 +1163,20 @@ footer {
 
   .footer__newsletter-input {
     width: 100%;
-    padding: 12px 85px 12px 16px;
+    max-width: 100%;
+    padding: 12px 95px 12px 16px;
   }
 
   .footer__newsletter-btn {
     position: absolute;
-    right: 0;
+    left: auto;
+    right: 4px;
     top: 0;
     bottom: 0;
     margin: auto;
-    height: 100%;
-    width: 80px;
-    border-width: 3px;
+    height: calc(100% - 8px);
+    width: 85px;
+    border-width: 2px;
     border-radius: 36px;
     color: #392f27;
     background-color: #faf9ed;
@@ -1256,19 +1188,19 @@ footer {
   }
 }
 
-/* 🟢 TAMBAHAN KHUSUS SMARTPHONE KECIL (Lebar Layar di bawah 480px) */
+/* ==========================================================================
+   SMARTPHONE VIEW (LAYAR DI BAWAH 480px)
+   ========================================================================== */
 @media (max-width: 480px) {
-  .header__logo {
-    font-size: 20px;
-    letter-spacing: 1.5px;
-  }
-
-  .header__sep {
-    font-size: 10px;
-  }
-
+  /* Sembunyikan separator & breadcrumb agar header tidak menumpuk di HP */
+  .header__sep,
   .header__breadcrumb {
-    font-size: 14px;
+    display: none;
+  }
+
+  .header__logo {
+    font-size: 22px;
+    letter-spacing: 2px;
   }
 
   .product-hero__title-wrap {
@@ -1284,12 +1216,14 @@ footer {
     padding: 16px 16px 0;
   }
 
+  /* Slider responsif berbasis lebar layar (viewport width) */
   .product-images__slide {
-    width: 85vw;
+    width: 80vw;
     height: 100vw;
     border-radius: 24px;
   }
 
+  /* Perbaikan posisi vertikal panah agar pas di tengah gambar */
   .product-images__arrow {
     width: 40px;
     height: 40px;
@@ -1327,6 +1261,7 @@ footer {
     font-size: 22px;
     height: 54px;
     border-radius: 14px;
+    letter-spacing: 1px;
   }
 
   .product-video {
@@ -1381,16 +1316,8 @@ footer {
     font-size: 14px;
   }
 
-  .customers-rating__track {
-    padding: 0 16px;
-  }
-
   .also-like__heading {
     font-size: 28px;
-  }
-
-  .carousel-fan {
-    padding: 10px 16px 20px;
   }
 
   .carousel-fan__item {
@@ -1405,9 +1332,5 @@ footer {
   .footer__tagline {
     font-size: 18px;
     letter-spacing: 1px;
-  }
-
-  .footer__brand-name {
-    font-size: 32px;
   }
 }
