@@ -744,6 +744,118 @@ a {
 }
 
 /* ============================================================
+   RESPONSIVE OPTIMIZATION: TABLET & SMALL LAPTOP (541px - 1024px)
+   Mengatur transisi mulus dari HP ke Tablet (misal: iPad)
+   ============================================================ */
+@media (min-width: 541px) and (max-width: 1024px) {
+  .page-container {
+    gap: 64px;
+  }
+
+  .auth-wrapper {
+    /* Tetap atas-bawah, tapi dengan ruang yang lebih lega */
+    flex-direction: column;
+    padding: 40px 32px;
+    gap: 40px;
+    max-width: 768px; /* Membatasi kelebaran maksimal di tablet */
+  }
+
+  .hero-banner {
+    min-height: 380px;
+    padding: 40px;
+    border-radius: 40px;
+  }
+
+  .hero-title {
+    font-size: 42px; /* Ukuran tengah antara Mobile (32px) dan Desktop (50px) */
+  }
+
+  .hero-stats {
+    flex-direction: row; /* Jejerkan statistik menyamping agar mengisi ruang kosong */
+    gap: 48px;
+  }
+
+  .form-section {
+    padding: 0;
+  }
+
+  .form-container {
+    max-width: 520px; /* Form lebih lebar sedikit untuk tablet */
+    margin: 0 auto;
+    background-color: #ffffff; /* Memberikan efek kartu (card) pada form di layar tablet */
+    padding: 40px;
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
+  }
+
+  .auth-header h1 {
+    font-size: 34px;
+  }
+
+  /* Penyesuaian Footer untuk Tablet */
+  .footer-columns {
+    gap: 48px;
+    justify-content: center;
+  }
+
+  .footer-brand {
+    flex: 1 1 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-brand p {
+    margin: 0 auto 24px;
+  }
+
+  .nav-column {
+    flex: 0 0 auto;
+    text-align: center;
+    min-width: 180px;
+  }
+
+  .footer-newsletter {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 16px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE OPTIMIZATION: MEDIUM DESKTOP (1025px - 1280px)
+   Mencegah banner dan form saling bertabrakan di layar laptop kecil
+   ============================================================ */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .auth-wrapper {
+    padding: 40px 24px;
+    gap: 32px;
+  }
+
+  .hero-banner {
+    flex: 0 0 45%;
+    min-height: 600px;
+    padding: 36px;
+  }
+
+  .hero-title {
+    font-size: 40px; /* Cegah teks judul menjadi terlalu panjang */
+  }
+
+  .form-container {
+    max-width: 400px;
+  }
+
+  .footer-columns {
+    gap: 32px;
+  }
+}
+
+/* ============================================================
    AUTH.JS — Inline validation styles
    ============================================================ */
 
