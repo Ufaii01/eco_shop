@@ -1,3 +1,7 @@
+/* ==========================================================================
+   1. BASE STYLES & DESKTOP DEFAULT (> 1024px)
+   ========================================================================== */
+
 .hero {
     height: 100vh;
     display: flex;
@@ -8,6 +12,7 @@
 }
 
 .hero-bg {
+    padding-right: 10px;
     position: absolute;
     top: 0;
     left: 0;
@@ -81,38 +86,21 @@
     background-size: 10px auto;
 }
 
+/* Grid Layout (Desktop) - 3 Kolom */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     grid-gap: 30px;
-    grid-auto-rows: 380px;
+    /* grid-auto-rows dihapus, diganti dengan aspect-ratio di .product-card */
 }
 
+/* Semua Card Sekarang Berbentuk Persegi Seragam */
 .product-card {
     border-radius: 30px;
     position: relative;
     overflow: hidden;
     background-color: #f6f5ef;
-}
-
-.product-card img, 
-.new-arrival-card img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.card-large-square, 
-.card-small, 
-.card-wide, 
-.card-tall, 
-.card-large-tall { 
-    grid-column: span 1 !important; 
-    grid-row: span 1 !important; 
+    aspect-ratio: 1 / 1; /* Memaksa kotak menjadi persegi (sama sisi) */
 }
 
 .product-card img, 
@@ -129,12 +117,6 @@
 .bg-grey {
     background-color: #daddd8;
 }
-
-.card-large-square { grid-column: span 2; grid-row: span 2; }
-.card-small { grid-column: span 1; grid-row: span 1; }
-.card-wide { grid-column: span 2; grid-row: span 1; }
-.card-tall { grid-column: span 2; grid-row: span 2; }
-.card-large-tall { grid-column: span 2; grid-row: span 2; }
 
 .product-tags {
     position: absolute;
@@ -197,6 +179,7 @@
     background-color: #fff;
 }
 
+/* New Arrivals Section */
 .new-arrivals {
     background-color: #3b322a;
     color: #fff;
@@ -286,72 +269,10 @@
     scroll-snap-align: start; 
 }
 
-/* 540px–900px handled by min-width: 540px block above */
-
-@media (min-width: 540px) and (max-width: 900px) {
-    .products-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    .hero-content { width: 70%; }
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .card-wide, .card-large-square, .card-tall, .card-large-tall {
-        grid-column: span 2;
-    }
-    .new-arrival-card {
-        flex: 0 0 260px;
-        height: 350px;
-    }
-}
-
-@media (max-width: 539px) {
-    .products-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-    }
-    .hero-content { 
-        width: 100%; 
-        text-align: center;
-    }
-    .products-header h2 { font-size: 28px; }
-    
-    .filters {
-        flex-wrap: wrap;
-        gap: 10px;
-        width: 100%;
-    }
-    .filter-group { width: 100%; }
-    .filter-group select { width: 100%; } 
-
-    .products-grid {
-        grid-template-columns: 1fr; 
-        grid-auto-rows: 320px;
-    }
-
-    .card-large-square, .card-small, .card-wide, .card-tall, .card-large-tall {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
-    .new-arrival-card {
-        flex: 0 0 230px; 
-        height: 300px;
-    }
-
-    .tag {
-        font-size: 10px;
-        padding: 5px 10px;
-    }
-}
 /* ==========================================================================
-   NAVBAR COLORS — catalog page starts over a dark hero image
+   NAVBAR COLORS
    ========================================================================== */
 
-/* Default: white text/icons over dark hero */
 .navbar .logo {
     color: #ffffff;
     transition: color 0.35s ease;
@@ -369,16 +290,70 @@
     transition: color 0.35s ease;
 }
 
-/* Scrolled: dark text over white background */
-.navbar.scrolled .logo {
-    color: #3b322a;
+.navbar.scrolled .logo { color: #3b322a; }
+.navbar.scrolled .logo span { color: rgba(59, 50, 42, 0.60); }
+.navbar.scrolled .hamburger { color: #3b322a; }
+.navbar.scrolled .nav-right .icon { color: #3b322a; }
+
+/* ==========================================================================
+   2. TABLET RESPONSIVE (540px to 1024px)
+   ========================================================================== */
+@media (min-width: 540px) and (max-width: 1024px) {
+    .products-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .hero-content { width: 70%; }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom, otomatis berbentuk persegi berkat aspect-ratio */
+    }
+
+    .new-arrival-card {
+        flex: 0 0 280px;
+        height: 350px;
+    }
 }
-.navbar.scrolled .logo span {
-    color: rgba(59, 50, 42, 0.60);
-}
-.navbar.scrolled .hamburger {
-    color: #3b322a;
-}
-.navbar.scrolled .nav-right .icon {
-    color: #3b322a;
+
+/* ==========================================================================
+   3. MOBILE RESPONSIVE (< 540px)
+   ========================================================================== */
+@media (max-width: 539px) {
+    .products-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .hero-content { 
+        width: 100%; 
+        text-align: center;
+    }
+    
+    .products-header h2 { font-size: 28px; }
+    
+    .filters {
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .filter-group { width: 100%; }
+    .filter-group select { width: 100%; } 
+
+    .products-grid {
+        grid-template-columns: 1fr; /* 1 kolom penuh di HP */
+    }
+
+    .new-arrival-card {
+        flex: 0 0 230px; 
+        height: 300px;
+    }
+
+    .tag {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
 }

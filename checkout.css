@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. BASE STYLES & DESKTOP DEFAULT (> 1024px)
+   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,7 +35,6 @@ input {
   max-width: 1200px;
   margin: 100px auto 40px; 
   padding: 20px;
-  padding-top: -40px;
 }
 
 .breadcrumb {
@@ -75,6 +77,7 @@ input {
   font-weight: 700;
 }
 
+/* Grid utama untuk Desktop */
 .checkout-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -373,25 +376,6 @@ input {
   letter-spacing: 0.5px;
 }
 
-@media screen and (max-width: 1024px) {
-  .checkout-grid { grid-template-columns: 1fr; }
-  .checkout-container { padding: 24px; margin-top: 80px; }
-  .cart-wrapper, .summary-wrapper { padding: 20px; }
-}
-
-@media screen and (max-width: 540px) {
-  .header__title { font-size: 38px; }
-  .cart-item { flex-direction: column; }
-  .cart-item__image-wrap { width: 100%; height: 180px; }
-  .form-row { grid-template-columns: 1fr; }
-  .payment-methods { grid-template-columns: 1fr; }
-  .checkout-container { padding: 16px; margin-top: 72px; }
-  .cart-wrapper, .summary-wrapper { padding: 16px; }
-  .cart-item__name { font-size: 22px; }
-  .summary-row { font-size: 16px; }
-  .summary-total { font-size: 22px; }
-}
-
 .navbar .logo {
   color: #3B2A1A;
   transition: color 0.35s ease;
@@ -409,7 +393,89 @@ input {
   transition: color 0.35s ease;
 }
 
-/* Scrolled: same dark text, white background added by global.css */
 .navbar.scrolled .logo   { color: #3B2A1A; }
 .navbar.scrolled .hamburger { color: #3B2A1A; }
 .navbar.scrolled .nav-right .icon { color: #3B2A1A; }
+
+
+/* ==========================================================================
+   2. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* --- UKURAN TABLET (max-width: 1024px hingga 541px) --- */
+@media screen and (max-width: 1024px) {
+  .checkout-grid { 
+    grid-template-columns: 1fr; /* Berubah jadi 1 kolom bertumpuk agar tidak sempit */
+    gap: 24px;
+  }
+  .checkout-container { 
+    padding: 24px; 
+    margin-top: 80px; 
+  }
+  .cart-wrapper, .summary-wrapper { 
+    padding: 24px; 
+  }
+  .header__title {
+    font-size: 48px; /* Sedikit diperkecil untuk tablet */
+  }
+}
+
+/* --- OPTIMALISASI TAMBAHAN UNTUK MINI TABLET (max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+  .trust-badges {
+    flex-wrap: wrap; /* Mencegah badge keluar layar jika ruang menyempit */
+    gap: 16px;
+  }
+}
+
+/* --- UKURAN HP / MOBILE (max-width: 540px) --- */
+@media screen and (max-width: 540px) {
+  .header__title { 
+    font-size: 34px; 
+  }
+  .checkout-container { 
+    padding: 16px; 
+    margin-top: 72px; 
+  }
+  .cart-wrapper, .summary-wrapper { 
+    padding: 16px; 
+  }
+  
+  /* Item Keranjang Belanja */
+  .cart-item { 
+    flex-direction: column; 
+    gap: 16px;
+  }
+  .cart-item__image-wrap { 
+    width: 100%; 
+    height: 180px; 
+  }
+  .cart-item__name { 
+    font-size: 22px; 
+  }
+  .cart-item__actions {
+    margin-top: 12px;
+  }
+
+  /* Ringkasan & Form Pembayaran */
+  .summary-row { 
+    font-size: 16px; 
+  }
+  .summary-total { 
+    font-size: 22px; 
+  }
+  .form-row { 
+    grid-template-columns: 1fr; /* Form input nama depan/belakang bertumpuk vertikal */
+    gap: 0; /* Jarak diatur oleh form-group */
+  }
+  .payment-methods { 
+    grid-template-columns: 1fr; /* Metode pembayaran bertumpuk vertikal */
+    gap: 12px;
+  }
+  
+  .trust-badges {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi badge menjadi 2 kolom rapi di HP */
+    gap: 20px;
+  }
+}

@@ -179,15 +179,17 @@ button {
   color: inherit;
   text-decoration: none;
   transition: color 0.35s ease;
+  font-size: 18px;
 }
 
 .navbar .logo span {
   color: rgba(255, 255, 255, 0.60);
   transition: color 0.35s ease;
+  font-size: 15px;
 }
 
 .nav-left .hamburger {
-  color: #ffffff;
+  color: #faf9ed;
   font-size: 24px;
   opacity: 0.9;
   cursor: pointer;
@@ -200,7 +202,7 @@ button {
 }
 
 .nav-right .icon {
-  color: #ffffff;
+  color: #faf9ed;
   opacity: 0.9;
   transition: color 0.35s ease, opacity 0.2s;
 }

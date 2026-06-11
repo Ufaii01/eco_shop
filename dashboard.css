@@ -14,6 +14,7 @@
 body {
     background: var(--brown);
     font-family: 'Koulen', sans-serif;
+    overflow-x: hidden; /* Mencegah horizontal scroll yang tidak disengaja */
 }
 
 h1, h2, h3, h4 {
@@ -25,34 +26,35 @@ h1, h2, h3, h4 {
    DASHBOARD HEADER & LAYOUT
    ===================================================== */
 .dashboard-header {
-    min-height: 70px;       /* was: height: 70px — won't clip content when zoomed */
+    min-height: clamp(56px, 8vw, 70px);
     height: auto;
     background: var(--cream);
     display: flex;
     align-items: center;
-    padding: 8px 20px;
+    padding: 8px clamp(16px, 3vw, 20px);
     border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
 .left-header {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: clamp(12px, 2vw, 18px);
 }
 
 .left-header h2 {
-    font-size: 32px;
+    font-size: clamp(22px, 3vw, 32px); /* Fluid typography */
     letter-spacing: 2px;
 }
 
 .menu {
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 30px);
+    cursor: pointer;
 }
 
 .dashboard-container {
     display: flex;
-    gap: 12px;
-    padding: 18px 20px;
+    gap: clamp(12px, 2vw, 20px);
+    padding: clamp(12px, 2vw, 18px) clamp(16px, 3vw, 20px);
     align-items: flex-start;
 }
 
@@ -60,7 +62,8 @@ h1, h2, h3, h4 {
    PROFILE SIDEBAR
    ===================================================== */
 .profile-sidebar {
-    width: 320px;
+    /* Lebar dinamis di desktop, maksimal 320px */
+    flex: 0 0 clamp(260px, 25vw, 320px); 
     display: flex;
 }
 
@@ -69,7 +72,7 @@ h1, h2, h3, h4 {
     flex-direction: column;
     width: 100%;
     border: 3px solid var(--cream);
-    border-radius: 20px;
+    border-radius: clamp(16px, 2vw, 20px);
     overflow: hidden;
 }
 
@@ -106,11 +109,12 @@ h1, h2, h3, h4 {
     font-size: 8px;
     color: #D4D4D4;
     line-height: 1;
+    letter-spacing: 0.5px;
 }
 
 .profile-icon {
-    width: 54px;
-    height: 54px;
+    width: clamp(40px, 5vw, 54px);
+    height: clamp(40px, 5vw, 54px);
     object-fit: contain;
     flex-shrink: 0;
 }
@@ -120,19 +124,21 @@ h1, h2, h3, h4 {
     height: 25px;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .balance {
     background: var(--cream);
-    padding: 24px 18px;
+    padding: clamp(16px, 2vw, 24px) 18px;
 }
 
 .balance h2 {
-    font-size: 40px;
+    font-size: clamp(28px, 4vw, 40px); /* Fluid */
 }
 
 .balance h3 {
-    margin-top: 18px;
+    margin-top: clamp(10px, 2vw, 18px);
+    font-size: clamp(16px, 2vw, 20px);
 }
 
 .transactions {
@@ -146,10 +152,11 @@ h1, h2, h3, h4 {
     padding: 15px 0 15px 18px;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+    font-size: clamp(16px, 2vw, 18px);
 }
 
 .transaction-list { 
-    padding: 12px;
+    padding: clamp(8px, 2vw, 12px);
 }
 
 .transaction-card {
@@ -171,9 +178,7 @@ h1, h2, h3, h4 {
     );
 }
 
-.transaction-card:last-child {
-    margin-bottom: 0;
-}
+.transaction-card:last-child { margin-bottom: 0; }
 
 .transaction-info {
     flex: 1;
@@ -182,15 +187,9 @@ h1, h2, h3, h4 {
     height: 100%;
 }
 
-.transaction-info h4 {
-    color: #392F27;
-    font-size: 18px;
-    margin: 0 0 6px 0;
-}
-
 .transaction-card img {
-    width: 52px;
-    height: 52px;
+    width: clamp(45px, 5vw, 52px);
+    height: clamp(45px, 5vw, 52px);
     object-fit: cover;
     flex-shrink: 0;
     position: relative;
@@ -209,7 +208,7 @@ h1, h2, h3, h4 {
 .transaction-card h4 { 
     margin: 0;
     color: #392F27;
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
     line-height: 1;
 }
 
@@ -239,27 +238,29 @@ h1, h2, h3, h4 {
     background: var(--red);
     color: white;
     font-family: 'Koulen';
+    cursor: pointer;
+    transition: opacity 0.2s;
 }
+
+.logout-btn:hover { opacity: 0.8; }
 
 /* =====================================================
    DASHBOARD CONTENT (Stats & Orders)
    ===================================================== */
-.content {
-    flex: 1;
-}
+.content { flex: 1; }
 
 .stats-card {
     background: var(--cream);
-    border-radius: 30px;
+    border-radius: clamp(20px, 3vw, 30px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
 .stats-header {
-    padding: 12px 20px;
+    padding: clamp(10px, 2vw, 12px) clamp(16px, 2vw, 20px);
     border-bottom: 2px solid #cfcfcf;
-    font-size: 22px;
+    font-size: clamp(18px, 2vw, 22px);
 }
 
 .stats-body {
@@ -272,8 +273,8 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
-    padding: 22px;
+    gap: clamp(12px, 2vw, 18px);
+    padding: clamp(16px, 2vw, 22px);
 }
 
 .stat-info {
@@ -282,19 +283,17 @@ h1, h2, h3, h4 {
     align-items: flex-start;
 }
 
-.stat:not(:last-child) {
-    border-right: 2px solid #cfcfcf;
-}
+.stat:not(:last-child) { border-right: 2px solid #cfcfcf; }
 
 .stat h2 {
-    font-size: 48px;
+    font-size: clamp(32px, 4vw, 48px); /* Fluid */
     line-height: 1;
     margin: 0;
 }
 
 .stat-icon {
-    width: 75px;
-    height: 75px;
+    width: clamp(52px, 5vw, 75px);
+    height: clamp(52px, 5vw, 75px);
     object-fit: contain;
     margin-bottom: 8px;
 }
@@ -302,22 +301,23 @@ h1, h2, h3, h4 {
 .stat p {
     margin-top: 4px;
     color: #888;
+    font-size: clamp(12px, 1.5vw, 16px);
 }
 
 .orders-wrapper {
-    margin-top: 18px;
+    margin-top: clamp(12px, 2vw, 18px);
     background: var(--cream);
-    border-radius: 35px;
-    padding: 28px;
+    border-radius: clamp(16px, 3vw, 35px);
+    padding: clamp(16px, 3vw, 28px);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: clamp(16px, 3vw, 32px);
 }
 
 .order-panel {
     border: 3px solid var(--brown);
-    border-radius: 28px;
-    padding: 18px;
+    border-radius: clamp(16px, 2vw, 28px);
+    padding: clamp(14px, 2vw, 18px);
 }
 
 .order-panel h3 {
@@ -326,9 +326,14 @@ h1, h2, h3, h4 {
 }
 
 .order-list{
-    height: 365px;
-    overflow-y: scroll;
+    height: clamp(220px, 30vh, 365px); /* Menyesuaikan tinggi layar */
+    overflow-y: auto; /* Menggunakan auto agar scrollbar hilang jika konten sedikit */
+    padding-right: 5px; /* Memberi ruang untuk scrollbar */
 }
+
+/* Mempercantik Scrollbar */
+.order-list::-webkit-scrollbar { width: 6px; }
+.order-list::-webkit-scrollbar-thumb { background: #cfcfcf; border-radius: 10px; }
 
 .order-card {
     display: flex;
@@ -336,59 +341,54 @@ h1, h2, h3, h4 {
     background: #3d3028;
     color: white;
     border-radius: 10px;
-    padding: 10px;
+    padding: clamp(8px, 1.5vw, 10px);
     min-height: 62px;
     margin-bottom: 12px;
 }
 
 .order-card img {
-    width: 70px;
-    height: 70px;
+    width: clamp(52px, 5vw, 70px);
+    height: clamp(52px, 5vw, 70px);
     object-fit: cover;
+    border-radius: 6px;
 }
 
 .order-card p {
     margin-top: 5px;
     background: #8F4949;
-    width: 96px;
+    width: fit-content;
     padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 4px;
 }
 
 /* =====================================================
    RESPONSIVE — 768px (Tablet) & 540px (Mobile)
    ===================================================== */
-@media (max-width: 768px) {
+/* Di sini kita hanya perlu mengatur perubahan LAYOUT (seperti kolom ke baris), 
+   karena ukuran font dan padding sudah otomatis diatur oleh clamp() di atas. */
+
+@media (max-width: 900px) {
+    /* Penyesuaian khusus untuk iPad/Tablet layar menengah */
     .dashboard-container {
-        flex-direction: column;
-        padding: 16px;
-        gap: 16px;
+        flex-direction: column; /* Pindahkan sidebar ke atas */
     }
-
-    .profile-sidebar {
-        width: 100%;
-    }
-
+    
+    .profile-sidebar { flex: auto; width: 100%; }
+    
     .profile-card {
         flex-direction: row;
         flex-wrap: wrap;
-        border-radius: 16px;
     }
+    
+    .profile-top { width: 100%; }
+    .balance { flex: 1; min-width: 250px; }
+    .transactions { width: 100%; border-top: 2px solid var(--cream); }
+}
 
-    .profile-top {
-        width: 100%;
-    }
-
-    .balance {
-        flex: 1;
-        min-width: 200px;
-    }
-
-    .transactions {
-        width: 100%;
-    }
-
+@media (max-width: 768px) {
     .stats-body {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Ubah stats jadi 2 kolom */
     }
 
     .stat:not(:last-child) {
@@ -396,285 +396,103 @@ h1, h2, h3, h4 {
         border-bottom: 2px solid #cfcfcf;
     }
 
-    .stat:nth-child(2) {
-        border-right: none;
-    }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(1) { border-right: 2px solid #cfcfcf; } /* Batas kolom 1 & 2 */
 
     .orders-wrapper {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 20px;
-        border-radius: 24px;
-    }
-
-    .order-list {
-        height: 240px;
+        grid-template-columns: 1fr; /* Ubah order jadi 1 kolom menyusun ke bawah */
     }
 }
 
 @media (max-width: 539px) {
-    .dashboard-header {
-        padding: 0 16px;
-        height: 56px;
-    }
-
-    .left-header h2 {
-        font-size: 22px;
-    }
-
-    .dashboard-container {
-        padding: 12px;
-    }
-
-    .balance h2 {
-        font-size: 28px;
-    }
-
-    .balance h3 {
-        font-size: 16px;
-    }
-
-    .stats-card {
-        border-radius: 20px;
-    }
-
-    .stats-header {
-        font-size: 18px;
-        padding: 10px 16px;
-    }
-
     .stats-body {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stats jadi 1 kolom di HP kecil */
     }
 
-    .stat {
-        padding: 16px;
-        gap: 12px;
-        justify-content: flex-start;
-    }
-
-    .stat:not(:last-child) {
-        border-right: none;
-        border-bottom: 2px solid #cfcfcf;
-    }
-
-    .stat h2 {
-        font-size: 36px;
-    }
-
-    .stat-icon {
-        width: 52px;
-        height: 52px;
-    }
-
-    .orders-wrapper {
-        margin-top: 12px;
-        padding: 16px;
-        border-radius: 16px;
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .order-panel {
-        padding: 14px;
-        border-radius: 16px;
-    }
-
-    .order-list {
-        height: 220px;
-    }
-
-    .order-card {
-        padding: 8px;
-    }
-
-    .order-card img {
-        width: 52px;
-        height: 52px;
-    }
-
-    .transaction-list {
-        padding: 8px;
+    .stat { justify-content: flex-start; }
+    
+    .stat:nth-child(1) { 
+        border-right: none; 
+        border-bottom: 2px solid #cfcfcf; 
     }
 }
 
 /* =====================================================
-   GLOBAL NAVIGATION SIDEBAR (Sudah disesuaikan 100% dengan gambar)
+   GLOBAL NAVIGATION SIDEBAR
    ===================================================== */
 .sidebar-overlay { 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-    z-index: 1000; 
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden;
+    transition: all 0.3s ease-in-out; z-index: 1000; 
 }
 
-.sidebar-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
+.sidebar-overlay.active { opacity: 1; visibility: visible; }
 
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    width: min(320px, 85vw);   /* shrinks on narrow viewports & high zoom */
-    height: 100vh;             /* fallback */
-    height: 100dvh;            /* dynamic — avoids iOS address-bar overflow */
-    background-color: #3b322a; /* Warna dark brown sesuai katalog */
-    color: #fff;
-    z-index: 1001;
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-    padding: 30px 40px;
+    position: fixed; top: 0; left: 0; transform: translateX(-100%);
+    width: min(320px, 85vw); 
+    height: 100vh; height: 100dvh; 
+    background-color: #3b322a; color: #fff; z-index: 1001;
+    overflow-y: auto; transition: transform 0.3s ease-in-out;
+    padding: clamp(25px, 4vw, 30px) clamp(20px, 5vw, 40px);
     box-shadow: 2px 0 10px rgba(0,0,0,0.3);
     font-family: 'DM Sans', sans-serif;
 }
 
-.sidebar.active {
-    transform: translateX(0);
-}
+.sidebar.active { transform: translateX(0); }
 
 .sidebar-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 40px;
+    display: flex; align-items: center; gap: 15px;
+    margin-bottom: clamp(30px, 5vw, 40px);
 }
 
-.sidebar-header .hamburger-inside {
-    font-size: 22px;
-    cursor: pointer;
-    color: #fff;
-}
+.sidebar-header .hamburger-inside { font-size: 22px; cursor: pointer; color: #fff; }
 
 .sidebar-header h2 {
-    font-family: 'DM Sans', sans-serif; /* Menggunakan sans-serif bold proporsional */
-    font-size: 24px; 
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin: 0;
-    color: #fff;
+    font-size: 24px; font-weight: 800; letter-spacing: 2px; margin: 0;
 }
 
-.sidebar-section {
-    margin-bottom: 35px;
-}
+.sidebar-section { margin-bottom: 35px; }
 
 .underlined-title {
-    font-family: 'DM Sans', sans-serif;
-    color: #a39d98; /* Light gray text */
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    display: inline-block;
-    border-bottom: 1px solid #7a736d; /* Garis bawah hanya spanjang teks */
-    padding-bottom: 4px;
+    color: #a39d98; font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 20px; display: inline-block;
+    border-bottom: 1px solid #7a736d; padding-bottom: 4px;
 }
 
 .sidebar-section ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 18px; /* Spasi antar menu yang pas */
+    list-style: none; padding: 0; display: flex; flex-direction: column; gap: 18px;
 }
 
 .sidebar-section ul li a {
-    font-family: 'DM Sans', sans-serif;
-    color: #ffffff;
-    font-size: 16px; /* Ukuran proporsional, tidak kebesaran */
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-decoration: none;
+    color: #ffffff; font-size: clamp(14px, 2vw, 16px); font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; text-decoration: none;
     transition: color 0.2s;
 }
 
 .sidebar-section ul li a:hover,
-.sidebar-section ul li a.active-link {
-    color: #a39d98;
-}
+.sidebar-section ul li a.active-link { color: #a39d98; }
 
-.menu-contact {
-    gap: 15px !important;
-}
+.menu-contact { gap: 15px !important; }
+.menu-contact li a { display: flex; align-items: center; gap: 15px; font-size: 14px; }
+.menu-contact li a i { font-size: 18px; width: 20px; text-align: center; }
 
-.menu-contact li a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 14px; /* Sedikit lebih kecil dari menu utama */
-}
-
-.menu-contact li a i {
-    font-size: 18px;
-    width: 20px;
-    text-align: center;
-}
-
-.menu-support {
-    gap: 12px !important;
-}
-
-.menu-support li a {
-    font-size: 11px; /* Teks kecil dan tebal */
-    font-weight: 800;
-    letter-spacing: 0.5px;
-}
+.menu-support { gap: 12px !important; }
+.menu-support li a { font-size: 11px; font-weight: 800; letter-spacing: 0.5px; }
 
 .community-box h5 {
-    font-family: 'DM Sans', sans-serif;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color: #ffffff; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+    text-transform: uppercase; letter-spacing: 0.5px;
 }
 
 .community-box p {
-    font-family: 'DM Sans', sans-serif;
-    color: #a39d98;
-    font-size: 10px;
-    line-height: 1.5;
-    margin-bottom: 15px;
+    color: #a39d98; font-size: 10px; line-height: 1.5; margin-bottom: 15px;
 }
 
 .join-btn {
-    background-color: #ffffff;
-    color: #3b322a;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 800;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: background-color 0.2s;
+    background-color: #ffffff; color: #3b322a; border: none; padding: 8px 16px;
+    border-radius: 20px; font-size: 10px; font-weight: 800; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px; transition: background-color 0.2s;
 }
 
-.join-btn:hover {
-    background-color: #e2e0d7;
-}
-
-@media (max-width: 539px) {
-    .sidebar { 
-        width: min(280px, 85vw);   /* responsive — won't overflow on small/zoomed screens */
-        padding: 25px 30px;
-    }
-    .sidebar-section ul li a {
-        font-size: 14px;
-    }
-}
+.join-btn:hover { background-color: #e2e0d7; }
