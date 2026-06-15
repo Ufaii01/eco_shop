@@ -7,19 +7,23 @@
 
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="global.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Koulen&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
     <script src="navbar-scroll.js" defer></script>
+    
     <nav class="top-navbar">
-        <button class="hamburger-btn" id="index-hamburger" aria-label="Open menu">&#9776;</button>
-
-        <div class="logo">ECOSHOP</div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="hamburger" id="hamburger-btn" style="font-size: 24px; cursor: pointer;">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="logo">ECOSHOP</div>
+        </div>
 
         <ul class="menu">
             <li><a href="index.html"><b>HOME</b></a></li>
@@ -36,100 +40,133 @@
             
             <div class="divider"></div>
 
-            <a href="Login.HTML" class="login"><b>Log In</b></a>
+            <a href="Login.html" class="login"><b>Log In</b></a>
 
             <div class="signup-container">
-                <a href="Register.HTML" class="signup-text"><b>SIGN IN NOW</b></a>
+                <a href="Register.html" class="signup-text"><b>SIGN IN NOW</b></a>
                 <div class="signup-line"></div>
                 <span>It's Free</span>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile navigation drawer -->
-    <div class="mobile-nav-overlay" id="index-overlay"></div>
-    <div class="mobile-nav-drawer" id="index-drawer">
-        <button class="mobile-nav-close" id="index-drawer-close">&#10005;</button>
-        <ul class="mobile-nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="catalog.html">CATALOG</a></li>
-            <li><a href="dashboard.html">DASHBOARD</a></li>
-        </ul>
-        <div class="mobile-nav-footer">
-            <a href="Login.HTML" class="mobile-login-btn">Log In</a>
-            <a href="Register.HTML" class="mobile-signup-btn">SIGN IN NOW — It's Free</a>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="hamburger-inside" id="close-sidebar"><i class="fa-solid fa-xmark"></i></span>
+            <h2>ECOSHOP</h2>
         </div>
-    </div>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h4 class="underlined-title">PAGE</h4>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="catalog.html">CATALOG</a></li>
+                    <li><a href="dashboard.html">DASHBOARD</a></li>
+                    <li><a href="cart.html">CART</a></li>
+                    <li><a href="checkout.html">CHECKOUT</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h4 class="underlined-title">CONTACT US</h4>
+                <ul class="menu-contact">
+                    <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> @ECOSHOP.ID</a></li>
+                    <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i> ECOSHOP</a></li>
+                    <li><a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i> ECOSHOP</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h4 class="underlined-title">SUPPORT</h4>
+                <ul class="menu-support">
+                    <li><a href="#">CUSTOMER SUPPORT</a></li>
+                    <li><a href="#">SHIPPING & RETURNS</a></li>
+                    <li><a href="#">PRIVACY POLICY</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h4 class="underlined-title">COMMUNITY</h4>
+                <div class="community-box">
+                    <h5>ECO SHOPPER</h5>
+                    <p>A community of nature enthusiast who loves eco-product</p>
+                    <button class="join-btn">JOIN NOW &nbsp;&mdash;&nbsp; <span>It's Free</span></button>
+                </div>
+            </div>
+        </div>
+    </aside>
 
     <script>
-        (function() {
-            const hamburger = document.getElementById('index-hamburger');
-            const drawer    = document.getElementById('index-drawer');
-            const overlay   = document.getElementById('index-overlay');
-            const closeBtn  = document.getElementById('index-drawer-close');
-            function openDrawer()  { drawer.classList.add('open');    overlay.classList.add('visible');    document.body.style.overflow = 'hidden'; }
-            function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('visible'); document.body.style.overflow = ''; }
-            hamburger.addEventListener('click', openDrawer);
-            closeBtn.addEventListener('click',  closeDrawer);
-            overlay.addEventListener('click',   closeDrawer);
-        })();
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburgerBtn = document.getElementById("hamburger-btn");
+            const sidebar = document.getElementById("sidebar");
+            const closeSidebarBtn = document.getElementById("close-sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
+
+            function openSidebar() {
+                sidebar.classList.add("active");
+                sidebarOverlay.classList.add("active");
+                document.body.style.overflow = "hidden"; 
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove("active");
+                sidebarOverlay.classList.remove("active");
+                document.body.style.overflow = "auto";
+            }
+
+            if(hamburgerBtn) hamburgerBtn.addEventListener("click", openSidebar);
+            if(closeSidebarBtn) closeSidebarBtn.addEventListener("click", closeSidebar);
+            if(sidebarOverlay) sidebarOverlay.addEventListener("click", closeSidebar);
+        });
     </script>
 
-    <div class="hero-content">
-        <div class="hero-left">
-            <h1>ECOSHOP</h1>
-            <p>
-                EcoShop is your curated destination for eco-friendly essentials designed to replace everyday wasteful products. From reusable home goods to thoughtfully crafted sustainable innovations, we make it easy for you to live greener without sacrificing comfort or style.
-            </p>
-            <a href="catalog.html">
-            <div class="shop-btn">
-                <span><b>START SHOPPING</b></span>
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1>ECOSHOP</h1>
+                <p>
+                    EcoShop is your curated destination for eco-friendly essentials designed to replace everyday wasteful products. From reusable home goods to thoughtfully crafted sustainable innovations, we make it easy for you to live greener without sacrificing comfort or style.
+                </p>
+                <a href="catalog.html" style="text-decoration: none;">
+                    <div class="shop-btn">
+                        <span><b>START SHOPPING</b></span>
+                        <div class="arrow-circle">></div>
+                    </div> 
+                </a>
+            </div>
 
-                <div class="arrow-circle">
-                    >
-                </div>
-            </div> 
-            </a>
+            <div class="social-media">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <div class="social-line"></div>
+            </div>
 
+            <div class="hero-right">
+                <img src="assets/gambar landing page 1.jpeg" alt="Eco Product">
+            </div>
         </div>
-
-        <div class="social-media">
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-linkedin-in"></i>
-
-            <div class="social-line"></div>
-        </div>
-
-        <div class="hero-right">
-            <img src="assets/gambar landing page 1.jpeg" alt="Eco Product">
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
     <section class="brands">
-    <div class="brands-wrapper">
-        <div class="brands-track">
+        <div class="brands-wrapper">
+            <div class="brands-track">
+                <img src="assets/Infinite scroll/Carbon neutral.png" alt="">
+                <img src="assets/Infinite scroll/Carbon Trust.png" alt="">
+                <img src="assets/Infinite scroll/Certified Carbon neutral.png" alt="">
+                <img src="assets/Infinite scroll/Cradle To Cradle.png" alt="">
+                <img src="assets/Infinite scroll/Eco Label.png" alt="">
+                <img src="assets/Infinite scroll/lec.png" alt="">
+                <img src="assets/Infinite scroll/LEI.png" alt="">
 
-        <img src="assets/Infinite scroll/Carbon neutral.png" alt="">
-        <img src="assets/Infinite scroll/Carbon Trust.png" alt="">
-        <img src="assets/Infinite scroll/Certified Carbon neutral.png" alt="">
-        <img src="assets/Infinite scroll/Cradle To Cradle.png" alt="">
-        <img src="assets/Infinite scroll/Eco Label.png" alt="">
-        <img src="assets/Infinite scroll/lec.png" alt="">
-        <img src="assets/Infinite scroll/LEI.png" alt="">
-
-        <img src="assets/Infinite scroll/Carbon neutral.png" alt="">
-        <img src="assets/Infinite scroll/Carbon Trust.png" alt="">
-        <img src="assets/Infinite scroll/Certified Carbon neutral.png" alt="">
-        <img src="assets/Infinite scroll/Cradle To Cradle.png" alt="">
-        <img src="assets/Infinite scroll/Eco Label.png" alt="">
-        <img src="assets/Infinite scroll/lec.png" alt="">
-        <img src="assets/Infinite scroll/LEI.png" alt="">
+                <img src="assets/Infinite scroll/Carbon neutral.png" alt="">
+                <img src="assets/Infinite scroll/Carbon Trust.png" alt="">
+                <img src="assets/Infinite scroll/Certified Carbon neutral.png" alt="">
+                <img src="assets/Infinite scroll/Cradle To Cradle.png" alt="">
+                <img src="assets/Infinite scroll/Eco Label.png" alt="">
+                <img src="assets/Infinite scroll/lec.png" alt="">
+                <img src="assets/Infinite scroll/LEI.png" alt="">
+            </div>
         </div>
-    </div>
     </section>
 
     <div class="eco-content-wrapper">
@@ -239,12 +276,14 @@
 
             <div class="register-cta-container">
                 <div class="seller-cta">WANT TO SELL YOUR OWN ECO FRIENDLY PRODUCTS? BECOME OUR SELLER TODAY!</div>
-                <a href="Register.HTML" class="btn-register-business">
+                <a href="Register.html" class="btn-register-business" style="text-decoration: none;">
                     <span>REGISTER YOUR BUSINESS</span>
                     <div class="btn-icon">></div>
                 </a>
             </div>
-        </div> <div class="trust-badges">
+        </div> 
+        
+        <div class="trust-badges">
             <div class="trust-grid">
                 <div class="trust-item">
                     <div class="trust-icon"><img src="assets/Logo How it work/Container.png" alt="bcorp"></div>
@@ -277,8 +316,8 @@
             </div>
         </div>
     </div>
-    <footer class="main-footer">
 
+    <footer class="main-footer">
       <div class="footer-top-header">
         <div class="footer-badge">
           <img src="" alt="">
@@ -287,7 +326,6 @@
       </div>
 
       <div class="footer-columns">
-
         <div class="footer-brand">
           <h2 class="footer-brand-name">ECOSHOP</h2>
           <p>A platform dedicated to ethical production and conscious consumption through the power of collective pre-ordering.</p>
@@ -330,7 +368,6 @@
             <button type="submit">JOIN</button>
           </form>
         </div>
-
       </div>
 
       <hr class="footer-divider" />
@@ -349,8 +386,8 @@
         </div>
         <p class="copyright-text">&copy; 2024 EcoShop. Consciously Crafted for Ethical Consumption.</p>
       </div>
-
     </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const slides = document.querySelectorAll('.slide-item');
@@ -358,28 +395,21 @@
 
             function updateSlider() {
                 slides.forEach((slide, index) => {
-                    // Reset semua class posisi
                     slide.classList.remove('slide-active', 'slide-left', 'slide-right', 'slide-hidden');
                     
-                    // Kalkulasi posisi logika circular
                     if (index === currentIndex) {
                         slide.classList.add('slide-active');
                     } else if (index === (currentIndex - 1 + slides.length) % slides.length) {
-                        // Item sebelumnya bergeser ke kiri
                         slide.classList.add('slide-left');
                     } else if (index === (currentIndex + 1) % slides.length) {
-                        // Item selanjutnya muncul dari kanan
                         slide.classList.add('slide-right');
                     } else {
-                        // Sisa item disembunyikan di belakang
                         slide.classList.add('slide-hidden');
                     }
                 });
             }
 
-            // Interval untuk menggeser gambar secara otomatis (contoh: setiap 3 detik)
             setInterval(() => {
-                // Mengurangi index membuat efek gambar bergeser ke arah kanan secara visual
                 currentIndex = (currentIndex - 1 + slides.length) % slides.length;
                 updateSlider();
             }, 3000); 

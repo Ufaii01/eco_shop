@@ -61,7 +61,7 @@
     <nav class="navbar custom-navbar">
         <div class="nav-left">
             <span class="hamburger" id="hamburger-btn">&#9776;</span>
-            <div class="logo-text"><strong>ECOSHOP</strong> <span class="page-title">/ CART</span></div>
+            <div class="logo-text"><strong>ECOSHOP</strong> <span class="page-title" style="font-size: 13px">/ CART</span></div>
         </div>
         <div class="nav-right">
             <a href="catalog.html"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -92,7 +92,10 @@
                         <span class="qty-value">1</span>
                         <button class="qty-btn plus">&plus;</button>
                     </div>
-                </div>
+                        <button class="remove-item-btn" aria-label="Remove Item">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
                 <div class="cart-item-row" data-price="35000">
                     <input type="checkbox" class="custom-checkbox item-checkbox">
                     <div class="product-image-wrapper">
@@ -108,6 +111,9 @@
                         <span class="qty-value">2</span>
                         <button class="qty-btn plus">&plus;</button>
                     </div>
+                    <button class="remove-item-btn" aria-label="Remove Item">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -133,6 +139,9 @@
                         <span class="qty-value">1</span>
                         <button class="qty-btn plus">&plus;</button>
                     </div>
+                    <button class="remove-item-btn" aria-label="Remove Item">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
                 <div class="cart-item-row" data-price="120000">
                     <input type="checkbox" class="custom-checkbox item-checkbox">
@@ -149,6 +158,9 @@
                         <span class="qty-value">1</span>
                         <button class="qty-btn plus">&plus;</button>
                     </div>
+                    <button class="remove-item-btn" aria-label="Remove Item">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -174,6 +186,9 @@
                         <span class="qty-value">3</span>
                         <button class="qty-btn plus">&plus;</button>
                     </div>
+                    <button class="remove-item-btn" aria-label="Remove Item">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -199,6 +214,9 @@
                         <span class="qty-value">1</span>
                         <button class="qty-btn plus">&plus;</button>
                     </div>
+                    <button class="remove-item-btn" aria-label="Remove Item">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -380,6 +398,31 @@
                 
                 // Pindah ke halaman checkout
                 window.location.href = "checkout.html";
+            });
+            // ==========================================
+            // 4. LOGIKA HAPUS BARANG (REMOVE ITEM)
+            // ==========================================
+            const removeButtons = document.querySelectorAll(".remove-item-btn");
+            
+            removeButtons.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    const row = e.target.closest(".cart-item-row");
+                    const shopGroup = row.closest(".cart-shop-group");
+                    
+                    // Hapus elemen produk dari halaman
+                    row.remove();
+                    
+                    // Cek apakah toko tersebut masih memiliki barang lain?
+                    // Jika habis (0 barang), hapus juga header tokonya sekalian
+                    const remainingItems = shopGroup.querySelectorAll(".cart-item-row");
+                    if (remainingItems.length === 0) {
+                        shopGroup.remove(); 
+                    }
+                    
+                    // Update kalkulasi total harga & status checkbox
+                    checkSelectAllStatus();
+                    calculateCartTotal();
+                });
             });
         });
     </script>

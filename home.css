@@ -11,9 +11,7 @@
 }
 
 body {
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-top: 100px;
+    padding-top: var(--nav-height);
     background-color: #f6f5ef;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
@@ -32,6 +30,7 @@ body {
     width: 100%;
     z-index: 50;
     transition: background-color 0.35s ease, box-shadow 0.35s ease;
+    flex-wrap: nowrap; /* Dipaksa sebaris */
 }
 
 .top-navbar.scrolled {
@@ -40,10 +39,10 @@ body {
 }
 
 .hamburger-btn {
-    display: none;
+    display: none; /* Tetap hidden di desktop */
     background: none;
     border: none;
-    font-size: 26px;
+    font-size: 18px; /* Dikecilkan agar setara dengan teks menu */
     line-height: 1;
     cursor: pointer;
     color: #392F27;
@@ -256,10 +255,10 @@ body {
 
 /* ==================== HERO SECTION ==================== */
 .hero {
-    padding-top: calc(var(--nav-height) + var(--hero-float) + clamp(16px, 2vw, 32px));
-    padding-right: clamp(12px, 2.5vw, 24px);
+    padding-top: clamp(16px, 3vw, 32px);
+    padding-right: clamp(16px, 4vw, 24px); 
     padding-bottom: clamp(16px, 2vw, 20px);
-    padding-left: clamp(12px, 2.5vw, 24px);
+    padding-left: clamp(16px, 4vw, 24px);
 }
 
 .hero-content {
@@ -463,7 +462,6 @@ body {
     opacity: 1;
 }
 
-/* Menggunakan clamp agar translasi menyesuaikan ukuran layar tanpa keluar container */
 .slide-left {
     transform: translateX(clamp(-280px, -28vw, -150px)) scale(0.9);
     z-index: 4;
@@ -514,7 +512,7 @@ body {
     align-items: center;
     gap: clamp(15px, 3vw, 30px);
     margin-bottom: 60px;
-    flex-wrap: wrap; /* Menjaga agar elemen melipat rapi bila ruang sempit */
+    flex-wrap: wrap; 
 }
 
 .step-item {
@@ -574,7 +572,6 @@ body {
 
 .sellers-grid {
     display: grid;
-    /* Dibuat auto-fit sehingga baris otomatis menyusut tanpa tumpah */
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 24px;
     max-width: 1200px;
@@ -689,11 +686,11 @@ body {
 .trust-badges {
     background-color: #392f27;
     padding: clamp(30px, 4vw, 40px) clamp(16px, 3vw, 32px) 60px;
+    width: 100%; 
 }
 
 .trust-grid {
     display: grid;
-    /* Grid otomatis mengalir menyesuaikan ukuran layar */
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: clamp(20px, 3vw, 32px);
     max-width: 1440px;
@@ -744,21 +741,65 @@ body {
     .signup-container { display: none; }
     .divider { display: none; }
     
-    /* Process steps arrow direction adjustment for smaller tablets */
     .step-arrow { transform: rotate(90deg); margin: 10px 0; }
     .process-steps { flex-direction: column; gap: 20px; }
 }
 
 /* ── Mobile: ≤ 768px ─────────────────────────────────────── */
 @media (max-width: 768px) {
-    .hamburger-btn { display: block; }
-    .menu, .nav-right { display: none; }
+    .hamburger-btn { display: none; }
+    
+    .top-navbar {
+        padding: 12px 10px;
+        gap: 5px; 
+        flex-wrap: nowrap; /* Memaksa agar tetap 1 baris menyamping */
+    }
+    
+    .menu {
+        display: flex;
+        gap: clamp(4px, 1vw, 8px); /* Jarak antar menu diperkecil */
+        width: auto;
+        order: unset;
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 11px; /* Ukuran font menu dikecilkan agar muat */
+    }
+    
+    .dot {
+        font-size: 11px;
+    }
+
+    .nav-right { 
+        display: flex; 
+        align-items: center;
+        gap: 8px;
+        order: unset;
+    }
+
+    .logo {
+        font-size: 20px; /* Logo sedikit dikecilkan agar muat di HP sebaris */
+        letter-spacing: 1px;
+        order: unset;
+    }
+
+    .login {
+        font-size: 14px; /* Teks Log In dikecilkan */
+        font-weight: 700;
+    }
+
+    .user-icon img {
+        width: 24px; /* Ikon dikecilkan agar hemat tempat */
+        transform: translateY(0); 
+    }
 
     .hero {
-        padding-top: calc(var(--nav-height) + clamp(16px, 4vw, 28px));
-        padding-right: 14px;
+        padding-top: 16px;
+        padding-right: 16px;
         padding-bottom: 24px;
-        padding-left: 14px;
+        padding-left: 16px;
     }
 
     .hero-content {
@@ -789,18 +830,19 @@ body {
     }
 
     .main-content-card {
-        margin: 60px 14px 40px;
+        margin: 60px 16px 40px; 
         padding: 32px 20px;
         border-radius: 24px;
+        max-width: calc(100% - 32px); 
     }
 }
 
-/* ── Small mobile: ≤ 480px (Untuk berjaga-jaga) ────────── */
+/* ── Small mobile: ≤ 480px ────────────────────────── */
 @media (max-width: 480px) {
     .hero {
-        padding-top: calc(var(--nav-height) + 14px);
-        padding-right: 10px;
-        padding-left: 10px;
+        padding-top: 12px;
+        padding-right: 12px;
+        padding-left: 12px;
         padding-bottom: 20px;
     }
 
@@ -809,7 +851,7 @@ body {
         border-radius: 20px;
     }
 
-    .hero-left h1 { letter-spacing: 2px; }
+    .hero-left h1 { font-size: 34px; letter-spacing: 2px; } 
     .shop-btn { width: 100%; justify-content: space-between; }
     .trust-grid { grid-template-columns: 1fr; }
 }

@@ -14,47 +14,82 @@
 body {
     background: var(--brown);
     font-family: 'Koulen', sans-serif;
-    overflow-x: hidden; /* Mencegah horizontal scroll yang tidak disengaja */
+    overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1, h3 {
     font-family: 'Koulen', sans-serif;
-    font-weight: 400;
+    font-weight: 100;
+}
+
+h4 {
+    font-weight: 100;
 }
 
 /* =====================================================
    DASHBOARD HEADER & LAYOUT
    ===================================================== */
 .dashboard-header {
-    min-height: clamp(56px, 8vw, 70px);
-    height: auto;
+    min-height: 63px;
     background: var(--cream);
     display: flex;
     align-items: center;
-    padding: 8px clamp(16px, 3vw, 20px);
-    border-bottom: 1px solid rgba(0,0,0,.08);
+    justify-content: space-between;
+    padding: 12px 30px;
 }
 
 .left-header {
     display: flex;
     align-items: center;
-    gap: clamp(12px, 2vw, 18px);
+    gap: 18px;
 }
 
 .left-header h2 {
-    font-size: clamp(22px, 3vw, 32px); /* Fluid typography */
-    letter-spacing: 2px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--brown);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.left-header .page-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: normal;
 }
 
 .menu {
-    font-size: clamp(24px, 3vw, 30px);
+    font-size: 22px;
     cursor: pointer;
+    color: var(--brown);
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.right-header a {
+    color: var(--brown);
+    font-size: 20px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.right-header a:hover {
+    opacity: 0.6;
 }
 
 .dashboard-container {
     display: flex;
-    gap: clamp(12px, 2vw, 20px);
-    padding: clamp(12px, 2vw, 18px) clamp(16px, 3vw, 20px);
+    gap: 16px;
+    padding: 15px 18px;
     align-items: flex-start;
 }
 
@@ -62,8 +97,7 @@ h1, h2, h3, h4 {
    PROFILE SIDEBAR
    ===================================================== */
 .profile-sidebar {
-    /* Lebar dinamis di desktop, maksimal 320px */
-    flex: 0 0 clamp(260px, 25vw, 320px); 
+    flex: 0 0 290px;
     display: flex;
 }
 
@@ -72,7 +106,7 @@ h1, h2, h3, h4 {
     flex-direction: column;
     width: 100%;
     border: 3px solid var(--cream);
-    border-radius: clamp(16px, 2vw, 20px);
+    border-radius: 18px;
     overflow: hidden;
 }
 
@@ -113,8 +147,8 @@ h1, h2, h3, h4 {
 }
 
 .profile-icon {
-    width: clamp(40px, 5vw, 54px);
-    height: clamp(40px, 5vw, 54px);
+    width: 47px;
+    height: 47px;
     object-fit: contain;
     flex-shrink: 0;
 }
@@ -129,16 +163,17 @@ h1, h2, h3, h4 {
 
 .balance {
     background: var(--cream);
-    padding: clamp(16px, 2vw, 24px) 18px;
+    padding: 20px 18px;
 }
 
 .balance h2 {
-    font-size: clamp(28px, 4vw, 40px); /* Fluid */
+    font-size: 30px;
+    font-weight: 250;
 }
 
 .balance h3 {
-    margin-top: clamp(10px, 2vw, 18px);
-    font-size: clamp(16px, 2vw, 20px);
+    margin-top: 14px;
+    font-size: 18px;
 }
 
 .transactions {
@@ -152,11 +187,10 @@ h1, h2, h3, h4 {
     padding: 15px 0 15px 18px;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    font-size: clamp(16px, 2vw, 18px);
 }
 
-.transaction-list { 
-    padding: clamp(8px, 2vw, 12px);
+.transaction-list {
+    padding: 10px;
 }
 
 .transaction-card {
@@ -188,8 +222,8 @@ h1, h2, h3, h4 {
 }
 
 .transaction-card img {
-    width: clamp(45px, 5vw, 52px);
-    height: clamp(45px, 5vw, 52px);
+    width: 48px;
+    height: 48px;
     object-fit: cover;
     flex-shrink: 0;
     position: relative;
@@ -205,10 +239,10 @@ h1, h2, h3, h4 {
     z-index: 2;
 }
 
-.transaction-card h4 { 
+.transaction-card h4 {
     margin: 0;
     color: #392F27;
-    font-size: clamp(16px, 2vw, 18px);
+    font-size: 17px;
     line-height: 1;
 }
 
@@ -228,8 +262,7 @@ h1, h2, h3, h4 {
 }
 
 .logout-btn {
-    margin-top: auto;
-    float: right;
+    align-self: flex-end; /* Menggantikan float agar lebih konsisten di flexbox */
     margin: 10px;
     width: 120px;
     height: 35px;
@@ -247,20 +280,20 @@ h1, h2, h3, h4 {
 /* =====================================================
    DASHBOARD CONTENT (Stats & Orders)
    ===================================================== */
-.content { flex: 1; }
+.content { flex: 1; width: 100%; }
 
 .stats-card {
     background: var(--cream);
-    border-radius: clamp(20px, 3vw, 30px);
+    border-radius: 25px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
 .stats-header {
-    padding: clamp(10px, 2vw, 12px) clamp(16px, 2vw, 20px);
+    padding: 11px 18px;
     border-bottom: 2px solid #cfcfcf;
-    font-size: clamp(18px, 2vw, 22px);
+    font-size: 20px;
 }
 
 .stats-body {
@@ -273,27 +306,29 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(12px, 2vw, 18px);
-    padding: clamp(16px, 2vw, 22px);
+    gap: 15px;
+    padding: 19px;
 }
 
 .stat-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    
 }
 
 .stat:not(:last-child) { border-right: 2px solid #cfcfcf; }
 
 .stat h2 {
-    font-size: clamp(32px, 4vw, 48px); /* Fluid */
+    font-size: 30px;
+    font-weight: 100;
     line-height: 1;
     margin: 0;
 }
 
 .stat-icon {
-    width: clamp(52px, 5vw, 75px);
-    height: clamp(52px, 5vw, 75px);
+    width: 50px;
+    height: 50px;
     object-fit: contain;
     margin-bottom: 8px;
 }
@@ -301,23 +336,23 @@ h1, h2, h3, h4 {
 .stat p {
     margin-top: 4px;
     color: #888;
-    font-size: clamp(12px, 1.5vw, 16px);
+    font-size: 14px;
 }
 
 .orders-wrapper {
-    margin-top: clamp(12px, 2vw, 18px);
+    margin-top: 15px;
     background: var(--cream);
-    border-radius: clamp(16px, 3vw, 35px);
-    padding: clamp(16px, 3vw, 28px);
+    border-radius: 26px;
+    padding: 22px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(16px, 3vw, 32px);
+    gap: 24px;
 }
 
 .order-panel {
     border: 3px solid var(--brown);
-    border-radius: clamp(16px, 2vw, 28px);
-    padding: clamp(14px, 2vw, 18px);
+    border-radius: 22px;
+    padding: 16px;
 }
 
 .order-panel h3 {
@@ -325,13 +360,12 @@ h1, h2, h3, h4 {
     margin-bottom: 20px;
 }
 
-.order-list{
-    height: clamp(220px, 30vh, 365px); /* Menyesuaikan tinggi layar */
-    overflow-y: auto; /* Menggunakan auto agar scrollbar hilang jika konten sedikit */
-    padding-right: 5px; /* Memberi ruang untuk scrollbar */
+.order-list {
+    height: 290px;
+    overflow-y: auto;
+    padding-right: 5px;
 }
 
-/* Mempercantik Scrollbar */
 .order-list::-webkit-scrollbar { width: 6px; }
 .order-list::-webkit-scrollbar-thumb { background: #cfcfcf; border-radius: 10px; }
 
@@ -341,14 +375,14 @@ h1, h2, h3, h4 {
     background: #3d3028;
     color: white;
     border-radius: 10px;
-    padding: clamp(8px, 1.5vw, 10px);
+    padding: 9px;
     min-height: 62px;
     margin-bottom: 12px;
 }
 
 .order-card img {
-    width: clamp(52px, 5vw, 70px);
-    height: clamp(52px, 5vw, 70px);
+    width: 61px;
+    height: 61px;
     object-fit: cover;
     border-radius: 6px;
 }
@@ -363,24 +397,140 @@ h1, h2, h3, h4 {
 }
 
 /* =====================================================
-   RESPONSIVE — 768px (Tablet) & 540px (Mobile)
+   GLOBAL NAVIGATION SIDEBAR
    ===================================================== */
-/* Di sini kita hanya perlu mengatur perubahan LAYOUT (seperti kolom ke baris), 
-   karena ukuran font dan padding sudah otomatis diatur oleh clamp() di atas. */
+.sidebar-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden;
+    transition: all 0.3s ease-in-out; z-index: 1000;
+}
 
+.sidebar-overlay.active { opacity: 1; visibility: visible; }
+
+.sidebar {
+    position: fixed; top: 0; left: 0; transform: translateX(-100%);
+    width: min(320px, 85vw); /* Dioptimalkan agar tidak overflow di layar HP kecil */
+    height: 100vh;
+    background-color: #3b322a; color: #fff; z-index: 1001;
+    overflow-y: auto; transition: transform 0.3s ease-in-out;
+    padding: 28px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar.active { transform: translateX(0); }
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.sidebar-header h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.sidebar-header .close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.2s ease;
+}
+
+.sidebar-header .close-btn:hover { color: #a39d98; }
+
+.sidebar-section { margin-bottom: 35px; }
+
+.underlined-title {
+    color: #a39d98;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 1px solid #7a736d;
+    padding-bottom: 4px;
+}
+
+.sidebar-section ul {
+    list-style: none; padding: 0; display: flex; flex-direction: column; gap: 18px;
+}
+
+.sidebar-section ul li a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sidebar-section ul li a:hover,
+.sidebar-section ul li a.active-link { color: #a39d98; }
+
+.menu-contact { gap: 15px !important; }
+.menu-contact li a { display: flex; align-items: center; gap: 15px; font-size: 13px; }
+.menu-contact li a i { font-size: 18px; width: 20px; text-align: center; }
+
+.menu-support { gap: 12px !important; }
+.menu-support li a { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+
+.community-box h5 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.community-box p {
+    color: #a39d98; font-size: 11px; line-height: 1.5; margin-bottom: 15px;
+}
+
+.join-btn {
+    background-color: #ffffff;
+    color: #3b322a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s;
+}
+
+.join-btn:hover { background-color: #e2e0d7; }
+
+/* =====================================================
+   RESPONSIVE MEDIA QUERIES (DIOPTIMALKAN UNTUK HP)
+   ===================================================== */
 @media (max-width: 900px) {
-    /* Penyesuaian khusus untuk iPad/Tablet layar menengah */
     .dashboard-container {
-        flex-direction: column; /* Pindahkan sidebar ke atas */
+        flex-direction: column;
+        padding: 15px 12px;
     }
-    
+
     .profile-sidebar { flex: auto; width: 100%; }
-    
+
     .profile-card {
         flex-direction: row;
         flex-wrap: wrap;
     }
-    
+
     .profile-top { width: 100%; }
     .balance { flex: 1; min-width: 250px; }
     .transactions { width: 100%; border-top: 2px solid var(--cream); }
@@ -388,7 +538,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
     .stats-body {
-        grid-template-columns: repeat(2, 1fr); /* Ubah stats jadi 2 kolom */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .stat:not(:last-child) {
@@ -397,102 +547,77 @@ h1, h2, h3, h4 {
     }
 
     .stat:nth-child(2) { border-right: none; }
-    .stat:nth-child(1) { border-right: 2px solid #cfcfcf; } /* Batas kolom 1 & 2 */
+    .stat:nth-child(1) { border-right: 2px solid #cfcfcf; }
 
     .orders-wrapper {
-        grid-template-columns: 1fr; /* Ubah order jadi 1 kolom menyusun ke bawah */
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 15px;
     }
 }
 
-@media (max-width: 539px) {
+/* Kategori Layar HP (Smartphone Portrait) */
+@media (max-width: 576px) {
+    .dashboard-header {
+        padding: 12px 15px; /* Mempersempit padding header di HP */
+    }
+
+    .left-header {
+        gap: 10px;
+    }
+
+    .left-header .page-title {
+        display: none; /* Menyembunyikan sub-title halaman jika layar terlalu sempit agar tidak sumpek */
+    }
+
+    /* Mengembalikan profile card menjadi vertical stack penuh agar rapi di HP */
+    .profile-card {
+        flex-direction: column;
+    }
+
+    .balance {
+        width: 100%;
+        border-bottom: 2px solid var(--brown);
+    }
+
+    /* Menyesuaikan ukuran font statistik yang terlalu besar di HP */
     .stats-body {
-        grid-template-columns: 1fr; /* Stats jadi 1 kolom di HP kecil */
+        grid-template-columns: 1fr; /* Menjadi 1 kolom penuh ke bawah */
     }
 
-    .stat { justify-content: flex-start; }
+    .stat {
+        justify-content: flex-start;
+        padding: 15px;
+    }
+
+    .stat:nth-child(1) {
+        border-right: none;
+        border-bottom: 2px solid #cfcfcf;
+    }
+
+    .stat h2 {
+        font-size: 32px; /* Ukuran angka stat dikecilkan dari 40px */
+    }
+
+    .stat-icon {
+        width: 48px; /* Mengecilkan icon stat di HP */
+        height: 48px;
+    }
     
-    .stat:nth-child(1) { 
-        border-right: none; 
-        border-bottom: 2px solid #cfcfcf; 
+    .order-panel {
+        padding: 12px;
     }
 }
 
-/* =====================================================
-   GLOBAL NAVIGATION SIDEBAR
-   ===================================================== */
-.sidebar-overlay { 
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden;
-    transition: all 0.3s ease-in-out; z-index: 1000; 
+/* Tambahan untuk HP berspesifikasi layar sangat kecil (seperti iPhone SE lama / < 360px) */
+@media (max-width: 360px) {
+    .left-header h2 {
+        font-size: 15px;
+    }
+    .right-header {
+        gap: 12px;
+    }
+    .balance h2 {
+        font-size: 24px;
+    }
 }
-
-.sidebar-overlay.active { opacity: 1; visibility: visible; }
-
-.sidebar {
-    position: fixed; top: 0; left: 0; transform: translateX(-100%);
-    width: min(320px, 85vw); 
-    height: 100vh; height: 100dvh; 
-    background-color: #3b322a; color: #fff; z-index: 1001;
-    overflow-y: auto; transition: transform 0.3s ease-in-out;
-    padding: clamp(25px, 4vw, 30px) clamp(20px, 5vw, 40px);
-    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-    font-family: 'DM Sans', sans-serif;
-}
-
-.sidebar.active { transform: translateX(0); }
-
-.sidebar-header {
-    display: flex; align-items: center; gap: 15px;
-    margin-bottom: clamp(30px, 5vw, 40px);
-}
-
-.sidebar-header .hamburger-inside { font-size: 22px; cursor: pointer; color: #fff; }
-
-.sidebar-header h2 {
-    font-size: 24px; font-weight: 800; letter-spacing: 2px; margin: 0;
-}
-
-.sidebar-section { margin-bottom: 35px; }
-
-.underlined-title {
-    color: #a39d98; font-size: 12px; font-weight: 600; letter-spacing: 1px;
-    text-transform: uppercase; margin-bottom: 20px; display: inline-block;
-    border-bottom: 1px solid #7a736d; padding-bottom: 4px;
-}
-
-.sidebar-section ul {
-    list-style: none; padding: 0; display: flex; flex-direction: column; gap: 18px;
-}
-
-.sidebar-section ul li a {
-    color: #ffffff; font-size: clamp(14px, 2vw, 16px); font-weight: 700;
-    letter-spacing: 1px; text-transform: uppercase; text-decoration: none;
-    transition: color 0.2s;
-}
-
-.sidebar-section ul li a:hover,
-.sidebar-section ul li a.active-link { color: #a39d98; }
-
-.menu-contact { gap: 15px !important; }
-.menu-contact li a { display: flex; align-items: center; gap: 15px; font-size: 14px; }
-.menu-contact li a i { font-size: 18px; width: 20px; text-align: center; }
-
-.menu-support { gap: 12px !important; }
-.menu-support li a { font-size: 11px; font-weight: 800; letter-spacing: 0.5px; }
-
-.community-box h5 {
-    color: #ffffff; font-size: 14px; font-weight: 700; margin-bottom: 6px;
-    text-transform: uppercase; letter-spacing: 0.5px;
-}
-
-.community-box p {
-    color: #a39d98; font-size: 10px; line-height: 1.5; margin-bottom: 15px;
-}
-
-.join-btn {
-    background-color: #ffffff; color: #3b322a; border: none; padding: 8px 16px;
-    border-radius: 20px; font-size: 10px; font-weight: 800; cursor: pointer;
-    display: inline-flex; align-items: center; gap: 6px; transition: background-color 0.2s;
-}
-
-.join-btn:hover { background-color: #e2e0d7; }

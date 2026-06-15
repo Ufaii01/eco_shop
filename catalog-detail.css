@@ -389,15 +389,15 @@ button {
 .btn-add-cart,
 .btn-buy-now {
   background-color: #faf9ed;
-  border-radius: 27px;
-  height: 80px;
+  border-radius: 18px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Koulen', sans-serif;
-  font-size: 40px;
+  font-size: 22px;
   color: #392f27;
-  letter-spacing: 3.2px;
+  letter-spacing: 2px;
   transition: background-color 0.2s;
   width: 100%;
 }
@@ -1030,10 +1030,10 @@ footer {
 
   .btn-add-cart,
   .btn-buy-now {
-    font-size: 26px;
-    height: 64px;
-    border-radius: 20px;
-    letter-spacing: 2px;
+    font-size: 18px;
+    height: 48px;
+    border-radius: 14px;
+    letter-spacing: 1.5px;
   }
 
   .product-video {

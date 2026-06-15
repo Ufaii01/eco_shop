@@ -376,6 +376,14 @@ input {
   letter-spacing: 0.5px;
 }
 
+/* ==========================================================================
+   NAVBAR COLORS & SCROLL EFFECT (Checkout Page)
+   ========================================================================== */
+.navbar {
+  background-color: #FAF7F2; 
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
 .navbar .logo {
   color: #3B2A1A;
   transition: color 0.35s ease;
@@ -393,10 +401,18 @@ input {
   transition: color 0.35s ease;
 }
 
-.navbar.scrolled .logo   { color: #3B2A1A; }
-.navbar.scrolled .hamburger { color: #3B2A1A; }
-.navbar.scrolled .nav-right .icon { color: #3B2A1A; }
+/* Efek saat discroll */
+.navbar.scrolled {
+  background-color: #392F27 !important; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
+.navbar.scrolled .logo,
+.navbar.scrolled .logo span,
+.navbar.scrolled .hamburger,
+.navbar.scrolled .nav-right .icon {
+  color: #FAF7F2 !important;
+}
 
 /* ==========================================================================
    2. RESPONSIVE MEDIA QUERIES
@@ -405,7 +421,7 @@ input {
 /* --- UKURAN TABLET (max-width: 1024px hingga 541px) --- */
 @media screen and (max-width: 1024px) {
   .checkout-grid { 
-    grid-template-columns: 1fr; /* Berubah jadi 1 kolom bertumpuk agar tidak sempit */
+    grid-template-columns: 1fr; 
     gap: 24px;
   }
   .checkout-container { 
@@ -416,14 +432,14 @@ input {
     padding: 24px; 
   }
   .header__title {
-    font-size: 48px; /* Sedikit diperkecil untuk tablet */
+    font-size: 48px; 
   }
 }
 
 /* --- OPTIMALISASI TAMBAHAN UNTUK MINI TABLET (max-width: 768px) --- */
 @media screen and (max-width: 768px) {
   .trust-badges {
-    flex-wrap: wrap; /* Mencegah badge keluar layar jika ruang menyempit */
+    flex-wrap: wrap; 
     gap: 16px;
   }
 }
@@ -465,17 +481,17 @@ input {
     font-size: 22px; 
   }
   .form-row { 
-    grid-template-columns: 1fr; /* Form input nama depan/belakang bertumpuk vertikal */
-    gap: 0; /* Jarak diatur oleh form-group */
+    grid-template-columns: 1fr; 
+    gap: 0; 
   }
   .payment-methods { 
-    grid-template-columns: 1fr; /* Metode pembayaran bertumpuk vertikal */
+    grid-template-columns: 1fr; 
     gap: 12px;
   }
   
   .trust-badges {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Membagi badge menjadi 2 kolom rapi di HP */
+    grid-template-columns: 1fr 1fr; 
     gap: 20px;
   }
 }
