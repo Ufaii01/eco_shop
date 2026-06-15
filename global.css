@@ -378,7 +378,6 @@ a {
 
 /* Mobile & Tablet Kecil (Di bawah 768px) */
 @media (max-width: 768px) {
-    /* --- FOOTER MOBILE --- */
     .footer-content {
         grid-template-columns: 1fr; /* Menjadi 1 kolom berderet ke bawah */
         text-align: center;
@@ -413,64 +412,6 @@ a {
         width: 100%; 
         max-width: 400px;
         padding: 12px 20px; 
-    }
-
-    /* --- TAMBAHAN UNTUK SIDEBAR MOBILE (LEBIH RAPI & MENGECIL) --- */
-    .sidebar {
-        padding: 24px 0; /* Mengurangi padding atas-bawah */
-    }
-
-    .sidebar-header {
-        margin-bottom: 30px;
-    }
-
-    .sidebar-header h2 {
-        font-size: 18px; /* Mengecilkan tulisan brand (ECOSHOP) */
-    }
-
-    .sidebar-header .hamburger-inside {
-        font-size: 18px;
-    }
-
-    .sidebar-section {
-        margin-bottom: 28px; /* Merapatkan jarak antar section (PAGE, CONTACT US, dll) */
-    }
-
-    .underlined-title {
-        font-size: 10px; /* Mengecilkan teks sub-judul */
-        margin-bottom: 16px;
-    }
-
-    .sidebar-section ul li {
-        margin-bottom: 12px; /* Merapatkan jarak list antar menu */
-    }
-
-    .sidebar-section ul li a {
-        font-size: 12px; /* Font menu utama mengecil dari 14px ke 12px */
-        gap: 12px;
-    }
-
-    .menu-contact li a i {
-        font-size: 16px; /* Ikon sosial media lebih kecil */
-        width: 16px;
-    }
-
-    .menu-support li a {
-        font-size: 9px; /* Teks support lebih kecil */
-    }
-
-    .community-box h5 {
-        font-size: 12px;
-    }
-
-    .community-box p {
-        font-size: 9.5px;
-        margin-bottom: 12px;
-    }
-
-    .join-btn {
-        padding: 6px 14px;
-        font-size: 9.5px;
     }
 }
 

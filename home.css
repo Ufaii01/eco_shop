@@ -747,7 +747,7 @@ body {
 
 /* ── Mobile: ≤ 768px ─────────────────────────────────────── */
 @media (max-width: 768px) {
-    .hamburger-btn { display: none; }
+    .hamburger-btn { display: block; }
     
     .top-navbar {
         padding: 12px 10px;
@@ -756,7 +756,7 @@ body {
     }
     
     .menu {
-        display: flex;
+        display: none;
         gap: clamp(4px, 1vw, 8px); /* Jarak antar menu diperkecil */
         width: auto;
         order: unset;
@@ -769,6 +769,7 @@ body {
     }
     
     .dot {
+        display:none;
         font-size: 11px;
     }
 
