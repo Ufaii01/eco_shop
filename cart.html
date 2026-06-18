@@ -239,9 +239,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // ==========================================
-            // 1. LOGIKA SIDEBAR & NAVBAR SCROLL
-            // ==========================================
             const hamburgerBtn = document.getElementById("hamburger-btn");
             const sidebar = document.getElementById("sidebar");
             const closeSidebarBtn = document.getElementById("close-sidebar");
@@ -272,9 +269,6 @@
                 }
             });
 
-            // ==========================================
-            // 2. LOGIKA KERANJANG & PERHITUNGAN
-            // ==========================================
             const selectAllCheckbox = document.getElementById("select-all");
             const shopCheckboxes = document.querySelectorAll(".shop-checkbox");
             const itemCheckboxes = document.querySelectorAll(".item-checkbox");
@@ -282,12 +276,10 @@
             const totalAmountDisplay = document.querySelector(".total-amount");
             const processBtn = document.querySelector(".process-checkout-btn");
 
-            // Helper untuk format rupiah
             function formatRupiah(number) {
                 return "Rp " + number.toLocaleString("id-ID");
             }
 
-            // Fungsi Hitung Total Belanja
             function calculateCartTotal() {
                 let total = 0;
                 const rows = document.querySelectorAll(".cart-item-row");
@@ -304,7 +296,6 @@
                 totalAmountDisplay.textContent = formatRupiah(total);
             }
 
-            // Event Listener Tombol Quantity Plus & Minus
             qtyButtons.forEach(btn => {
                 btn.addEventListener("click", (e) => {
                     const qtyValueSpan = btn.parentElement.querySelector(".qty-value");
@@ -321,7 +312,6 @@
                 });
             });
 
-            // Checkbox: Select All
             selectAllCheckbox.addEventListener("change", () => {
                 const isChecked = selectAllCheckbox.checked;
                 shopCheckboxes.forEach(cb => cb.checked = isChecked);
@@ -329,7 +319,6 @@
                 calculateCartTotal();
             });
 
-            // Checkbox: Shop Level (Pilih semua item di toko tertentu)
             shopCheckboxes.forEach(shopCb => {
                 shopCb.addEventListener("change", () => {
                     const isChecked = shopCb.checked;
@@ -338,20 +327,17 @@
                     
                     itemsInShop.forEach(itemCb => itemCb.checked = isChecked);
                     
-                    // Update status select all
                     checkSelectAllStatus();
                     calculateCartTotal();
                 });
             });
 
-            // Checkbox: Item Level
             itemCheckboxes.forEach(itemCb => {
                 itemCb.addEventListener("change", () => {
                     const shopGroup = itemCb.closest(".cart-shop-group");
                     const shopCb = shopGroup.querySelector(".shop-checkbox");
                     const itemsInShop = shopGroup.querySelectorAll(".item-checkbox");
                     
-                    // Jika semua produk di toko ini dicentang
                     const allItemsInShopChecked = Array.from(itemsInShop).every(cb => cb.checked);
                     shopCb.checked = allItemsInShopChecked;
 
@@ -365,11 +351,8 @@
                 selectAllCheckbox.checked = allItemsChecked;
             }
 
-            // ==========================================
-            // 3. LOGIKA KIRIM DATA KE CHECKOUT via LOCALSTORAGE
-            // ==========================================
             processBtn.addEventListener("click", (e) => {
-                e.preventDefault(); // Mencegah pindah halaman langsung
+                e.preventDefault(); 
                 
                 const selectedItems = [];
                 const rows = document.querySelectorAll(".cart-item-row");
@@ -393,10 +376,8 @@
                     return;
                 }
 
-                // Simpan data array barang ke localStorage
                 localStorage.setItem("selectedCartItems", JSON.stringify(selectedItems));
                 
-                // Pindah ke halaman checkout
                 window.location.href = "checkout.html";
             });
             // ==========================================
@@ -409,17 +390,13 @@
                     const row = e.target.closest(".cart-item-row");
                     const shopGroup = row.closest(".cart-shop-group");
                     
-                    // Hapus elemen produk dari halaman
                     row.remove();
                     
-                    // Cek apakah toko tersebut masih memiliki barang lain?
-                    // Jika habis (0 barang), hapus juga header tokonya sekalian
                     const remainingItems = shopGroup.querySelectorAll(".cart-item-row");
                     if (remainingItems.length === 0) {
                         shopGroup.remove(); 
                     }
                     
-                    // Update kalkulasi total harga & status checkbox
                     checkSelectAllStatus();
                     calculateCartTotal();
                 });
