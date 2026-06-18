@@ -1,21 +1,14 @@
-// Pastikan kode nunggu HTML selesai loading
 document.addEventListener("DOMContentLoaded", function () {
-    
-    // ==========================================================================
-    // 1. LOGIKA GESER GAMBAR HERO DENGAN TOMBOL PANAH
-    // ==========================================================================
     const trackImages = document.getElementById('img-track');
     const btnLeft = document.querySelector('.product-images__arrow--left');
     const btnRight = document.querySelector('.product-images__arrow--right');
 
     if (trackImages && btnLeft && btnRight) {
-        // Fungsi menghitung jarak geser (lebar 1 gambar + jarak antar gambar)
         const getScrollAmount = () => {
             const slide = trackImages.querySelector('.product-images__slide');
             return slide ? slide.getBoundingClientRect().width + 18 : 500;
         };
-
-        // Klik panah kanan
+        
         btnRight.addEventListener('click', function() {
             trackImages.scrollBy({
                 left: getScrollAmount(),
@@ -23,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Klik panah kiri
         btnLeft.addEventListener('click', function() {
             trackImages.scrollBy({
                 left: -getScrollAmount(),
@@ -32,9 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================================
-    // 2. LOGIKA CAROUSEL BAWAH (YOU MAY ALSO LIKE) - DRAG MOUSE & SCROLLBAR
-    // ==========================================================================
     const trackFan = document.querySelector('.carousel-fan');
 
     if (trackFan) {
@@ -42,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let startX;
         let scrollLeft;
 
-        // Klik mouse dan tahan
         trackFan.addEventListener('mousedown', (e) => {
             isDown = true;
             trackFan.style.cursor = 'grabbing';
@@ -50,19 +38,16 @@ document.addEventListener("DOMContentLoaded", function () {
             scrollLeft = trackFan.scrollLeft;
         });
 
-        // Mouse keluar dari area carousel
         trackFan.addEventListener('mouseleave', () => {
             isDown = false;
             trackFan.style.cursor = 'grab';
         });
 
-        // Lepas klik mouse
         trackFan.addEventListener('mouseup', () => {
             isDown = false;
             trackFan.style.cursor = 'grab';
         });
 
-        // Mouse digeser pas posisi ngeklik
         trackFan.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
@@ -72,9 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================================
-    // 3. LOGIKA CUSTOM PLAY/PAUSE VIDEO
-    // ==========================================================================
     const video = document.getElementById('my-product-video');
     const playBtn = document.getElementById('custom-play-btn');
 
@@ -82,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         playBtn.addEventListener('click', function() {
             video.play()
                 .then(() => {
-                    // Sembunyikan tombol lingkaran putih pas video jalan
                     playBtn.style.display = 'none';
                 })
                 .catch(error => {
@@ -91,20 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
         });
 
-        // Munculkan kembali tombol putih jika user klik pause di kontrol bawaan
         video.addEventListener('pause', function() {
             playBtn.style.display = 'flex';
         });
         
-        // Munculkan kembali tombol putih saat video tamat
         video.addEventListener('ended', function() {
             playBtn.style.display = 'flex';
         });
     }
 
-    // ==========================================================================
-    // 4. LOGIKA SIDEBAR NAVIGASI
-    // ==========================================================================
     const hamburgerBtn = document.querySelector('.nav-left .hamburger');
     const closeBtn = document.getElementById('close-btn');
     const sidebar = document.getElementById('sidebar');
@@ -129,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let startX;
         let scrollLeft;
 
-        // FITUR DRAG PAKAI MOUSE (Klik, Tahan, Geser Kanan-Kiri)
         track.addEventListener('mousedown', (e) => {
           isDown = true;
           track.style.cursor = 'grabbing';
@@ -151,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (!isDown) return;
           e.preventDefault();
           const x = e.pageX - track.offsetLeft;
-          const walk = (x - startX) * 2; // Naikkan angka ini kalau berasa kurang cepat gesernya
+          const walk = (x - startX) * 2;
           track.scrollLeft = scrollLeft - walk;
         });
     }
