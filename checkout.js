@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const SHIPPING_COST = 15000;
   const DISCOUNT_RATE = 0.10; 
 
-  // Daftar Produk Asli dari Catalog
   let cartItems = [
     { id: 1, name: 'Eco Cutlery Set', desc: 'BIOLOGICAL PLASTIC - 4 PO DAYS', price: 45000, qty: 1, img: 'assets/AssetFolderHCI-Lec/Sustainable Catering_ How to Reduce Waste and…_imgupscaler.ai_Beta_2K.jpg' },
     { id: 2, name: 'Recycled Tote Bag', desc: 'RECYCLED COTTON - 2 PO DAYS', price: 85000, qty: 1, img: 'assets/AssetFolderHCI-Lec/NewCatalog2.jpg' },
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', (e) => {
         const id = parseInt(e.currentTarget.dataset.id);
         const item = cartItems.find(i => i.id === id);
-        if (!item) return; // Guard clause 
+        if (!item) return;  
         item.qty++;
         renderCart();
       });
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', (e) => {
         const id = parseInt(e.currentTarget.dataset.id);
         const item = cartItems.find(i => i.id === id);
-        if (!item || item.qty <= 1) return; // Guard clause
+        if (!item || item.qty <= 1) return; 
         item.qty--;
         renderCart();
       });
@@ -93,9 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('summ-total').textContent = formatCurrency(total);
   };
 
-  // ============================================================
-  // LOGIKA KLIK PAYMENT METHOD (BISA MUNCUL/HILANG)
-  // ============================================================
   const paymentTabs = document.querySelectorAll('.payment-method');
   const ccInputFields = document.getElementById('cc-input-fields');
 
@@ -105,9 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.classList.add('is-active');
 
       if (tab.dataset.method === 'digital') {
-        ccInputFields.style.display = 'none'; // Sembunyiin kalau klik e-wallet
+        ccInputFields.style.display = 'none'; 
       } else {
-        ccInputFields.style.display = 'block'; // Munculin kalau klik credit card
+        ccInputFields.style.display = 'block'; 
       }
     });
   });
@@ -137,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutBtn.addEventListener('click', () => {
       if(cartItems.length === 0) {
         alert('Your cart is empty!');
-        return; // Guard clause
+        return; 
       }
       
       checkoutBtn.innerHTML = 'Processing...';

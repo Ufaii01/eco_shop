@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* ==================== ROOT VARIABLES ==================== */
 :root {
     --nav-height: 68px;
     --hero-float: clamp(40px, 6.5vw, 100px);
@@ -17,7 +16,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ==================== NAVBAR ==================== */
 .top-navbar {
     display: flex;
     justify-content: space-between;
@@ -30,7 +28,7 @@ body {
     width: 100%;
     z-index: 50;
     transition: background-color 0.35s ease, box-shadow 0.35s ease;
-    flex-wrap: nowrap; /* Dipaksa sebaris */
+    flex-wrap: nowrap; 
 }
 
 .top-navbar.scrolled {
@@ -39,10 +37,10 @@ body {
 }
 
 .hamburger-btn {
-    display: none; /* Tetap hidden di desktop */
+    display: none; 
     background: none;
     border: none;
-    font-size: 18px; /* Dikecilkan agar setara dengan teks menu */
+    font-size: 18px;
     line-height: 1;
     cursor: pointer;
     color: #392F27;
@@ -253,7 +251,6 @@ body {
     font-weight: 400;
 }
 
-/* ==================== HERO SECTION ==================== */
 .hero {
     padding-top: clamp(16px, 3vw, 32px);
     padding-right: clamp(16px, 4vw, 24px); 
@@ -361,7 +358,6 @@ body {
     display: block;
 }
 
-/* ==================== BRANDS SECTION ==================== */
 .brands {
     overflow: hidden;
     width: 100%;
@@ -384,7 +380,6 @@ body {
     to { transform: translateX(-50%); }
 }
 
-/* ==================== ECO WRAPPER & BACKGROUND TEXT ==================== */
 .eco-content-wrapper {
     background-color: #392f27;
     position: relative;
@@ -415,7 +410,6 @@ body {
     white-space: nowrap;
 }
 
-/* ==================== MAIN OVERLAY CARD ==================== */
 .main-content-card {
     background-color: #faf9ed;
     border-radius: clamp(24px, 4vw, 40px);
@@ -428,7 +422,6 @@ body {
     box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
-/* ==================== SLIDER CSS ==================== */
 .slider-container {
     position: relative;
     height: clamp(340px, 50vw, 480px);
@@ -480,7 +473,6 @@ body {
     opacity: 0;
 }
 
-/* ==================== HOW IT WORKS ==================== */
 .how-it-works-container {
     margin-top: clamp(40px, 6vw, 80px);
     margin-bottom: 60px;
@@ -555,7 +547,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* ==================== VERIFIED SELLERS SPOTLIGHT ==================== */
 .sellers-spotlight {
     margin-top: clamp(40px, 6vw, 80px);
     margin-bottom: 40px;
@@ -641,7 +632,6 @@ body {
     color: #6e6053;
 }
 
-/* ==================== CALL TO ACTION (CTA) ==================== */
 .register-cta-container { text-align: center; }
 
 .seller-cta {
@@ -682,7 +672,6 @@ body {
     font-weight: bold;
 }
 
-/* ==================== TRUST BADGES ==================== */
 .trust-badges {
     background-color: #392f27;
     padding: clamp(30px, 4vw, 40px) clamp(16px, 3vw, 32px) 60px;
@@ -733,9 +722,6 @@ body {
     line-height: 1.4;
 }
 
-/* ==================== MEDIA QUERIES (RESPONSIVE) ==================== */
-
-/* ── Tablet: 769px – 1100px ─────────────────────────────── */
 @media (max-width: 1100px) {
     .social-media { display: none; } 
     .signup-container { display: none; }
@@ -745,19 +731,18 @@ body {
     .process-steps { flex-direction: column; gap: 20px; }
 }
 
-/* ── Mobile: ≤ 768px ─────────────────────────────────────── */
 @media (max-width: 768px) {
     .hamburger-btn { display: block; }
     
     .top-navbar {
         padding: 12px 10px;
         gap: 5px; 
-        flex-wrap: nowrap; /* Memaksa agar tetap 1 baris menyamping */
+        flex-wrap: nowrap; 
     }
     
     .menu {
         display: none;
-        gap: clamp(4px, 1vw, 8px); /* Jarak antar menu diperkecil */
+        gap: clamp(4px, 1vw, 8px); 
         width: auto;
         order: unset;
         margin-top: 0;
@@ -765,7 +750,7 @@ body {
     }
 
     .menu a {
-        font-size: 11px; /* Ukuran font menu dikecilkan agar muat */
+        font-size: 11px; 
     }
     
     .dot {
@@ -781,18 +766,18 @@ body {
     }
 
     .logo {
-        font-size: 20px; /* Logo sedikit dikecilkan agar muat di HP sebaris */
+        font-size: 20px; 
         letter-spacing: 1px;
         order: unset;
     }
 
     .login {
-        font-size: 14px; /* Teks Log In dikecilkan */
+        font-size: 14px;
         font-weight: 700;
     }
 
     .user-icon img {
-        width: 24px; /* Ikon dikecilkan agar hemat tempat */
+        width: 24px; 
         transform: translateY(0); 
     }
 
@@ -838,7 +823,6 @@ body {
     }
 }
 
-/* ── Small mobile: ≤ 480px ────────────────────────── */
 @media (max-width: 480px) {
     .hero {
         padding-top: 12px;

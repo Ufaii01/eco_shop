@@ -16,7 +16,6 @@ a {
     color: inherit;
 }
 
-/* ==================== NAVBAR ==================== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -74,7 +73,6 @@ a {
     cursor: pointer;
 }
 
-/* ==================== FOOTER ==================== */
 .footer {
     position: relative;
     background-color: #0c140d;
@@ -237,7 +235,6 @@ a {
     text-align: center;
 }
 
-/* ==================== SIDEBAR ==================== */
 .sidebar-overlay { 
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -365,31 +362,26 @@ a {
 .join-btn span { font-weight: 500; }
 .join-btn:hover { background-color: #e2e0d7; }
 
-
-/* ==================== MEDIA QUERIES ==================== */
-
-/* Tablet & Layar Menengah (768px - 1024px) */
 @media (max-width: 1024px) {
     .footer-content {
-        grid-template-columns: 1fr 1fr; /* Menjadi 2 kolom */
+        grid-template-columns: 1fr 1fr; 
         gap: 40px;
     }
 }
 
-/* Mobile & Tablet Kecil (Di bawah 768px) */
 @media (max-width: 768px) {
     .footer-content {
-        grid-template-columns: 1fr; /* Menjadi 1 kolom berderet ke bawah */
+        grid-template-columns: 1fr; 
         text-align: center;
         gap: 30px;
     }
     
     .brand-col h3 {
-        justify-content: center; /* Menengahkan logo eco di mobile */
+        justify-content: center; 
     }
 
     .brand-col p {
-        margin: 0 auto 20px auto; /* Menengahkan teks paragraf */
+        margin: 0 auto 20px auto;
     }
 
     .newsletter-form {
@@ -405,7 +397,7 @@ a {
         color: white;
         border-radius: 30px;
         width: 100%;
-        max-width: 400px; /* Agar input tidak terlalu lebar di layar medium */
+        max-width: 400px; 
     }
 
     .newsletter-form button { 
@@ -415,13 +407,12 @@ a {
     }
 }
 
-/* Smartphone Kecil (Di bawah 480px) */
 @media (max-width: 480px) {
     .navbar {
         padding: 15px 20px;
     }
     
     .social-icons {
-        gap: 15px; /* Sedikit merapatkan icon sosial media */
+        gap: 15px;
     }
 }

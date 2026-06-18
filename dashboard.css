@@ -26,9 +26,6 @@ h4 {
     font-weight: 100;
 }
 
-/* =====================================================
-   DASHBOARD HEADER & LAYOUT
-   ===================================================== */
 .dashboard-header {
     min-height: 63px;
     background: var(--cream);
@@ -93,9 +90,6 @@ h4 {
     align-items: flex-start;
 }
 
-/* =====================================================
-   PROFILE SIDEBAR
-   ===================================================== */
 .profile-sidebar {
     flex: 0 0 290px;
     display: flex;
@@ -262,7 +256,7 @@ h4 {
 }
 
 .logout-btn {
-    align-self: flex-end; /* Menggantikan float agar lebih konsisten di flexbox */
+    align-self: flex-end; 
     margin: 10px;
     width: 120px;
     height: 35px;
@@ -277,9 +271,6 @@ h4 {
 
 .logout-btn:hover { opacity: 0.8; }
 
-/* =====================================================
-   DASHBOARD CONTENT (Stats & Orders)
-   ===================================================== */
 .content { flex: 1; width: 100%; }
 
 .stats-card {
@@ -396,9 +387,6 @@ h4 {
     border-radius: 4px;
 }
 
-/* =====================================================
-   GLOBAL NAVIGATION SIDEBAR
-   ===================================================== */
 .sidebar-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden;
@@ -409,7 +397,7 @@ h4 {
 
 .sidebar {
     position: fixed; top: 0; left: 0; transform: translateX(-100%);
-    width: min(320px, 85vw); /* Dioptimalkan agar tidak overflow di layar HP kecil */
+    width: min(320px, 85vw); 
     height: 100vh;
     background-color: #3b322a; color: #fff; z-index: 1001;
     overflow-y: auto; transition: transform 0.3s ease-in-out;
@@ -515,9 +503,6 @@ h4 {
 
 .join-btn:hover { background-color: #e2e0d7; }
 
-/* =====================================================
-   RESPONSIVE MEDIA QUERIES (DIOPTIMALKAN UNTUK HP)
-   ===================================================== */
 @media (max-width: 900px) {
     .dashboard-container {
         flex-direction: column;
@@ -556,10 +541,9 @@ h4 {
     }
 }
 
-/* Kategori Layar HP (Smartphone Portrait) */
 @media (max-width: 576px) {
     .dashboard-header {
-        padding: 12px 15px; /* Mempersempit padding header di HP */
+        padding: 12px 15px; 
     }
 
     .left-header {
@@ -567,10 +551,9 @@ h4 {
     }
 
     .left-header .page-title {
-        display: none; /* Menyembunyikan sub-title halaman jika layar terlalu sempit agar tidak sumpek */
+        display: none; 
     }
 
-    /* Mengembalikan profile card menjadi vertical stack penuh agar rapi di HP */
     .profile-card {
         flex-direction: column;
     }
@@ -580,9 +563,8 @@ h4 {
         border-bottom: 2px solid var(--brown);
     }
 
-    /* Menyesuaikan ukuran font statistik yang terlalu besar di HP */
     .stats-body {
-        grid-template-columns: 1fr; /* Menjadi 1 kolom penuh ke bawah */
+        grid-template-columns: 1fr;
     }
 
     .stat {
@@ -596,11 +578,11 @@ h4 {
     }
 
     .stat h2 {
-        font-size: 32px; /* Ukuran angka stat dikecilkan dari 40px */
+        font-size: 32px;
     }
 
     .stat-icon {
-        width: 48px; /* Mengecilkan icon stat di HP */
+        width: 48px; 
         height: 48px;
     }
     
@@ -609,7 +591,6 @@ h4 {
     }
 }
 
-/* Tambahan untuk HP berspesifikasi layar sangat kecil (seperti iPhone SE lama / < 360px) */
 @media (max-width: 360px) {
     .left-header h2 {
         font-size: 15px;

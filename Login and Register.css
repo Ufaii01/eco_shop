@@ -662,9 +662,6 @@ a {
   }
 }
 
-/* ============================================================
-   RESPONSIVE OPTIMIZATION AT 540PX (Bagian yang disempurnakan)
-   ============================================================ */
 @media (max-width: 540px) {
   .page-container {
     gap: 48px;
@@ -675,7 +672,6 @@ a {
     gap: 24px;
   }
 
-  /* Hero Banner Adjustments */
   .hero-banner {
     min-height: 280px;
     padding: 32px 24px;
@@ -683,7 +679,7 @@ a {
   }
 
   .hero-title {
-    font-size: 32px; /* Dikecilkan dari 50px agar tidak overflow */
+    font-size: 32px; 
   }
 
   .hero-description {
@@ -692,31 +688,29 @@ a {
   }
 
   .stats-number {
-    font-size: 38px; /* Dikecilkan dari 52px */
+    font-size: 38px; 
   }
 
-  /* Form Header Adjustments */
   .auth-header {
     margin-bottom: 30px;
   }
 
   .auth-header h1 {
-    font-size: 28px; /* Dikecilkan dari 38px agar pas di satu baris HP */
+    font-size: 28px; 
   }
 
-  /* Form Elements Stack */
   .auth-form {
     gap: 20px;
   }
 
   .form-actions {
-    flex-direction: column; /* Membuat checkbox 'remember me' dan link berbaris vertikal */
+    flex-direction: column; 
     align-items: flex-start;
     gap: 12px;
   }
 
   .social-auth {
-    flex-direction: column; /* Tombol Google dan Apple menumpuk vertikal di HP */
+    flex-direction: column; 
     gap: 10px;
   }
 
@@ -724,7 +718,6 @@ a {
     width: 100%;
   }
 
-  /* Footer Adjustments */
   .main-footer {
     padding: 56px 20px 32px;
   }
@@ -735,7 +728,7 @@ a {
   }
 
   .footer-brand-name {
-    font-size: 28px; /* Dikecilkan dari 38px */
+    font-size: 28px;
   }
 
   .newsletter-form {
@@ -743,21 +736,16 @@ a {
   }
 }
 
-/* ============================================================
-   RESPONSIVE OPTIMIZATION: TABLET & SMALL LAPTOP (541px - 1024px)
-   Mengatur transisi mulus dari HP ke Tablet (misal: iPad)
-   ============================================================ */
 @media (min-width: 541px) and (max-width: 1024px) {
   .page-container {
     gap: 64px;
   }
 
   .auth-wrapper {
-    /* Tetap atas-bawah, tapi dengan ruang yang lebih lega */
     flex-direction: column;
     padding: 40px 32px;
     gap: 40px;
-    max-width: 768px; /* Membatasi kelebaran maksimal di tablet */
+    max-width: 768px; 
   }
 
   .hero-banner {
@@ -767,11 +755,11 @@ a {
   }
 
   .hero-title {
-    font-size: 42px; /* Ukuran tengah antara Mobile (32px) dan Desktop (50px) */
+    font-size: 42px;
   }
 
   .hero-stats {
-    flex-direction: row; /* Jejerkan statistik menyamping agar mengisi ruang kosong */
+    flex-direction: row;
     gap: 48px;
   }
 
@@ -780,9 +768,9 @@ a {
   }
 
   .form-container {
-    max-width: 520px; /* Form lebih lebar sedikit untuk tablet */
+    max-width: 520px;
     margin: 0 auto;
-    background-color: #ffffff; /* Memberikan efek kartu (card) pada form di layar tablet */
+    background-color: #ffffff;
     padding: 40px;
     border-radius: 32px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
@@ -792,7 +780,6 @@ a {
     font-size: 34px;
   }
 
-  /* Penyesuaian Footer untuk Tablet */
   .footer-columns {
     gap: 48px;
     justify-content: center;
@@ -826,10 +813,6 @@ a {
   }
 }
 
-/* ============================================================
-   RESPONSIVE OPTIMIZATION: MEDIUM DESKTOP (1025px - 1280px)
-   Mencegah banner dan form saling bertabrakan di layar laptop kecil
-   ============================================================ */
 @media (min-width: 1025px) and (max-width: 1280px) {
   .auth-wrapper {
     padding: 40px 24px;
@@ -843,7 +826,7 @@ a {
   }
 
   .hero-title {
-    font-size: 40px; /* Cegah teks judul menjadi terlalu panjang */
+    font-size: 40px; 
   }
 
   .form-container {
@@ -855,18 +838,12 @@ a {
   }
 }
 
-/* ============================================================
-   AUTH.JS — Inline validation styles
-   ============================================================ */
-
-/* --- Input in error state --- */
 .input-group input.input-invalid,
 .terms-group input.input-invalid {
   border-color: #c0392b;
   box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
 }
 
-/* --- Inline field error message --- */
 .field-error {
   display: block;
   margin-top: 6px;
@@ -880,7 +857,6 @@ a {
   animation: fadeSlideIn 0.18s ease;
 }
 
-/* --- Top-level form banner (success / error) --- */
 .form-banner {
   padding: 14px 20px;
   border-radius: var(--radius-input);
@@ -904,7 +880,6 @@ a {
   color: #1e8449;
 }
 
-/* --- Entry animation --- */
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
