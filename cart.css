@@ -1,7 +1,3 @@
-/* ==========================================================================
-   1. BASE STYLES & DESKTOP DEFAULT (> 1024px)
-   ========================================================================== */
-
 .nav-left {
     display: flex;
     align-items: center;
@@ -32,7 +28,7 @@
 .cart-main-container {
     max-width: 1200px; 
     width: 92%; 
-    margin: 140px auto 140px; /* Ditambah margin-top agar tidak tertutup navbar */
+    margin: 140px auto 140px; 
     padding: 0; 
 }
 
@@ -71,7 +67,6 @@
     flex-direction: column;
 }
 
-/* Layout Baris Produk (Desktop) */
 .cart-item-row {
     display: flex;
     align-items: center;
@@ -85,7 +80,6 @@
     border-bottom: none; 
 }
 
-/* Custom Checkbox */
 .custom-checkbox {
     appearance: none;
     -webkit-appearance: none;
@@ -119,7 +113,6 @@
     transform: scale(1);
 }
 
-/* Gambar Produk */
 .product-image-wrapper {
     width: 100px;
     height: 100px;
@@ -135,13 +128,12 @@
     object-fit: cover;
 }
 
-/* Detail Produk */
 .product-info-details {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 4px;
-    min-width: 0; /* Mencegah teks panjang merusak layout flexbox */
+    min-width: 0; 
 }
 
 .product-title {
@@ -165,7 +157,6 @@
     color: #2c2a27;
 }
 
-/* Pengatur Jumlah (Quantity) */
 .quantity-controller {
     display: flex;
     align-items: center;
@@ -196,7 +187,6 @@
     text-align: center;
 }
 
-/* Sticky Checkout Bar (Desktop) */
 .checkout-sticky-bar {
     position: fixed;
     bottom: 0;
@@ -282,9 +272,6 @@
     transform: translateY(-1px);
 }
 
-/* ==========================================================================
-   NAVBAR COLORS (Cart Page Default)
-   ========================================================================== */
 .navbar .hamburger {
     color: #2c2a27;
     transition: color 0.35s ease;
@@ -300,10 +287,6 @@
 .navbar.scrolled .hamburger { color: #2c2a27; }
 .navbar.scrolled .nav-right .icon { color: #2c2a27; }
 
-
-/* ==========================================================================
-   2. TABLET RESPONSIVE (540px to 1024px)
-   ========================================================================== */
 @media (min-width: 540px) and (max-width: 1024px) {
     .cart-main-container {
         margin: 110px auto 120px;
@@ -341,10 +324,6 @@
     }
 }
 
-
-//* ==========================================================================
-   3. MOBILE RESPONSIVE (< 540px)
-   ========================================================================== */
 @media (max-width: 539px) {
     .cart-main-container {
         margin: 90px auto 100px;
@@ -356,28 +335,27 @@
         margin-bottom: 24px;
     }
 
-    /* Modifikasi susunan item di mobile agar sangat rapi */
     .cart-item-row {
         flex-wrap: wrap; 
         gap: 12px;
         padding: 16px 0;
-        position: relative; /* Penting untuk mengunci posisi tombol X */
-        padding-right: 25px; /* Beri ruang di kanan agar teks tidak menabrak X */
+        position: relative; 
+        padding-right: 25px; 
     }
     
     .product-image-wrapper {
-        width: 75px; /* Dikecilkan sedikit agar lega */
+        width: 75px; 
         height: 75px;
         border-radius: 8px;
     }
 
     .product-info-details {
-        flex: 1; /* Biarkan teks mengambil sisa ruang tengah */
+        flex: 1;
         min-width: 120px; 
     }
 
     .product-title {
-        font-size: 14px; /* Disesuaikan agar judul panjang tetap rapi */
+        font-size: 14px; 
         padding-right: 10px;
     }
 
@@ -385,14 +363,12 @@
         font-size: 14px;
     }
 
-    /* Pengatur jumlah merapat ke kanan bawah */
     .quantity-controller {
         margin-left: auto;
         padding: 2px 10px;
         gap: 10px;
     }
 
-    /* Tombol X pindah ke pojok kanan atas khusus layar HP */
     .remove-item-btn {
         position: absolute;
         top: 16px;
@@ -401,7 +377,6 @@
         padding: 4px;
     }
 
-    /* Penyesuaian Sticky Bar di Layar Kecil */
     .checkout-bar-content {
         padding: 12px 0;
         gap: 8px;
@@ -432,9 +407,6 @@
     }
 }
 
-/* ==========================================================================
-   4. TOMBOL HAPUS BARANG (X) AESTHETIC - DESKTOP/TABLET DEFAULT
-   ========================================================================== */
 .remove-item-btn {
     background: transparent;
     border: none;
@@ -454,20 +426,16 @@
     transform: scale(1.15); 
 }
 
-/* ==========================================================================
-   5. NAVBAR SCROLL JADI COKLAT
-   ========================================================================== */
 .navbar {
-    background-color: #ffffff; /* Awalnya putih */
+    background-color: #ffffff; 
     transition: background-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .navbar.scrolled {
-    background-color: #392F27 !important; /* Warna coklat earthy */
+    background-color: #392F27 !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Supaya teks & icon kelihatan, ganti jadi krem terang saat background coklat */
 .navbar.scrolled .hamburger,
 .navbar.scrolled .logo-text strong,
 .navbar.scrolled .logo-text .page-title,
